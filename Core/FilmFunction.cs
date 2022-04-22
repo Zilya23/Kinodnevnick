@@ -15,5 +15,11 @@ namespace Core
         {
             return new ObservableCollection<Film>(bd_connection.connection.Film.ToList());
         }
+
+        public static Film GetFilmInfo(Film film)
+        {
+            Film selectedFilm = bd_connection.connection.Film.Where(filmId => filmId.ID == film.ID).FirstOrDefault();
+            return selectedFilm;
+        }
     }
 }

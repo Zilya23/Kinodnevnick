@@ -29,5 +29,14 @@ namespace Kinodnevnick
             filmList = Core.FilmFunction.GetFilm();
             this.DataContext = this;
         }
+
+        private void lv_films_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var isSelected = lv_films.SelectedItem as Core.DateBase.Film;
+            if(isSelected != null)
+            {
+                NavigationService.Navigate(new FilmInfoPage(isSelected));
+            }  
+        }
     }
 }

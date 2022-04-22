@@ -9,7 +9,7 @@
       Title="FilmMainPage">
 
     <Grid>
-        <ListView x:Name="lv_films" ItemsSource="{Binding filmList}">
+        <ListView x:Name="lv_films" ItemsSource="{Binding filmList}" SelectionChanged="lv_films_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
