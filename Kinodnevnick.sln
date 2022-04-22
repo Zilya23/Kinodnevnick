@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinodnevnick", "Kinodnevnick\Kinodnevnick.csproj", "{C4EF5A16-39C3-4482-9B12-11B7BFBCFF57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{211DE46C-E8C4-4E62-A8EC-BAB06252E627}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4EF5A16-39C3-4482-9B12-11B7BFBCFF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EF5A16-39C3-4482-9B12-11B7BFBCFF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EF5A16-39C3-4482-9B12-11B7BFBCFF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EF5A16-39C3-4482-9B12-11B7BFBCFF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44248325-7BDD-4E1F-80B7-B78D6F6B41F1}
+	EndGlobalSection
+EndGlobal
