@@ -16,14 +16,23 @@ using System.Windows.Shapes;
 namespace Kinodnevnick
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AuthorizationPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthorizationPage : Page
     {
-        public MainWindow()
+        public AuthorizationPage()
         {
             InitializeComponent();
-            frame_autoriz.NavigationService.Navigate(new AuthorizationPage());
+        }
+
+        private void btn_regist_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_authoriz_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
