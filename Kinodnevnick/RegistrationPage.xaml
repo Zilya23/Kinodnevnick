@@ -1,0 +1,48 @@
+﻿<Page x:Class="Kinodnevnick.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kinodnevnick"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="4" 
+                    Background="#A70000" Margin="0, 0, 0, 40"/>
+        <TextBlock Text="КинокраД" 
+                   Grid.Row="0" 
+                   Grid.Column="0" Grid.ColumnSpan="4" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="50" FontWeight="Bold"/>
+        <TextBlock x:Name="tb_back"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="40" 
+                   Margin="10, 0, 0, 0"
+                   MouseDown="TextBlock_MouseDown"
+                   MouseEnter="TextBlock_MouseEnter"
+                   MouseLeave="tb_back_MouseLeave"/>
+        
+    </Grid>
+</Page>

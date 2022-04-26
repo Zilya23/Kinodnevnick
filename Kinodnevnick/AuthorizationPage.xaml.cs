@@ -27,7 +27,7 @@ namespace Kinodnevnick
 
         private void btn_regist_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RegistrationPage());
         }
 
         private void btn_authoriz_Click(object sender, RoutedEventArgs e)
