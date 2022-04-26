@@ -32,7 +32,7 @@ namespace Kinodnevnick
 
         private void btn_authoriz_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new FilmMainPage());
         }
     }
 }

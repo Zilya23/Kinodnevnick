@@ -9,13 +9,72 @@
       Title="FilmMainPage">
 
     <Grid>
-        <ListView x:Name="lv_films" ItemsSource="{Binding filmList}" SelectionChanged="lv_films_SelectionChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#A70000"/>
+        <TextBlock Text="КинокраД" 
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="0" FontWeight="Bold"/>
+        <ListView x:Name="lv_films" 
+                  ItemsSource="{Binding filmList}" 
+                  Grid.Row="1" Grid.RowSpan="12"
+                  Grid.Column="1" Grid.ColumnSpan="12"
+                  SelectionChanged="lv_films_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Название" 
+                                    DisplayMemberBinding="{Binding Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        
+        <Button x:Name="btn_main"
+                Content="Main"
+                Grid.Column="0"
+                Grid.Row="1" Grid.RowSpan="4"
+                Background="#FFA70000" BorderBrush="Black"/>
+        <Button x:Name="btn_dairy"
+                Content="dairy"
+                Grid.Column="0"
+                Grid.Row="5" Grid.RowSpan="4"
+                Background="#FFA70000" BorderBrush="Black"/>
+        <Button x:Name="btn_collection"
+                Content="coll"
+                Grid.Column="0"
+                Grid.Row="9" Grid.RowSpan="12"
+                Background="#FFA70000" BorderBrush="Black"/>
+
     </Grid>
 </Page>
