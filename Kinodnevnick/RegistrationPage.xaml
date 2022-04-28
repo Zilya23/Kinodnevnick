@@ -8,6 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegistrationPage">
 
+    <Page.Background>
+        <ImageBrush ImageSource="img/fon3.jpg"/>
+    </Page.Background>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -43,6 +47,61 @@
                    MouseDown="TextBlock_MouseDown"
                    MouseEnter="TextBlock_MouseEnter"
                    MouseLeave="tb_back_MouseLeave"/>
-        
+        <TextBlock Text="Никнейм"
+                   Grid.Column="2"
+                   Grid.Row="2"
+                   FontSize="19"/>
+        <TextBlock Text="Логин"
+                   Grid.Column="2"
+                   Grid.Row="3"
+                   FontSize="19"/>
+        <TextBlock Text="Пароль"
+                   Grid.Column="2"
+                   Grid.Row="4"
+                   FontSize="19"/>
+        <TextBox x:Name="tb_nick"
+                 Grid.Row="2"
+                 Grid.Column="2"
+                 VerticalAlignment="Bottom"
+                 Height="28"
+                 FontSize="20"/>
+        <TextBox x:Name="tb_login"
+                 Grid.Row="3"
+                 Grid.Column="2"
+                 VerticalAlignment="Bottom"
+                 Height="28"
+                 FontSize="20"/>
+        <TextBox x:Name="tb_pass"
+                 Grid.Row="4"
+                 Grid.Column="2"
+                 VerticalAlignment="Bottom"
+                 Height="28"
+                 FontSize="20"/>
+        <Image x:Name="img_photo"
+               Grid.Row="1" Grid.RowSpan="5"
+               HorizontalAlignment="Center" 
+               Margin="24,22,0,42" 
+               Width="176"/>
+        <Button x:Name="btn_newphoto"
+                Content="Загрузите фото"
+                Grid.ColumnSpan="2"
+                Grid.Row="5"
+                Height="28"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Width="200"
+                Background="#A70000"
+                Click="btn_newphoto_Click"/>
+        <Button x:Name="btn_save"
+                Content="Зарегистрироваться"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                Grid.Row="6"
+                Height="28"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Width="350"
+                Margin="0, 0, 0, 10"
+                Background="#A70000"
+                Click="btn_save_Click"/>
     </Grid>
 </Page>

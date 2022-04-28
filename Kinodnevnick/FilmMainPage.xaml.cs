@@ -23,7 +23,7 @@ namespace Kinodnevnick
     public partial class FilmMainPage : Page
     {
         public static ObservableCollection<Core.DateBase.Film> filmList { get; set; }
-        public FilmMainPage()
+        public FilmMainPage(Core.DateBase.User user)
         {
             InitializeComponent();
             filmList = Core.FilmFunction.GetFilm();

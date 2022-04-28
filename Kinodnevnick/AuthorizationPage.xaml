@@ -85,13 +85,17 @@
                 Height="30"
                 Margin="19,10,19,0"
                 VerticalAlignment="Top"
-                FontSize="15" FontWeight="Bold" 
+                FontSize="15" FontWeight="Bold"
                 Click="btn_authoriz_Click"/>
-        <TextBlock Text="Нет аккаунта? Зарегистрируйтесь!"
+        <TextBlock x:Name="tb_regist"
+                   Text="Нет аккаунта? Зарегистрируйтесь!"
                    Grid.Row="6"
                    Grid.Column="1" Grid.ColumnSpan="2"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"
-                   FontSize="14"/>
+                   FontSize="14"
+                   MouseDown="TextBlock_MouseDown"
+                   MouseEnter="TextBlock_MouseEnter"
+                   MouseLeave="TextBlock_MouseLeave"/>
     </Grid>
 </Page>

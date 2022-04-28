@@ -12,7 +12,7 @@ namespace Core
     {
         public static ObservableCollection<User> users { get; set; }
 
-        public static void RegistrationUser(string nick, string login, string password)
+        public static void RegistrationUser(string nick, string login, string password, byte[] photo)
         {
             User newUser = new User();
             int startXP = 0;
@@ -23,6 +23,7 @@ namespace Core
             newUser.Password = password;
             newUser.User_Level = startLvl;
             newUser.Count_XP = startXP;
+            newUser.Photo = photo;
 
             bd_connection.connection.User.Add(newUser);
             bd_connection.connection.SaveChanges();

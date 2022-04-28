@@ -39,12 +39,27 @@ namespace Kinodnevnick
             User user = Core.Authorization.AuthorizationUser(login, password);
             if(user != null)
             {
-                NavigationService.Navigate(new FilmMainPage());
+                NavigationService.Navigate(new FilmMainPage(user));
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationPage());
+        }
+
+        private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_regist.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_regist.Foreground = new SolidColorBrush(Colors.Black);
         }
     }
 }
