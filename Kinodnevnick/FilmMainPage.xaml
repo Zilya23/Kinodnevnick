@@ -76,20 +76,23 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="btn_main"
-                Content="Main"
                 Grid.Column="0"
                 Grid.Row="1" Grid.RowSpan="4"
-                Background="#FFA70000" BorderBrush="Black"/>
+                Background="#FFA70000" BorderBrush="Black">
+            <Image Source="img/main.png" Width="40"/>
+        </Button>
         <Button x:Name="btn_dairy"
-                Content="dairy"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
-                Background="#FFA70000" BorderBrush="Black"/>
+                Background="#FFA70000" BorderBrush="Black">
+            <Image Source="img/ca.png" Width="40"/>
+        </Button>
         <Button x:Name="btn_collection"
-                Content="coll"
                 Grid.Column="0"
                 Grid.Row="9" Grid.RowSpan="12"
-                Background="#FFA70000" BorderBrush="Black"/>
+                Background="#FFA70000" BorderBrush="Black">
+            <Image Source="img/colle.png" Width="40"/>
+        </Button>
 
     </Grid>
 </Page>
