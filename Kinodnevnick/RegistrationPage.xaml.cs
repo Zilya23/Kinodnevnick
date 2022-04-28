@@ -65,11 +65,18 @@ namespace Kinodnevnick
             string nickName = tb_nick.Text;
             string login = tb_login.Text;
             string pass = tb_pass.Text;
+            if (Registration.UniqueLogin(login))
+            {
+                Registration.RegistrationUser(nickName, login, pass, user_photo);
 
-            Registration.RegistrationUser(nickName, login, pass, user_photo);
-
-            System.Windows.MessageBox.Show("Аккаунт успешно создан!");
-            NavigationService.Navigate(new AuthorizationPage());
+                System.Windows.MessageBox.Show("Аккаунт успешно создан!");
+                NavigationService.Navigate(new AuthorizationPage());
+            }
+            else
+            {
+                tb_login.Text = "";
+                System.Windows.MessageBox.Show("Придумайте другой логин");
+            }
         }
     }
 }
