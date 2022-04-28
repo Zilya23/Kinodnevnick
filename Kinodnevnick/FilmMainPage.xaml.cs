@@ -26,8 +26,8 @@ namespace Kinodnevnick
         public FilmMainPage()
         {
             InitializeComponent();
-            //filmList = Core.FilmFunction.GetFilm();
-            //this.DataContext = this;
+            filmList = Core.FilmFunction.GetFilm();
+            this.DataContext = this;
         }
 
         private void lv_films_SelectionChanged(object sender, SelectionChangedEventArgs e)

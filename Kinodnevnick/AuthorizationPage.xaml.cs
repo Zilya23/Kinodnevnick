@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
+using Core.DateBase;
 
 namespace Kinodnevnick
 {
@@ -32,7 +34,17 @@ namespace Kinodnevnick
 
         private void btn_authoriz_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FilmMainPage());
+            string login = tb_login.Text;
+            string password = tb_password.Text;
+            User user = Core.Authorization.AuthorizationUser(login, password);
+            if(user != null)
+            {
+                NavigationService.Navigate(new FilmMainPage());
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

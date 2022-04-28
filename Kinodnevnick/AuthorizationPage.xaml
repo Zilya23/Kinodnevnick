@@ -6,9 +6,15 @@
       xmlns:local="clr-namespace:Kinodnevnick"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthorizationPage" Background="White">
+      Title="AuthorizationPage">
+    <Page.Background>
+        <ImageBrush ImageSource="img/fon3.jpg"/>
+    </Page.Background>
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="img/fon2.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,13 +34,13 @@
 
         <StackPanel Grid.Row="0" Grid.RowSpan="2"
                     Grid.Column="0" Grid.ColumnSpan="4" 
-                    Background="#A70000" Margin="0, 0, 0, 40"/>
+                    Background="#FF780000" Margin="0, 0, 0, 40"/>
         <TextBlock Text="КинокраД" 
                    Grid.Row="0" 
                    Grid.Column="0" Grid.ColumnSpan="4" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="50" FontWeight="Bold"/>
-        <TextBlock Text="Авторизация"
+        <TextBlock Text="Добро пожаловать!"
                    Grid.Row="2"
                    Grid.Column="1" Grid.ColumnSpan="2"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -44,34 +50,48 @@
                  Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"
                  Height="28"
-                 FontSize="20"/>
+                 FontSize="20" Margin="19,0"/>
         <TextBlock Text="Логин"
                    Grid.Row="3"
                    Grid.Column="1" Grid.ColumnSpan="2"
                    VerticalAlignment="Top"
-                   FontSize="19"/>
+                   FontSize="19" Margin="19,0,0,0"/>
         <TextBox x:Name="tb_password"
                  Grid.Row="4"
                  Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"
                  Height="28"
-                 FontSize="20"/>
+                 FontSize="20" Margin="19,0"/>
         <TextBlock Text="Пароль"
                    Grid.Row="4"
                    Grid.Column="1" Grid.ColumnSpan="2"
                    VerticalAlignment="Top"
-                   FontSize="19"/>
-        <Button x:Name="btn_regist"
+                   FontSize="19" Margin="19,0,0,0"/>
+        <!--<Button x:Name="btn_regist"
                 Content="Зарегистрироваться"
-                Grid.Row="6"
-                Grid.Column="1"
-                Background="#FFA70000"
-                FontSize="15" FontWeight="Bold" Click="btn_regist_Click"/>
+                Grid.Row="5"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                Background="#FF780000"
+                FontSize="15" FontWeight="Bold" 
+                Margin="19,0"
+                Height="25"
+                VerticalAlignment="Bottom"
+                Click="btn_regist_Click"/>-->
         <Button x:Name="btn_authoriz"
                 Content="Войти"
-                Grid.Row="6"
-                Grid.Column="2"
-                Background="#FFA70000"
-                FontSize="15" FontWeight="Bold" Click="btn_authoriz_Click"/>
+                Grid.Row="5"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                Background="#FF780000"
+                Height="30"
+                Margin="19,10,19,0"
+                VerticalAlignment="Top"
+                FontSize="15" FontWeight="Bold" 
+                Click="btn_authoriz_Click"/>
+        <TextBlock Text="Нет аккаунта? Зарегистрируйтесь!"
+                   Grid.Row="6"
+                   Grid.Column="1" Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="14"/>
     </Grid>
 </Page>
