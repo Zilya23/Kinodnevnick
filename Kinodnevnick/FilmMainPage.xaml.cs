@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core;
+using Core.DateBase;
 
 namespace Kinodnevnick
 {
@@ -22,7 +23,7 @@ namespace Kinodnevnick
     /// </summary>
     public partial class FilmMainPage : Page
     {
-        public static ObservableCollection<Core.DateBase.Film> filmList { get; set; }
+        public static ObservableCollection<Film> filmList { get; set; }
         public FilmMainPage(Core.DateBase.User user)
         {
             InitializeComponent();
@@ -37,6 +38,17 @@ namespace Kinodnevnick
             {
                 NavigationService.Navigate(new FilmInfoPage(isSelected));
             }  
+        }
+
+        private void tbx_search_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            filmList = Core.FilmFunction.GetFilm();
+            if (tbx_search.Text != "")
+            {
+                filmList = new ObservableCollection<Film>(bd_connection.connection.Film.Where(a => a.Name.Contains(tbx_search.Text)).ToList());
+            }
+
+            lv_films.ItemsSource = filmList;
         }
     }
 }

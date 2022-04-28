@@ -48,9 +48,14 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="tbx_search"
+                 Grid.Row="1"
+                 Grid.Column="4" Grid.ColumnSpan="4"
+                 FontSize="20"
+                 SelectionChanged="tbx_search_SelectionChanged"/>
         <ListView x:Name="lv_films" 
                   ItemsSource="{Binding filmList}" 
-                  Grid.Row="1" Grid.RowSpan="12"
+                  Grid.Row="2" Grid.RowSpan="12"
                   Grid.Column="1" Grid.ColumnSpan="12"
                   SelectionChanged="lv_films_SelectionChanged">
             <ListView.ItemsPanel>

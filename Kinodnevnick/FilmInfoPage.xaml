@@ -9,7 +9,81 @@
       Title="FilmInfoPage">
 
     <Grid>
-        <TextBlock x:Name="tbl_name"/>
-        <TextBlock x:Name="tbl_discription"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#A70000"/>
+        <TextBlock Text="КинокраД" 
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="tb_back"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="30"
+                   Margin="10,-7,0,7"
+                   MouseDown="tb_back_MouseDown"
+                   MouseEnter="tb_back_MouseEnter"
+                   MouseLeave="tb_back_MouseLeave"/>
+
+        <Image x:Name="img_poster"
+               Source="{Binding filmToFill.Poster}"
+               Grid.Column="1" Grid.ColumnSpan="3"
+               Grid.Row="2" Grid.RowSpan="8"/>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3"
+                    Grid.Row="2" Grid.RowSpan="8"
+                    Background="Wheat"/>
+
+        <TextBlock Text="Дата выхода: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <TextBlock Text="Описание: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   FontSize="20"/>
+
+        <TextBlock Text="{Binding filmToFill.Description}"
+                   Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="5" Grid.RowSpan="6"
+                   FontSize="16"
+                   TextWrapping="Wrap"/>
+        <TextBlock Text="{Binding filmToFill.Date_Issue}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+
     </Grid>
 </Page>

@@ -28,9 +28,22 @@ namespace Kinodnevnick
             InitializeComponent();
             filmToFill = FilmFunction.GetFilmInfo(film);
 
-            tbl_name.Text = filmToFill.Name;
-            tbl_discription.Text = filmToFill.Description;
             this.DataContext = this;
+        }
+
+        private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
+        }
+
+        private void tb_back_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_back.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void tb_back_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_back.Foreground = new SolidColorBrush(Colors.Black);
         }
     }
 }

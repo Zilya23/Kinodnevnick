@@ -22,6 +22,7 @@ namespace Kinodnevnick
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+        public static User user;
         public AuthorizationPage()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Kinodnevnick
         {
             string login = tb_login.Text;
             string password = tb_password.Text;
-            User user = Core.Authorization.AuthorizationUser(login, password);
+            user = Core.Authorization.AuthorizationUser(login, password);
             if(user != null)
             {
                 NavigationService.Navigate(new FilmMainPage(user));
