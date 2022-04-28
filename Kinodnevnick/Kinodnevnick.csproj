@@ -258,25 +258,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\fon1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\fon3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\main.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\collect.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\cale.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\colle.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\men.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

@@ -83,16 +83,21 @@
         </Button>
         <Button x:Name="btn_dairy"
                 Grid.Column="0"
-                Grid.Row="5" Grid.RowSpan="4"
+                Grid.Row="9" Grid.RowSpan="12"
                 Background="#FFA70000" BorderBrush="Black">
-            <Image Source="img/ca.png" Width="40"/>
+            <Image Source="img/ca.png" Width="38"/>
         </Button>
         <Button x:Name="btn_collection"
                 Grid.Column="0"
-                Grid.Row="9" Grid.RowSpan="12"
+                Grid.Row="5" Grid.RowSpan="4"
                 Background="#FFA70000" BorderBrush="Black">
             <Image Source="img/colle.png" Width="40"/>
         </Button>
-
+        <Button x:Name="btn_menu"
+                Grid.Column="0"
+                Grid.Row="0"
+                Background="#FFA70000">
+            <Image Source="img/men.png" Width="35"/>
+        </Button>
     </Grid>
 </Page>
