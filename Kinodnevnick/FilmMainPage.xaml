@@ -53,12 +53,27 @@
                   Grid.Row="1" Grid.RowSpan="12"
                   Grid.Column="1" Grid.ColumnSpan="12"
                   SelectionChanged="lv_films_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Название" 
-                                    DisplayMemberBinding="{Binding Name}"/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}|{1}">
+                                    <Binding Path="filmList.Name"/>
+                                    <Binding Path="Name"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <Image Source="{Binding Poster}" Width="300" Height="300"/>
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" FontSize="20" Foreground="Black"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="btn_main"
                 Content="Main"
