@@ -59,7 +59,7 @@ namespace Kinodnevnick
 
         private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
         {
-            tb_regist.Foreground = new SolidColorBrush(Colors.Black);
+            tb_regist.Foreground = new SolidColorBrush(Colors.White);
         }
     }
 }

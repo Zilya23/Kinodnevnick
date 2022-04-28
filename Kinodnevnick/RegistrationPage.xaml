@@ -9,7 +9,7 @@
       Title="RegistrationPage">
 
     <Page.Background>
-        <ImageBrush ImageSource="img/fon3.jpg"/>
+        <ImageBrush ImageSource="img/fonreg.jpg"/>
     </Page.Background>
 
     <Grid>
@@ -50,15 +50,18 @@
         <TextBlock Text="Никнейм"
                    Grid.Column="2"
                    Grid.Row="2"
-                   FontSize="19"/>
+                   FontSize="19"
+                   Foreground="White"/>
         <TextBlock Text="Логин"
                    Grid.Column="2"
                    Grid.Row="3"
-                   FontSize="19"/>
+                   FontSize="19"
+                   Foreground="White"/>
         <TextBlock Text="Пароль"
                    Grid.Column="2"
                    Grid.Row="4"
-                   FontSize="19"/>
+                   FontSize="19"
+                   Foreground="White"/>
         <TextBox x:Name="tb_nick"
                  Grid.Row="2"
                  Grid.Column="2"

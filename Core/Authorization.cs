@@ -23,7 +23,6 @@ namespace Core
             {
                 return userExists;
             }
- 
         }
     }
 }

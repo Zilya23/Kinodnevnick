@@ -272,6 +272,18 @@
   <ItemGroup>
     <Resource Include="img\men.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fon4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fon5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fonreg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
