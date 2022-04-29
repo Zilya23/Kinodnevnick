@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,28 +13,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections.ObjectModel;
 using Core;
+using Core.DateBase;
 
 namespace Kinodnevnick
 {
     /// <summary>
-    /// Логика взаимодействия для FilmInfoPage.xaml
+    /// Логика взаимодействия для FilmInCollectionPage.xaml
     /// </summary>
-    public partial class FilmInfoPage : Page
+    public partial class FilmInCollectionPage : Page
     {
-        public static Core.DateBase.Film filmToFill { get; set; }
-        public FilmInfoPage(Core.DateBase.Film film)
+        public static ObservableCollection<Film_Collection> filmsToFill { get; set; }
+        public FilmInCollectionPage(Collection collection)
         {
             InitializeComponent();
-            filmToFill = FilmFunction.GetFilmInfo(film);
-
+            filmsToFill = CollectionFunction.GetFilmInCollection(collection.ID);
             this.DataContext = this;
         }
 
         private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
+            NavigationService.Navigate(new CollectionMainPage());
         }
 
         private void tb_back_MouseEnter(object sender, MouseEventArgs e)
@@ -44,11 +44,6 @@ namespace Kinodnevnick
         private void tb_back_MouseLeave(object sender, MouseEventArgs e)
         {
             tb_back.Foreground = new SolidColorBrush(Colors.Black);
-        }
-
-        private void img_plus_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
         }
     }
 }

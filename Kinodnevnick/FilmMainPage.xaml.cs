@@ -50,5 +50,10 @@ namespace Kinodnevnick
 
             lv_films.ItemsSource = filmList;
         }
+
+        private void btn_collection_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CollectionMainPage());
+        }
     }
 }
