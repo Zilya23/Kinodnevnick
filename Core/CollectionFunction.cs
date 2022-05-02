@@ -23,13 +23,20 @@ namespace Core
             return films = new ObservableCollection<Film_Collection>((bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == idColl)).ToList());
         }
 
-        public static void NewCollection(string nameCollection, int UserID)
+        public static void NewCollection(string nameCollection, int userID)
         {
             Collection newCollection = new Collection();
 
-            newCollection.ID_User = UserID;
+            newCollection.ID_User = userID;
             newCollection.Name = nameCollection;
             bd_connection.connection.Collection.Add(newCollection);
+            bd_connection.connection.SaveChanges();
+        }
+
+        public static void EditCollectionName(int idColl, string newName)
+        {
+            Collection editcollection = bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID == idColl).FirstOrDefault();
+            editcollection.Name = newName;
             bd_connection.connection.SaveChanges();
         }
     }

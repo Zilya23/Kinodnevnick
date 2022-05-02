@@ -76,5 +76,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Image x:Name="img_redaction" 
+               Source="img/red.png"
+               Grid.Column="12"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,5,11,0"
+               MouseDown="img_redaction_MouseDown"/>
     </Grid>
 </Page>
