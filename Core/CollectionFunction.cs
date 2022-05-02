@@ -22,5 +22,15 @@ namespace Core
         {
             return films = new ObservableCollection<Film_Collection>((bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == idColl)).ToList());
         }
+
+        public static void NewCollection(string nameCollection, int UserID)
+        {
+            Collection newCollection = new Collection();
+
+            newCollection.ID_User = UserID;
+            newCollection.Name = nameCollection;
+            bd_connection.connection.Collection.Add(newCollection);
+            bd_connection.connection.SaveChanges();
+        }
     }
 }

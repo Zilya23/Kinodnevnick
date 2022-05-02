@@ -189,6 +189,9 @@
     <Compile Include="FilmInCollectionPage.xaml.cs">
       <DependentUpon>FilmInCollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewCollectionWindow.xaml.cs">
+      <DependentUpon>NewCollectionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewCollectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

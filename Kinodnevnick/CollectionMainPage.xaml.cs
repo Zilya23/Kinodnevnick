@@ -38,13 +38,20 @@ namespace Kinodnevnick
 
         private void img_plus_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            NewCollectionWindow newCollection = new NewCollectionWindow(AuthorizationPage.user.ID);
+            newCollection.ShowDialog();
+            UpdateCollection();
         }
 
         private void lv_coll_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var collId = (sender as ListView).SelectedItem as Collection;
             NavigationService.Navigate(new FilmInCollectionPage(collId));
+        }
+
+        public void UpdateCollection()
+        {
+            lv_coll.ItemsSource = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
         }
     }
 }
