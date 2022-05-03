@@ -53,5 +53,10 @@ namespace Kinodnevnick
         {
             lv_coll.ItemsSource = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
         }
+
+        private void btn_dairy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new KalendarPage());
+        }
     }
 }

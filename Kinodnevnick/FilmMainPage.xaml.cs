@@ -55,5 +55,10 @@ namespace Kinodnevnick
         {
             NavigationService.Navigate(new CollectionMainPage());
         }
+
+        private void btn_dairy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new KalendarPage());
+        }
     }
 }

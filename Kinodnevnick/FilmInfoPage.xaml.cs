@@ -48,7 +48,7 @@ namespace Kinodnevnick
 
         private void img_plus_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            NavigationService.Navigate(new SelectionCollectionPage(filmToFill.ID));
         }
     }
 }

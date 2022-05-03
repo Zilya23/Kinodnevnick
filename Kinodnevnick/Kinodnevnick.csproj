@@ -192,11 +192,17 @@
     <Compile Include="FilmInCollectionPage.xaml.cs">
       <DependentUpon>FilmInCollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KalendarPage.xaml.cs">
+      <DependentUpon>KalendarPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewCollectionWindow.xaml.cs">
       <DependentUpon>NewCollectionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionCollectionPage.xaml.cs">
+      <DependentUpon>SelectionCollectionPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AuthorizationPage.xaml">
       <SubType>Designer</SubType>
@@ -219,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KalendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectionCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
