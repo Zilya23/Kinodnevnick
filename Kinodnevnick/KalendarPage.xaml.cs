@@ -29,18 +29,11 @@ namespace Kinodnevnick
             InitializeComponent();
             calendars = KalendarFunction.AllEvent(AuthorizationPage.user.ID);
 
-            //cal_film.SelectedDates = calendars.Select(x=> x.Date);
-            //cal_film.SelectedDates.Add(
-            //   new DateTime(2022, 5, 5));
-            ////cal_film.SelectedDates.AddRange(
-            ////    new DateTime(2022, 5, 12), new DateTime(2009, 1, 15));
-            //cal_film.SelectedDates.Add(
-            //    new DateTime(2022, 5, 27));
             foreach (var i in calendars)
             {
                 cal_film.SelectedDates.Add((DateTime)i.Date);
             }
-            //cal_film.BlackoutDates.Add(new CalendarDateRange(new DateTime(2022, 5, 2), new DateTime(2022, 5, 30)));
+            this.DataContext = this;
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)
@@ -55,11 +48,23 @@ namespace Kinodnevnick
 
         private void cal_film_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            //cal_film.BlackoutDates.Clear();
+            ObservableCollection<Film_Calendar> eventColl = new ObservableCollection<Film_Calendar>();
+
             foreach (var i in calendars)
             {
                 cal_film.SelectedDates.Add((DateTime)i.Date);
             }
+
+            foreach (var i in calendars)
+            {
+                if (cal_film.SelectedDate == i.Date)
+                {
+                    eventColl.Add(i);
+                }
+            }
+
+            lv_event.ItemsSource = eventColl;
+            this.DataContext = this;
         }
     }
 }

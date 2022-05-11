@@ -60,7 +60,6 @@
                   SelectionMode="MultipleRange"
                   Grid.Column="2" Grid.ColumnSpan="4"
                   SelectedDatesChanged="cal_film_SelectedDatesChanged"
-                  
                   Grid.Row="2" Grid.RowSpan="11" Margin="0,0,30,10.6"
                   materialDesign:CalendarAssist.HeaderBackground ="#A70000"/>
 
@@ -100,14 +99,16 @@
         </Button>
 
         <ListView x:Name="lv_event"
-                  ItemsSource="{Binding }"
+                  ItemsSource="{Binding eventColl}"
                   Grid.Column="7" Grid.ColumnSpan="5"
-                  Grid.Row="2" Grid.RowSpan="8">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Label Height="30" FontSize="15" Content="{Binding Film.Naim}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                  Grid.Row="2" Grid.RowSpan="8"
+                  Foreground="Black"
+                  FontSize="20">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Film.Name}"/>
+                </GridView>
+            </ListView.View>
         </ListView>
     </Grid>
 </Page>
