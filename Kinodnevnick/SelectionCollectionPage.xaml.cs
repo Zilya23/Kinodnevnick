@@ -62,7 +62,7 @@ namespace Kinodnevnick
                 }
                 else
                 {
-                    MessageBox.Show("Фильм уже добавлен в коллекцию", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Фильм уже добавлен в коллекцию", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
