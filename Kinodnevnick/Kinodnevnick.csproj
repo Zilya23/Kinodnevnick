@@ -221,8 +221,8 @@
     <Compile Include="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectionCollectionPage.xaml.cs">
-      <DependentUpon>SelectionCollectionPage.xaml</DependentUpon>
+    <Compile Include="SelectionCollectionWindow.xaml.cs">
+      <DependentUpon>SelectionCollectionWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AuthorizationPage.xaml">
       <SubType>Designer</SubType>
@@ -281,7 +281,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectionCollectionPage.xaml">
+    <Page Include="SelectionCollectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

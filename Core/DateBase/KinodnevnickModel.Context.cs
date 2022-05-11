@@ -13,10 +13,10 @@ namespace Core.DateBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KinodnevnickEntities : DbContext
+    public partial class KinodnevnickKursahEntities : DbContext
     {
-        public KinodnevnickEntities()
-            : base("name=KinodnevnickEntities")
+        public KinodnevnickKursahEntities()
+            : base("name=KinodnevnickKursahEntities")
         {
         }
     
@@ -29,6 +29,7 @@ namespace Core.DateBase
         public virtual DbSet<Film> Film { get; set; }
         public virtual DbSet<Film_Calendar> Film_Calendar { get; set; }
         public virtual DbSet<Film_Collection> Film_Collection { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

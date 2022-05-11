@@ -177,34 +177,37 @@
     <Compile Include="CollectionFunction.cs" />
     <Compile Include="DateBase\bd_connection.cs" />
     <Compile Include="DateBase\Collection.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Calendar.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Collection.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.Context.cs">
+    <Compile Include="DateBase\KinodnevnickModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.cs">
+    <Compile Include="DateBase\KinodnevnickModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.Designer.cs">
+    <Compile Include="DateBase\KinodnevnickModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>KinodnevnickModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\sysdiagrams.cs">
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>KinodnevnickModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmFunction.cs" />
     <Compile Include="KalendarFunction.cs" />
@@ -214,12 +217,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DateBase\Model1.edmx">
+    <EntityDeploy Include="DateBase\KinodnevnickModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>KinodnevnickModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DateBase\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="DateBase\KinodnevnickModel.edmx.diagram">
+      <DependentUpon>KinodnevnickModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -227,15 +230,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DateBase\Model1.Context.tt">
+    <Content Include="DateBase\KinodnevnickModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>KinodnevnickModel.edmx</DependentUpon>
+      <LastGenOutput>KinodnevnickModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DateBase\Model1.tt">
+    <Content Include="DateBase\KinodnevnickModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>KinodnevnickModel.edmx</DependentUpon>
+      <LastGenOutput>KinodnevnickModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
