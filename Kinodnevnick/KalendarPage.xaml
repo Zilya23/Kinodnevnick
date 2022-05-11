@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       
       xmlns:local="clr-namespace:Kinodnevnick" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
@@ -55,7 +56,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Calendar Grid.Column="2" Grid.ColumnSpan="4"
+        <Calendar x:Name="cal_film"
+                  SelectionMode="MultipleRange"
+                  Grid.Column="2" Grid.ColumnSpan="4"
+                  SelectedDatesChanged="cal_film_SelectedDatesChanged"
+                  
                   Grid.Row="2" Grid.RowSpan="11" Margin="0,0,30,10.6"
                   materialDesign:CalendarAssist.HeaderBackground ="#A70000"/>
 
@@ -93,5 +98,16 @@
                 Background="#FFA70000">
             <Image Source="img/men.png" Width="35"/>
         </Button>
+
+        <ListView x:Name="lv_event"
+                  ItemsSource="{Binding }"
+                  Grid.Column="7" Grid.ColumnSpan="5"
+                  Grid.Row="2" Grid.RowSpan="8">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Label Height="30" FontSize="15" Content="{Binding Film.Naim}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

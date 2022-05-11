@@ -17,6 +17,8 @@ namespace Core.DateBase
         public int ID { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> ID_User { get; set; }
+        public Nullable<int> ID_Film { get; set; }
+        public string Description { get; set; }
     
         public virtual User User { get; set; }
     }

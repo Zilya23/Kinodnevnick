@@ -28,8 +28,10 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" />
+          <Property Name="Date" Type="datetime" />
           <Property Name="ID_User" Type="int" />
+          <Property Name="ID_Film" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -153,9 +155,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="ID_User" Type="Int32" />
           <NavigationProperty Name="User" Relationship="Self.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
+          <Property Name="ID_Film" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -282,6 +286,8 @@
           <EntitySetMapping Name="Film_Calendar">
             <EntityTypeMapping TypeName="KinodnevnickModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
