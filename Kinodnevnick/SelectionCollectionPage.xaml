@@ -9,6 +9,56 @@
       Title="SelectionCollectionPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#A70000"/>
+        <TextBlock Text="{Binding filmToFill.Name}" 
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="tb_back"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="30"
+                   Margin="10,-7,0,7"
+                   MouseDown="tb_back_MouseDown"
+                   MouseEnter="tb_back_MouseEnter"
+                   MouseLeave="tb_back_MouseLeave"/>
+        <ComboBox Name="cb_collection"
+                  Grid.Column="1" Grid.ColumnSpan="4"
+                  Grid.Row="2"/>
     </Grid>
 </Page>

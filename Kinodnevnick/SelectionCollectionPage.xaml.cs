@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
+using Core.DateBase;
 
 namespace Kinodnevnick
 {
@@ -23,6 +25,23 @@ namespace Kinodnevnick
         public SelectionCollectionPage(int FilmID)
         {
             InitializeComponent();
+            cb_collection.ItemsSource = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
+            cb_collection.DisplayMemberPath = "Name";
+        }
+
+        private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void tb_back_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_back.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void tb_back_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_back.Foreground = new SolidColorBrush(Colors.Black);
         }
     }
 }
