@@ -24,6 +24,7 @@ namespace Kinodnevnick
     public partial class KalendarPage : Page
     {
         public static ObservableCollection<Film_Calendar> calendars { get; set; }
+        public static ObservableCollection<Film_Calendar> eventColl { get; set; }
         public KalendarPage()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Kinodnevnick
             {
                 cal_film.SelectedDates.Add((DateTime)i.Date);
             }
-            this.DataContext = this;
+            this.DataContext = eventColl;
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)
@@ -48,7 +49,7 @@ namespace Kinodnevnick
 
         private void cal_film_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            ObservableCollection<Film_Calendar> eventColl = new ObservableCollection<Film_Calendar>();
+            eventColl = new ObservableCollection<Film_Calendar>();
 
             foreach (var i in calendars)
             {
