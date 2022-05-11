@@ -175,39 +175,36 @@
   <ItemGroup>
     <Compile Include="Authorization.cs" />
     <Compile Include="CollectionFunction.cs" />
-    <Compile Include="DateBase\BDModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BDModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DateBase\BDModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BDModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DateBase\BDModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BDModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="DateBase\bd_connection.cs" />
     <Compile Include="DateBase\Collection.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Calendar.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Collection.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\sysdiagrams.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+    <Compile Include="DateBase\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DateBase\User.cs">
-      <DependentUpon>BDModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmFunction.cs" />
     <Compile Include="Program.cs" />
@@ -216,29 +213,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DateBase\BDModel.edmx">
+    <EntityDeploy Include="DateBase\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BDModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DateBase\BDModel.edmx.diagram">
-      <DependentUpon>BDModel.edmx</DependentUpon>
+    <None Include="DateBase\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DateBase\BDModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BDModel.Context.cs</LastGenOutput>
-      <DependentUpon>BDModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DateBase\BDModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BDModel.edmx</DependentUpon>
-      <LastGenOutput>BDModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="DateBase\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DateBase\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

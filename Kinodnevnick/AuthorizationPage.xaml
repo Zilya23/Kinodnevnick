@@ -51,7 +51,7 @@
                  Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"
                  Height="28"
-                 FontSize="20" Margin="19,0"/>
+                 FontSize="14" Margin="19,0"/>
         <TextBlock Text="Логин"
                    FontWeight="DemiBold"
                    Grid.Row="2"
@@ -63,7 +63,7 @@
                  Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"
                  Height="28"
-                 FontSize="20" Margin="19,0"/>
+                 FontSize="14" Margin="19,0"/>
         <TextBlock Text="Пароль"
                    FontWeight="DemiBold"
                    Grid.Row="3"
