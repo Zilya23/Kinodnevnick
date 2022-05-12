@@ -62,15 +62,22 @@ namespace Kinodnevnick
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string nickName = tb_nick.Text;
-            string login = tb_login.Text;
-            string pass = tb_pass.Text;
+            string nickName = tb_nick.Text.Trim();
+            string login = tb_login.Text.Trim();
+            string pass = tb_pass.Text.Trim();
             if (Registration.UniqueLogin(login))
             {
-                Registration.RegistrationUser(nickName, login, pass, user_photo);
+                if(nickName != "" && login != "" && pass != "")
+                {
+                    Registration.RegistrationUser(nickName, login, pass, user_photo);
 
-                System.Windows.MessageBox.Show("Аккаунт успешно создан!");
-                NavigationService.Navigate(new AuthorizationPage());
+                    System.Windows.MessageBox.Show("Аккаунт успешно создан!");
+                    NavigationService.Navigate(new AuthorizationPage());
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Заполните все поля!");
+                }
             }
             else
             {

@@ -55,7 +55,7 @@
                    Grid.Column="1" Grid.ColumnSpan="2"
                    VerticalAlignment="Top"
                    FontSize="19" Margin="19,16,0,0"/>
-        <TextBox x:Name="tb_password"
+        <PasswordBox x:Name="tb_password"
                  Grid.Row="4"
                  Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"

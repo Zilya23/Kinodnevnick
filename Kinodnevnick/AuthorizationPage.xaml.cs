@@ -36,7 +36,7 @@ namespace Kinodnevnick
         private void btn_authoriz_Click(object sender, RoutedEventArgs e)
         {
             string login = tb_login.Text;
-            string password = tb_password.Text;
+            string password = tb_password.Password;
             user = Core.Authorization.AuthorizationUser(login, password);
             if(user != null)
             {
