@@ -28,6 +28,10 @@ namespace Kinodnevnick
         public FilmInCollectionPage(Collection collection)
         {
             InitializeComponent();
+            if(collection.Name == "Избранное" || collection.Name == "Просмотрено")
+            {
+                img_redaction.Visibility = Visibility.Hidden;
+            }
             filmsToFill = CollectionFunction.GetFilmInCollection(collection.ID);
             IDCollection = collection.ID;
             this.DataContext = this;

@@ -23,14 +23,21 @@ namespace Core
             return films = new ObservableCollection<Film_Collection>((bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == idColl)).ToList());
         }
 
-        public static void NewCollection(string nameCollection, int userID)
+        public static bool NewCollection(string nameCollection, int userID)
         {
             Collection newCollection = new Collection();
-
-            newCollection.ID_User = userID;
-            newCollection.Name = nameCollection;
-            bd_connection.connection.Collection.Add(newCollection);
-            bd_connection.connection.SaveChanges();
+            if(UniqueCollection(userID, nameCollection))
+            {
+                newCollection.ID_User = userID;
+                newCollection.Name = nameCollection;
+                bd_connection.connection.Collection.Add(newCollection);
+                bd_connection.connection.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static void EditCollectionName(int idColl, string newName)
@@ -38,6 +45,20 @@ namespace Core
             Collection editcollection = bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID == idColl).FirstOrDefault();
             editcollection.Name = newName;
             bd_connection.connection.SaveChanges();
+        }
+
+        public static bool UniqueCollection(int idUser, string name)
+        {
+            bool uniq = true;
+            var unique = GetCollection(idUser);
+            foreach(var i in unique)
+            {
+                if(i.Name == name)
+                {
+                    uniq = false;
+                }
+            }
+            return uniq;
         }
     }
 }

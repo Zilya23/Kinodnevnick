@@ -27,6 +27,7 @@ namespace Core
 
             bd_connection.connection.User.Add(newUser);
             bd_connection.connection.SaveChanges();
+            NewUserCollection();
         }
 
         public static bool UniqueLogin(string login)
@@ -41,6 +42,21 @@ namespace Core
                 }
             }
             return login_unic;
+        }
+
+        public static void NewUserCollection()
+        {
+            users = new ObservableCollection<User>(bd_connection.connection.User.ToList());
+
+            Collection favouritesСollection = new Collection();
+            Collection viewedCollection = new Collection();
+            favouritesСollection.ID_User = users.Last().ID;
+            favouritesСollection.Name = "Избранное";
+            viewedCollection.ID_User = users.Last().ID;
+            viewedCollection.Name = "Просмотрено";
+            bd_connection.connection.Collection.Add(favouritesСollection);
+            bd_connection.connection.Collection.Add(viewedCollection);
+            bd_connection.connection.SaveChanges();
         }
     }
 }

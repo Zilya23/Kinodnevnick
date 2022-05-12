@@ -58,6 +58,7 @@
                MouseDown="img_plus_MouseDown"/>
 
         <ListView x:Name="lv_coll"
+                  ItemsSource="{Binding fullColl}"
                   Grid.Row="2" Grid.RowSpan="10"
                   Grid.Column="2" Grid.ColumnSpan="10"
                   FontSize="20"
