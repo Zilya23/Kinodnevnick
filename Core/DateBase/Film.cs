@@ -25,6 +25,7 @@ namespace Core.DateBase
         public string Description { get; set; }
         public byte[] Poster { get; set; }
         public Nullable<System.DateTime> Date_Issue { get; set; }
+        public Nullable<int> Duration { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_Collection> Film_Collection { get; set; }

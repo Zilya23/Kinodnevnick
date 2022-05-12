@@ -40,20 +40,22 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0"
-                    Grid.Column="0" Grid.ColumnSpan="13" 
+        <StackPanel Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="13"
+                    Margin="0, 0, 0, 20"
                     Background="#A70000"/>
         <TextBlock Text="{Binding filmToFill.Name}" 
-                   Grid.Row="0"
+                   Grid.Row="0" Grid.RowSpan="1"
                    Grid.Column="0" Grid.ColumnSpan="12" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center" 
-                   FontSize="20" FontWeight="Bold"/>
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0, 5, 0, 0"
+                   FontSize="25" FontWeight="Bold"/>
         <TextBlock x:Name="tb_back"
                    Text="←"
                    Grid.Row="0"
                    Grid.Column="0"
-                   FontWeight="Bold" FontSize="30"
-                   Margin="10,-7,0,7"
+                   FontWeight="Bold" FontSize="35"
+                   Margin="10,-5,0,3"
                    MouseDown="tb_back_MouseDown"
                    MouseEnter="tb_back_MouseEnter"
                    MouseLeave="tb_back_MouseLeave"/>
@@ -64,6 +66,10 @@
                Grid.Row="2" Grid.RowSpan="8"/>
 
         <TextBlock Text="Дата выхода: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock Text="Длительность: "
                    Grid.Column="5" Grid.ColumnSpan="3"
                    Grid.Row="3"
                    FontSize="20"/>
@@ -79,6 +85,11 @@
                    TextWrapping="Wrap"/>
         <TextBlock Text="{Binding filmToFill.Date_Issue, StringFormat=dd.MM.yyyy}"
                    Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock x:Name="tb_duration"
+                   Text="{Binding filmToFill.Duration}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
                    Grid.Row="3"
                    FontSize="20"/>
         <Image x:Name="img_plus" 
@@ -87,12 +98,14 @@
                Grid.Row="1"
                Width="27"
                HorizontalAlignment="Right"
-               Margin="0,5,11,0"
-               MouseDown="img_plus_MouseDown"/>
+               Margin="0,20,10,20"
+               MouseDown="img_plus_MouseDown" Grid.RowSpan="2"/>
         <CheckBox x:Name="cb_watch"
                   Content="Просмотрено"
                   Grid.Column="5" Grid.ColumnSpan="3"
-                  Grid.Row="15"
-                  FontSize="20"/>
+                  Grid.Row="11"
+                  FontSize="20" 
+                  Checked="cb_watch_Checked"
+                  Unchecked="cb_watch_Unchecked"/>
     </Grid>
 </Page>

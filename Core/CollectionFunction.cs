@@ -60,5 +60,72 @@ namespace Core
             }
             return uniq;
         }
+
+        public static void ViewedFilm(int idUser, int idFilm)
+        {
+            var FilmColl = new Film_Collection();
+            var allColl = CollectionFunction.GetCollection(idUser);
+            int viewedCollection = 0;
+            foreach (var i in allColl)
+            {
+                if (i.Name == "Просмотрено")
+                {
+                    viewedCollection = i.ID;
+                }
+            }
+            FilmColl.ID_Collection = viewedCollection;
+            FilmColl.ID_Film = idFilm;
+            FilmColl.Date = DateTime.Now;
+            Film_Collection unigue_Film_Collection = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == FilmColl.ID_Collection && a.ID_Film == FilmColl.ID_Film).FirstOrDefault();
+            if (unigue_Film_Collection == null)
+            {
+                bd_connection.connection.Film_Collection.Add(FilmColl);
+                bd_connection.connection.SaveChanges();
+            }
+        }
+
+        public static void UnviewedFilm(int idUser, int idFilm)
+        {
+            var FilmColl = new Film_Collection();
+            var allColl = CollectionFunction.GetCollection(idUser);
+            int viewedCollection = 0;
+            foreach (var i in allColl)
+            {
+                if (i.Name == "Просмотрено")
+                {
+                    viewedCollection = i.ID;
+                }
+            }
+            FilmColl.ID_Collection = viewedCollection;
+            FilmColl.ID_Film = idFilm;
+            Film_Collection deleted_Film_Collection = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == FilmColl.ID_Collection && a.ID_Film == FilmColl.ID_Film).FirstOrDefault();
+            bd_connection.connection.Film_Collection.Remove(deleted_Film_Collection);
+            bd_connection.connection.SaveChanges();
+        }
+
+        public static bool Viewed(int idUser, int idFilm)
+        {
+            var FilmColl = new Film_Collection();
+            var allColl = CollectionFunction.GetCollection(idUser);
+            int viewedCollection = 0;
+            foreach (var i in allColl)
+            {
+                if (i.Name == "Просмотрено")
+                {
+                    viewedCollection = i.ID;
+                }
+            }
+            FilmColl.ID_Collection = viewedCollection;
+            FilmColl.ID_Film = idFilm;
+            Film_Collection deleted_Film_Collection = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == FilmColl.ID_Collection && a.ID_Film == FilmColl.ID_Film).FirstOrDefault();
+            if(deleted_Film_Collection != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
