@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="EditCollectionWindow" Height="237.813" Width="604.214">
+        Title="Переименуйте коллекцию" Height="237.813" Width="604.214">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
