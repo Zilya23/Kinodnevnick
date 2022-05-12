@@ -38,7 +38,7 @@ namespace Kinodnevnick
 
         private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
+            NavigationService.GoBack();
         }
 
         private void tb_back_MouseEnter(object sender, MouseEventArgs e)

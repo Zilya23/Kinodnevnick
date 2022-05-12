@@ -57,5 +57,11 @@ namespace Kinodnevnick
             EditCollectionWindow editCollection = new EditCollectionWindow(IDCollection);
             editCollection.ShowDialog();
         }
+
+        private void lv_film_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Film selected = lv_film.SelectedItem as Film;
+            NavigationService.Navigate(new FilmInfoPage(selected));
+        }
     }
 }

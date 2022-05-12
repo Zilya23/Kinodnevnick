@@ -61,7 +61,8 @@
         <ListView x:Name="lv_film"
                   ItemsSource="{Binding filmsToFill}"
                   Grid.Row="2" Grid.RowSpan="10"
-                  Grid.Column="2" Grid.ColumnSpan="9">
+                  Grid.Column="2" Grid.ColumnSpan="9"
+                  SelectionChanged="lv_film_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>
