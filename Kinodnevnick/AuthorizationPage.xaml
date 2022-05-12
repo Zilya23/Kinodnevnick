@@ -87,6 +87,18 @@
                    Foreground="White"
                    MouseDown="TextBlock_MouseDown"
                    MouseEnter="TextBlock_MouseEnter"
-                   MouseLeave="TextBlock_MouseLeave" Margin="76,27,88,0" Width="236"/>
+                   MouseLeave="TextBlock_MouseLeave" 
+                   Margin="76,27,88,0" Width="236"/>
+        <CheckBox x:Name="cb_saveLogin"
+                  Content="Запомнить аккаунт?"
+                  IsChecked="True"
+                  Grid.Row="6"
+                  Grid.Column="1" Grid.ColumnSpan="2"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  FontSize="14"
+                  Foreground="White" 
+                  Margin="100,0,125,0" 
+                  Width="175"/>
     </Grid>
 </Page>

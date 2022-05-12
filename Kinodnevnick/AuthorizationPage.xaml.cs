@@ -23,9 +23,11 @@ namespace Kinodnevnick
     public partial class AuthorizationPage : Page
     {
         public static User user;
+        public static int pass_count = 0;
         public AuthorizationPage()
         {
             InitializeComponent();
+            tb_login.Text = Properties.Settings.Default.Login;
         }
 
         private void btn_regist_Click(object sender, RoutedEventArgs e)
@@ -35,16 +37,40 @@ namespace Kinodnevnick
 
         private void btn_authoriz_Click(object sender, RoutedEventArgs e)
         {
-            string login = tb_login.Text;
-            string password = tb_password.Password;
-            user = Core.Authorization.AuthorizationUser(login, password);
-            if(user != null)
+            if (Properties.Settings.Default.Password < DateTime.Now)
             {
-                NavigationService.Navigate(new FilmMainPage(user));
+                string login = tb_login.Text.Trim();
+                string password = tb_password.Password.Trim();
+                user = Core.Authorization.AuthorizationUser(login, password);
+                if (user != null)
+                {
+                    if (cb_saveLogin.IsChecked.GetValueOrDefault())
+                    {
+                        Properties.Settings.Default.Login = tb_login.Text.Trim();
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.Login = null;
+                        Properties.Settings.Default.Save();
+                    }
+                    NavigationService.Navigate(new FilmMainPage(user));
+                }
+                else
+                {
+                    pass_count++;
+                    MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (pass_count == 3)
+                    {
+                        pass_count = 0;
+                        Properties.Settings.Default.Password = DateTime.Now.AddMinutes(1);
+                        Properties.Settings.Default.Save();
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Вы ввели неверный пароль 3 раза, возможность входа заблокирована на: \n" + (Properties.Settings.Default.Password - DateTime.Now).Seconds + " сек.");
             }
         }
 
