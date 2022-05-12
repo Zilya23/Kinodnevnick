@@ -48,9 +48,15 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
+        <TextBlock Text="Поиск: "
+                   Grid.Row="1"
+                   Grid.Column="3" Grid.ColumnSpan="2"
+                   FontSize="20"
+                   HorizontalAlignment="Right"
+                   FontWeight="Medium"/>
         <TextBox x:Name="tbx_search"
                  Grid.Row="1"
-                 Grid.Column="4" Grid.ColumnSpan="4"
+                 Grid.Column="5" Grid.ColumnSpan="4"
                  FontSize="20"
                  SelectionChanged="tbx_search_SelectionChanged"/>
         <ListView x:Name="lv_films" 
