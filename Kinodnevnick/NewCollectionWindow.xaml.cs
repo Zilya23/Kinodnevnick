@@ -30,14 +30,21 @@ namespace Kinodnevnick
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
             string collectionName = tb_name.Text.Trim();
-            if(CollectionFunction.NewCollection(collectionName, ID))
+            if (collectionName != "")
             {
-                MessageBox.Show("Коллекция успешно создана!");
-                this.DialogResult = true;
+                if (CollectionFunction.NewCollection(collectionName, ID))
+                {
+                        MessageBox.Show("Коллекция успешно создана!");
+                        this.DialogResult = true;
+                }
+                else
+                {
+                    MessageBox.Show("Такая коллекция уже существует. Придумайте новое название");
+                }
             }
             else
             {
-                MessageBox.Show("Такая коллекция уже существует. Придумайте новое название");
+                MessageBox.Show("Введите название");
             }
         }
     }
