@@ -36,7 +36,7 @@
                 Grid.Row="4"
                 Width="100"
                 HorizontalAlignment="Right"
-                Margin="5"
-                Background="#A70000" Click="btn_save_Click"/>
+                Margin="0,0,10,10"
+                Background="#FF780000" Click="btn_save_Click" RenderTransformOrigin="0.251,0.555"/>
     </Grid>
 </Window>

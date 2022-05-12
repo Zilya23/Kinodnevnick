@@ -42,7 +42,7 @@
 
         <StackPanel Grid.Row="0"
                     Grid.Column="0" Grid.ColumnSpan="13" 
-                    Background="#A70000"/>
+                    Background="#FF780000"/>
         <TextBlock Text="{Binding filmToFill.Name}" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 

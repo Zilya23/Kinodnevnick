@@ -34,7 +34,8 @@
         <Button x:Name="btn_add"
                 Content="Добавить"
                 Grid.Column="1"
-                Grid.Row="4" 
+                Grid.Row="4"
+                Background="#FF780000"
                 Click="btn_add_Click"/>
     </Grid>
 </Window>

@@ -42,7 +42,7 @@
 
         <StackPanel Grid.Row="0"
                     Grid.Column="0" Grid.ColumnSpan="13" 
-                    Background="#A70000"/>
+                    Background="#FF780000"/>
         <TextBlock Text="КинокраД" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 
@@ -74,26 +74,26 @@
         <Button x:Name="btn_main"
                 Grid.Column="0"
                 Grid.Row="1" Grid.RowSpan="4"
-                Background="#FFA70000" BorderBrush="Black"
+                Background="#FF780000" BorderBrush="Black"
                 Click="btn_main_Click">
             <Image Source="img/main.png" Width="40"/>
         </Button>
         <Button x:Name="btn_dairy"
                 Grid.Column="0"
                 Grid.Row="9" Grid.RowSpan="12"
-                Background="#FFA70000" BorderBrush="Black" Click="btn_dairy_Click">
+                Background="#FF780000" BorderBrush="Black" Click="btn_dairy_Click">
             <Image Source="img/ca.png" Width="38"/>
         </Button>
         <Button x:Name="btn_collection"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
-                Background="#FFA70000" BorderBrush="Black">
+                Background="#FF780000" BorderBrush="Black">
             <Image Source="img/colle.png" Width="40"/>
         </Button>
         <Button x:Name="btn_menu"
                 Grid.Column="0"
                 Grid.Row="0"
-                Background="#FFA70000">
+                Background="#FF780000">
             <Image Source="img/men.png" Width="35"/>
         </Button>
     </Grid>
