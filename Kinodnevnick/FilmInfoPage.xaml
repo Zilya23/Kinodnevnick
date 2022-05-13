@@ -78,11 +78,14 @@
                    Grid.Row="4"
                    FontSize="20"/>
 
-        <TextBlock Text="{Binding filmToFill.Description}"
+        <ScrollViewer Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="5" Grid.RowSpan="6">
+            <TextBlock Text="{Binding filmToFill.Description}"
                    Grid.Column="5" Grid.ColumnSpan="6"
                    Grid.Row="5" Grid.RowSpan="6"
                    FontSize="16"
-                   TextWrapping="Wrap"/>
+                   TextWrapping="Wrap" />
+        </ScrollViewer>
         <TextBlock Text="{Binding filmToFill.Date_Issue, StringFormat=dd.MM.yyyy}"
                    Grid.Column="8" Grid.ColumnSpan="3"
                    Grid.Row="2"

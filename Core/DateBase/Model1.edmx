@@ -33,6 +33,8 @@
           <Property Name="ID_User" Type="int" />
           <Property Name="ID_Film" Type="int" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Start_Time" Type="time" Precision="7" />
+          <Property Name="End_Time" Type="time" Precision="7" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -207,6 +209,8 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="User" Relationship="KinodnevnickNewModel.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
           <NavigationProperty Name="Film" Relationship="KinodnevnickNewModel.FK_Film_Calendar_Film" FromRole="Film_Calendar" ToRole="Film" />
+          <Property Name="Start_Time" Type="Time" Precision="7" />
+          <Property Name="End_Time" Type="Time" Precision="7" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -323,6 +327,8 @@
           <EntitySetMapping Name="Film_Calendar">
             <EntityTypeMapping TypeName="KinodnevnickNewModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />

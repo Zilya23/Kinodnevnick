@@ -9,6 +9,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KalendarPage">
+    
 
     <Grid>
         <Grid.Resources>
@@ -24,7 +25,6 @@
         Value="{DynamicResource SecondaryHueMidForegroundBrush}" />
             </Style>
         </Grid.Resources>
-        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -71,7 +71,6 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
-
         <Button x:Name="btn_main"
                 Grid.Column="0"
                 Grid.Row="1" Grid.RowSpan="4"
@@ -103,7 +102,8 @@
                   Grid.Column="7" Grid.ColumnSpan="5"
                   Grid.Row="2" Grid.RowSpan="8"
                   Foreground="Black"
-                  FontSize="20">
+                  FontSize="20"
+                  SelectionChanged="lv_event_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn  DisplayMemberBinding="{Binding Film.Name}"/>

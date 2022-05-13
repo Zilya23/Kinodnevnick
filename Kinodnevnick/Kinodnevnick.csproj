@@ -209,6 +209,9 @@
     <Compile Include="EditCollectionWindow.xaml.cs">
       <DependentUpon>EditCollectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EventWindow.xaml.cs">
+      <DependentUpon>EventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FilmInCollectionPage.xaml.cs">
       <DependentUpon>FilmInCollectionPage.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditCollectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
