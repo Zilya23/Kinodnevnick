@@ -79,7 +79,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    
+
                     <GridViewColumn DisplayMemberBinding="{Binding Film.Name}"/>
                 </GridView>
             </ListView.View>
@@ -93,5 +93,14 @@
                HorizontalAlignment="Right"
                Margin="0,5,11,0"
                MouseDown="img_redaction_MouseDown"/>
+        <Image x:Name="img_delete" 
+               Source="img/del.png"
+               Grid.Column="11"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,5,52,0"
+               MouseDown="img_delete_MouseDown" 
+               Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

@@ -71,5 +71,11 @@ namespace Kinodnevnick
             Film selected = (lv_film.SelectedItem as Film_Collection).Film;
             NavigationService.Navigate(new FilmInfoPage(selected));
         }
+
+        private void img_delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DeleteWindow deleteWindow = new DeleteWindow();
+            deleteWindow.ShowDialog();
+        }
     }
 }
