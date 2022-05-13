@@ -31,6 +31,7 @@ namespace Kinodnevnick
             if(collection.Name == "Избранное" || collection.Name == "Просмотрено")
             {
                 img_redaction.Visibility = Visibility.Hidden;
+                img_delete.Visibility = Visibility.Hidden;
             }
             filmsToFill = CollectionFunction.GetFilmInCollection(collection.ID);
             if(filmsToFill.Count == 0)
@@ -75,7 +76,11 @@ namespace Kinodnevnick
         private void img_delete_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DeleteWindow deleteWindow = new DeleteWindow();
-            deleteWindow.ShowDialog();
+            if(deleteWindow.ShowDialog() == true)
+            {
+                CollectionFunction.DeletedCollection(IDCollection);
+                NavigationService.Navigate(new CollectionMainPage());
+            }
         }
     }
 }

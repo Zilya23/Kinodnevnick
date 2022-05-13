@@ -12,10 +12,11 @@ namespace Core
     {
         public static ObservableCollection<Collection> collections { get; set; }
         public static ObservableCollection<Film_Collection> films { get; set; }
+        public static Collection collectionForDelete { get; set; }
 
         public static ObservableCollection<Collection> GetCollection(int idUser)
         {
-            return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser)).ToList());
+            return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDeleted != true)).ToList());
         }
 
         public static ObservableCollection<Film_Collection> GetFilmInCollection(int idColl)
@@ -126,6 +127,13 @@ namespace Core
             {
                 return false;
             }
+        }
+
+        public static void DeletedCollection(int IDCollection)
+        {
+            collectionForDelete = bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID == IDCollection).FirstOrDefault();
+            collectionForDelete.IsDeleted = true;
+            bd_connection.connection.SaveChanges();
         }
     }
 }
