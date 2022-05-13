@@ -106,7 +106,7 @@
                   FontSize="20">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Film.Name}"/>
+                    <GridViewColumn  DisplayMemberBinding="{Binding Film.Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>

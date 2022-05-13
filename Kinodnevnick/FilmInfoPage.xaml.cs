@@ -23,11 +23,11 @@ namespace Kinodnevnick
     /// </summary>
     public partial class FilmInfoPage : Page
     {
-        public static Film filmToFill { get; set; }
+        public Film filmToFill { get; set; }
         public FilmInfoPage(Film film)
         {
             InitializeComponent();
-            filmToFill = FilmFunction.GetFilmInfo(film);
+            filmToFill = film;
             tb_duration.Text = filmToFill.Duration + " мин.";
             if(CollectionFunction.Viewed(AuthorizationPage.user.ID, filmToFill.ID))
             {

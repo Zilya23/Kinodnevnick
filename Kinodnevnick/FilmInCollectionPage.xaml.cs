@@ -60,7 +60,7 @@ namespace Kinodnevnick
 
         private void lv_film_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Film selected = lv_film.SelectedItem as Film;
+            Film selected = (lv_film.SelectedItem as Film_Collection).Film;
             NavigationService.Navigate(new FilmInfoPage(selected));
         }
     }

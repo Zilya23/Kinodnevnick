@@ -18,6 +18,7 @@ namespace Core.DateBase
         public Film()
         {
             this.Film_Collection = new HashSet<Film_Collection>();
+            this.Film_Calendar = new HashSet<Film_Calendar>();
         }
     
         public int ID { get; set; }
@@ -29,5 +30,7 @@ namespace Core.DateBase
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_Collection> Film_Collection { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Film_Calendar> Film_Calendar { get; set; }
     }
 }

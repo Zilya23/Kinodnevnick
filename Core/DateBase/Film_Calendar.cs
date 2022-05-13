@@ -21,5 +21,6 @@ namespace Core.DateBase
         public string Description { get; set; }
     
         public virtual User User { get; set; }
+        public virtual Film Film { get; set; }
     }
 }
