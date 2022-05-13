@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Core;
 using Core.DateBase;
+using System.Collections.ObjectModel;
 
 namespace Kinodnevnick
 {
@@ -26,7 +27,16 @@ namespace Kinodnevnick
         {
             InitializeComponent();
             FilmId = FilmID;
-            cb_collection.ItemsSource = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
+            ObservableCollection<Collection> collection = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
+            ObservableCollection<Collection> trueCollection = new ObservableCollection<Collection>();
+            foreach (var i in collection)
+            {
+                if(i.Name != "Просмотрено")
+                {
+                    trueCollection.Add(i);
+                }
+            }
+            cb_collection.ItemsSource = trueCollection;
             cb_collection.DisplayMemberPath = "Name";
         }
 
