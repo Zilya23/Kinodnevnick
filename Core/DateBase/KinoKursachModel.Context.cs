@@ -13,10 +13,10 @@ namespace Core.DateBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KinodnevnickNewEntities : DbContext
+    public partial class KinodnevnickKursachNewEntities : DbContext
     {
-        public KinodnevnickNewEntities()
-            : base("name=KinodnevnickNewEntities")
+        public KinodnevnickKursachNewEntities()
+            : base("name=KinodnevnickKursachNewEntities")
         {
         }
     

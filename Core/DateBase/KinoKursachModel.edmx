@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище KinodnevnickNewModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище KinodnevnickKursachNewModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Collection">
           <Key>
             <PropertyRef Name="ID" />
@@ -117,7 +117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище KinodnevnickNewModelContainer">
+        <EntityContainer Name="Хранилище KinodnevnickKursachNewModelContainer">
           <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Film_Calendar" EntityType="Self.Film_Calendar" Schema="dbo" store:Type="Tables" />
@@ -144,37 +144,11 @@
             <End Role="Film_Collection" EntitySet="Film_Collection" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="KinodnevnickNewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="KinodnevnickNewEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Collection" EntityType="KinodnevnickNewModel.Collection" />
-          <EntitySet Name="Film" EntityType="KinodnevnickNewModel.Film" />
-          <EntitySet Name="Film_Calendar" EntityType="KinodnevnickNewModel.Film_Calendar" />
-          <EntitySet Name="Film_Collection" EntityType="KinodnevnickNewModel.Film_Collection" />
-          <EntitySet Name="User" EntityType="KinodnevnickNewModel.User" />
-          <AssociationSet Name="FK_Collection_User" Association="KinodnevnickNewModel.FK_Collection_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Collection" EntitySet="Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Collection_Collection" Association="KinodnevnickNewModel.FK_Film_Collection_Collection">
-            <End Role="Collection" EntitySet="Collection" />
-            <End Role="Film_Collection" EntitySet="Film_Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Collection_Film" Association="KinodnevnickNewModel.FK_Film_Collection_Film">
-            <End Role="Film" EntitySet="Film" />
-            <End Role="Film_Collection" EntitySet="Film_Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Calendar_User" Association="KinodnevnickNewModel.FK_Film_Calendar_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Calendar_Film" Association="KinodnevnickNewModel.FK_Film_Calendar_Film">
-            <End Role="Film" EntitySet="Film" />
-            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="KinodnevnickKursachNewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Collection">
           <Key>
             <PropertyRef Name="ID" />
@@ -182,8 +156,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ID_User" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="KinodnevnickNewModel.FK_Collection_User" FromRole="Collection" ToRole="User" />
-          <NavigationProperty Name="Film_Collection" Relationship="KinodnevnickNewModel.FK_Film_Collection_Collection" FromRole="Collection" ToRole="Film_Collection" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Collection_User" FromRole="Collection" ToRole="User" />
+          <NavigationProperty Name="Film_Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Collection" ToRole="Film_Collection" />
         </EntityType>
         <EntityType Name="Film">
           <Key>
@@ -195,8 +169,8 @@
           <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Date_Issue" Type="DateTime" Precision="0" />
           <Property Name="Duration" Type="Int32" />
-          <NavigationProperty Name="Film_Collection" Relationship="KinodnevnickNewModel.FK_Film_Collection_Film" FromRole="Film" ToRole="Film_Collection" />
-          <NavigationProperty Name="Film_Calendar" Relationship="KinodnevnickNewModel.FK_Film_Calendar_Film" FromRole="Film" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Film_Calendar" Relationship="Self.FK_Film_Calendar_Film" FromRole="Film" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Film_Collection" Relationship="Self.FK_Film_Collection_Film" FromRole="Film" ToRole="Film_Collection" />
         </EntityType>
         <EntityType Name="Film_Calendar">
           <Key>
@@ -207,10 +181,10 @@
           <Property Name="ID_User" Type="Int32" />
           <Property Name="ID_Film" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="User" Relationship="KinodnevnickNewModel.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
-          <NavigationProperty Name="Film" Relationship="KinodnevnickNewModel.FK_Film_Calendar_Film" FromRole="Film_Calendar" ToRole="Film" />
           <Property Name="Start_Time" Type="Time" Precision="7" />
           <Property Name="End_Time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Calendar_Film" FromRole="Film_Calendar" ToRole="Film" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -220,8 +194,8 @@
           <Property Name="ID_Film" Type="Int32" />
           <Property Name="ID_Collection" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Collection" Relationship="KinodnevnickNewModel.FK_Film_Collection_Collection" FromRole="Film_Collection" ToRole="Collection" />
-          <NavigationProperty Name="Film" Relationship="KinodnevnickNewModel.FK_Film_Collection_Film" FromRole="Film_Collection" ToRole="Film" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Film_Collection" ToRole="Collection" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Collection_Film" FromRole="Film_Collection" ToRole="Film" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -234,12 +208,12 @@
           <Property Name="User_Level" Type="Int32" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Count_XP" Type="Int32" />
-          <NavigationProperty Name="Collection" Relationship="KinodnevnickNewModel.FK_Collection_User" FromRole="User" ToRole="Collection" />
-          <NavigationProperty Name="Film_Calendar" Relationship="KinodnevnickNewModel.FK_Film_Calendar_User" FromRole="User" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Collection_User" FromRole="User" ToRole="Collection" />
+          <NavigationProperty Name="Film_Calendar" Relationship="Self.FK_Film_Calendar_User" FromRole="User" ToRole="Film_Calendar" />
         </EntityType>
         <Association Name="FK_Collection_User">
-          <End Type="KinodnevnickNewModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="KinodnevnickNewModel.Collection" Role="Collection" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -250,8 +224,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Collection_Collection">
-          <End Type="KinodnevnickNewModel.Collection" Role="Collection" Multiplicity="0..1" />
-          <End Type="KinodnevnickNewModel.Film_Collection" Role="Film_Collection" Multiplicity="*" />
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <End Role="Film_Collection" Type="Self.Film_Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Collection">
               <PropertyRef Name="ID" />
@@ -261,9 +235,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Film_Calendar_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Film_Calendar" Type="Self.Film_Calendar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Film_Calendar">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Film_Collection_Film">
-          <End Type="KinodnevnickNewModel.Film" Role="Film" Multiplicity="0..1" />
-          <End Type="KinodnevnickNewModel.Film_Collection" Role="Film_Collection" Multiplicity="*" />
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Film_Collection" Type="Self.Film_Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Film">
               <PropertyRef Name="ID" />
@@ -274,8 +260,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Calendar_User">
-          <End Type="KinodnevnickNewModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="KinodnevnickNewModel.Film_Calendar" Role="Film_Calendar" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Film_Calendar" Type="Self.Film_Calendar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -285,78 +271,93 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Film_Calendar_Film">
-          <End Type="KinodnevnickNewModel.Film" Role="Film" Multiplicity="0..1" />
-          <End Type="KinodnevnickNewModel.Film_Calendar" Role="Film_Calendar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Film">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Film_Calendar">
-              <PropertyRef Name="ID_Film" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        </Schema>
+        <EntityContainer Name="KinodnevnickKursachNewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Collection" EntityType="Self.Collection" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="Film_Calendar" EntityType="Self.Film_Calendar" />
+          <EntitySet Name="Film_Collection" EntityType="Self.Film_Collection" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Collection_User" Association="Self.FK_Collection_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Collection_Collection" Association="Self.FK_Film_Collection_Collection">
+            <End Role="Collection" EntitySet="Collection" />
+            <End Role="Film_Collection" EntitySet="Film_Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Calendar_Film" Association="Self.FK_Film_Calendar_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Collection_Film" Association="Self.FK_Film_Collection_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Collection" EntitySet="Film_Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Calendar_User" Association="Self.FK_Film_Calendar_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище KinodnevnickNewModelContainer" CdmEntityContainer="KinodnevnickNewEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KinodnevnickKursachNewModelContainer" CdmEntityContainer="KinodnevnickKursachNewEntities">
           <EntitySetMapping Name="Collection">
-            <EntityTypeMapping TypeName="KinodnevnickNewModel.Collection">
+            <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.Collection">
               <MappingFragment StoreEntitySet="Collection">
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film">
-            <EntityTypeMapping TypeName="KinodnevnickNewModel.Film">
+            <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.Film">
               <MappingFragment StoreEntitySet="Film">
-                <ScalarProperty Name="Duration" ColumnName="Duration" />
-                <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
-                <ScalarProperty Name="Poster" ColumnName="Poster" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
+                <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Calendar">
-            <EntityTypeMapping TypeName="KinodnevnickNewModel.Film_Calendar">
+            <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
-                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
-                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Collection">
-            <EntityTypeMapping TypeName="KinodnevnickNewModel.Film_Collection">
+            <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.Film_Collection">
               <MappingFragment StoreEntitySet="Film_Collection">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ID_Collection" ColumnName="ID_Collection" />
-                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Collection" ColumnName="ID_Collection" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="KinodnevnickNewModel.User">
+            <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="User_Level" ColumnName="User_Level" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User_Level" ColumnName="User_Level" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

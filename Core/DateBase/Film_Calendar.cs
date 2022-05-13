@@ -22,7 +22,7 @@ namespace Core.DateBase
         public Nullable<System.TimeSpan> Start_Time { get; set; }
         public Nullable<System.TimeSpan> End_Time { get; set; }
     
-        public virtual User User { get; set; }
         public virtual Film Film { get; set; }
+        public virtual User User { get; set; }
     }
 }
