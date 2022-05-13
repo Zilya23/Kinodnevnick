@@ -48,6 +48,14 @@ namespace Kinodnevnick
                 filmList = new ObservableCollection<Film>(bd_connection.connection.Film.Where(a => a.Name.Contains(tbx_search.Text)).ToList());
             }
 
+            if (filmList.Count == 0)
+            {
+                tb_isEmpty.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tb_isEmpty.Visibility = Visibility.Hidden;
+            }
             lv_films.ItemsSource = filmList;
         }
 

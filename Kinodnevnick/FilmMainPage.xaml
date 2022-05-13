@@ -59,6 +59,12 @@
                  Grid.Column="5" Grid.ColumnSpan="4"
                  FontSize="20"
                  SelectionChanged="tbx_search_SelectionChanged"/>
+        <TextBlock x:Name="tb_isEmpty"
+                   Text="По запросу ничего не найдено"
+                   Grid.Row="6"
+                   Grid.Column="4" Grid.ColumnSpan="5"
+                   FontSize="20"
+                   Visibility="Hidden"/>
         <ListView x:Name="lv_films" 
                   ItemsSource="{Binding filmList}" 
                   Grid.Row="2" Grid.RowSpan="12"
@@ -89,21 +95,24 @@
         <Button x:Name="btn_main"
                 Grid.Column="0"
                 Grid.Row="1" Grid.RowSpan="4"
-                Background="#FF780000" BorderBrush="Black">
-            <Image Source="img/main.png" Width="40"/>
+                Background="#FF780000" BorderBrush="Black" Height="Auto">
+            <Image Source="img/main.png" Width="28"/>
         </Button>
         <Button x:Name="btn_dairy"
                 Grid.Column="0"
-                Grid.Row="9" Grid.RowSpan="12"
-                Background="#FF780000" BorderBrush="Black" Click="btn_dairy_Click">
-            <Image Source="img/ca.png" Width="38"/>
+                Grid.Row="9" 
+                Grid.RowSpan="4"
+                Background="#FF780000" 
+                BorderBrush="Black"
+                Click="btn_dairy_Click" Height="Auto" RenderTransformOrigin="0.484,0.875">
+            <Image Source="img/ca.png" Width="28"/>
         </Button>
         <Button x:Name="btn_collection"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black"
-                Click="btn_collection_Click">
-            <Image Source="img/colle.png" Width="40"/>
+                Click="btn_collection_Click" Height="Auto" RenderTransformOrigin="0.484,0.86">
+            <Image Source="img/colle.png" Width="28"/>
         </Button>
         <Button x:Name="btn_menu"
                 Grid.Column="0"

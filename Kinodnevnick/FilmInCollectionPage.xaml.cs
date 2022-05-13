@@ -33,6 +33,14 @@ namespace Kinodnevnick
                 img_redaction.Visibility = Visibility.Hidden;
             }
             filmsToFill = CollectionFunction.GetFilmInCollection(collection.ID);
+            if(filmsToFill.Count == 0)
+            {
+                tb_isEmpty.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tb_isEmpty.Visibility = Visibility.Hidden;
+            }
             IDCollection = collection.ID;
             this.DataContext = this;
         }

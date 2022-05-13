@@ -57,6 +57,13 @@
                    MouseDown="tb_back_MouseDown"
                    MouseEnter="tb_back_MouseEnter"
                    MouseLeave="tb_back_MouseLeave"/>
+        <TextBlock x:Name="tb_isEmpty"
+                   Text="Коллекция пустая"
+                   Grid.Row="6"
+                   Grid.Column="4" Grid.ColumnSpan="5"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   Visibility="Hidden"/>
 
         <ListView x:Name="lv_film"
                   ItemsSource="{Binding filmsToFill}"
