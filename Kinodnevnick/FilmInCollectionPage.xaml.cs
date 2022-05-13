@@ -82,5 +82,10 @@ namespace Kinodnevnick
                 NavigationService.Navigate(new CollectionMainPage());
             }
         }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
