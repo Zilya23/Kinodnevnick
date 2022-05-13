@@ -61,6 +61,14 @@ namespace Kinodnevnick
                     eventColl.Add(i);
                 }
             }
+            if (eventColl.Count == 0)
+            {
+                tb_isEmpty.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tb_isEmpty.Visibility = Visibility.Hidden;
+            }
 
             lv_event.ItemsSource = eventColl;
         }
@@ -69,8 +77,11 @@ namespace Kinodnevnick
         {
             var events = lv_event.SelectedItem as Film_Calendar;
             var n = (sender as ListView).SelectedItem as Film_Calendar;
-            EventWindow eventWindow = new EventWindow(n);
-            eventWindow.ShowDialog();
+            if (n != null)
+            { 
+                EventWindow eventWindow = new EventWindow(n);
+                eventWindow.ShowDialog();
+            }
         }
     }
 }

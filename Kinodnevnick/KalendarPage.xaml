@@ -96,7 +96,8 @@
                 Background="#FF780000">
             <Image Source="img/men.png" Width="35"/>
         </Button>
-
+        <TextBlock x:Name="tb_isEmpty" Text="No films thid date" 
+                  Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="5" Visibility="Hidden"/>
         <ListView x:Name="lv_event"
                   ItemsSource="{Binding eventColl}"
                   Grid.Column="7" Grid.ColumnSpan="5"
