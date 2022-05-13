@@ -61,5 +61,27 @@ namespace Kinodnevnick
                 }
             }
         }
+
+        private void img_plus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NewCollectionWindow newCollection = new NewCollectionWindow(AuthorizationPage.user.ID);
+            newCollection.ShowDialog();
+            UpdateCollection();
+        }
+
+        public void UpdateCollection()
+        {
+            ObservableCollection<Collection> collection = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
+            ObservableCollection<Collection> trueCollection = new ObservableCollection<Collection>();
+            foreach (var i in collection)
+            {
+                if (i.Name != "Просмотрено")
+                {
+                    trueCollection.Add(i);
+                }
+            }
+            cb_collection.ItemsSource = trueCollection;
+            cb_collection.DisplayMemberPath = "Name";
+        }
     }
 }
