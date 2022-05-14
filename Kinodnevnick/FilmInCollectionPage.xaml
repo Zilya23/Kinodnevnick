@@ -81,12 +81,15 @@
                     </GridViewColumn>
 
                     <GridViewColumn DisplayMemberBinding="{Binding Film.Name}"/>
-                    <!--<GridViewColumn>
-                        <Button x:Name="btn_delete"
-                                Content="Удалить?"
-                                Click="btn_delete_Click"
-                                HorizontalAlignment="Right" Width="45"/>
-                    </GridViewColumn>-->
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btn_del"
+                                        Content="Удалить"
+                                        Click="btn_del_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

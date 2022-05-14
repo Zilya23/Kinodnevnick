@@ -25,9 +25,11 @@ namespace Kinodnevnick
     {
         public static ObservableCollection<Film_Collection> filmsToFill { get; set; }
         public int IDCollection;
+        public Collection updateCollection { get; set; }
         public FilmInCollectionPage(Collection collection)
         {
             InitializeComponent();
+            updateCollection = collection;
             if(collection.Name == "Избранное" || collection.Name == "Просмотрено")
             {
                 img_redaction.Visibility = Visibility.Hidden;
@@ -83,9 +85,33 @@ namespace Kinodnevnick
             }
         }
 
-        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        private void btn_del_Click(object sender, RoutedEventArgs e)
         {
+            var senderButton = sender as Button;
+            var film = senderButton.DataContext as Film_Collection;
 
+            CollectionFunction.DeletedFilmInCollection(IDCollection, Convert.ToInt32(film.ID_Film));
+            UpdateFilm();
+        }
+
+        public void UpdateFilm()
+        {
+            if (updateCollection.Name == "Избранное" || updateCollection.Name == "Просмотрено")
+            {
+                img_redaction.Visibility = Visibility.Hidden;
+                img_delete.Visibility = Visibility.Hidden;
+            }
+            filmsToFill = CollectionFunction.GetFilmInCollection(updateCollection.ID);
+            if (filmsToFill.Count == 0)
+            {
+                tb_isEmpty.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tb_isEmpty.Visibility = Visibility.Hidden;
+            }
+
+            lv_film.ItemsSource = filmsToFill;
         }
     }
 }

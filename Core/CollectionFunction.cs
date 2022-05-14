@@ -13,6 +13,7 @@ namespace Core
         public static ObservableCollection<Collection> collections { get; set; }
         public static ObservableCollection<Film_Collection> films { get; set; }
         public static Collection collectionForDelete { get; set; }
+        public static Film_Collection Film_CollectionForDelete { get; set; } 
 
         public static ObservableCollection<Collection> GetCollection(int idUser)
         {
@@ -133,6 +134,13 @@ namespace Core
         {
             collectionForDelete = bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID == IDCollection).FirstOrDefault();
             collectionForDelete.IsDeleted = true;
+            bd_connection.connection.SaveChanges();
+        }
+
+        public static void DeletedFilmInCollection(int IDColl, int IDFilm)
+        {
+            Film_CollectionForDelete = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == IDColl && a.ID_Film == IDFilm).FirstOrDefault();
+            bd_connection.connection.Film_Collection.Remove(Film_CollectionForDelete);
             bd_connection.connection.SaveChanges();
         }
     }
