@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Core;
 using Core.DateBase;
 
 namespace Kinodnevnick
@@ -21,17 +20,10 @@ namespace Kinodnevnick
     /// </summary>
     public partial class EventWindow : Window
     {
-        public static Film filmName { get; set; }
         public EventWindow(Film_Calendar Event_)
         {
             InitializeComponent();
-            Film_Calendar event_ = Event_;
-            filmName = bd_connection.connection.Film.Where(a => a.ID == event_.ID_Film).FirstOrDefault();
-            tb_film.Text = filmName.Name;
-            tb_comment.Text = event_.Description;
-            tb_date.Text = event_.Date.ToString();
-            tb_start_time.Text = event_.Start_Time.ToString();
-            tb_end_time.Text = event_.End_Time.ToString();
+            frame_event.NavigationService.Navigate(new EventInfoPage(Event_));
         }
     }
 }
