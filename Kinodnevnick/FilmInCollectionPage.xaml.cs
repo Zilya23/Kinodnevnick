@@ -89,9 +89,17 @@ namespace Kinodnevnick
         {
             var senderButton = sender as Button;
             var film = senderButton.DataContext as Film_Collection;
+            Collection delFilmColl = bd_connection.connection.Collection.Where(a => a.ID == film.ID_Collection).FirstOrDefault();
 
-            CollectionFunction.DeletedFilmInCollection(IDCollection, Convert.ToInt32(film.ID_Film));
-            UpdateFilm();
+            if (delFilmColl.Name != "Просмотрено")
+            {
+                CollectionFunction.DeletedFilmInCollection(IDCollection, Convert.ToInt32(film.ID_Film));
+                UpdateFilm();
+            }
+            else
+            {
+                MessageBox.Show("Просмотрено не доступно для редактирования");
+            }
         }
 
         public void UpdateFilm()

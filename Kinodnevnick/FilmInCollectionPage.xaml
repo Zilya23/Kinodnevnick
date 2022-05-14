@@ -86,6 +86,8 @@
                             <DataTemplate>
                                 <Button x:Name="btn_del"
                                         Content="Удалить"
+                                        Background="#FF780000"
+                                        BorderBrush="Black"
                                         Click="btn_del_Click"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
