@@ -18,27 +18,21 @@ using Core.DateBase;
 namespace Kinodnevnick
 {
     /// <summary>
-    /// Логика взаимодействия для EventInfoPage.xaml
+    /// Логика взаимодействия для EventEditPage.xaml
     /// </summary>
-    public partial class EventInfoPage : Page
+    public partial class EventEditPage : Page
     {
         public static Film filmName { get; set; }
-        Film_Calendar event_ { get; set; }
-        public EventInfoPage(Film_Calendar Event_)
+        public EventEditPage(Film_Calendar Event_)
         {
             InitializeComponent();
-            event_ = Event_;
+            Film_Calendar event_ = Event_;
             filmName = bd_connection.connection.Film.Where(a => a.ID == event_.ID_Film).FirstOrDefault();
             tb_film.Text = filmName.Name;
             tb_comment.Text = event_.Description;
             tb_date.Text = event_.Date.ToString();
             tb_start_time.Text = event_.Start_Time.ToString();
             tb_end_time.Text = event_.End_Time.ToString();
-        }
-
-        private void img_redaction_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new EventEditPage(event_));
         }
     }
 }
