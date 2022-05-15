@@ -99,24 +99,23 @@
             Is24Hours="True"
             Foreground="Black"
             Margin="10, 0, 0, 0"
-            SelectedTimeChanged="tp_startTime_SelectedTimeChanged" />
-        <TextBox x:Name="tb_end_time"
+            SelectedTimeChanged="tp_startTime_SelectedTimeChanged"/>
+        <TextBlock x:Name="tb_end_time"
                    Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="4"
                    FontSize="20"
                    Foreground="Black"
                    Margin="10, 0, 0, 0"/>
-        <ScrollViewer Grid.Column="4" Grid.ColumnSpan="4"
-                   Grid.Row="5" Grid.RowSpan="3"
-                      Margin="10, 0, 0, 10">
-            <TextBox x:Name="tb_comment"
+        <TextBox x:Name="tb_comment"
                    TextWrapping="Wrap"
                    Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="5" Grid.RowSpan="3"
                    FontSize="20"
+                   AcceptsReturn="True"
+                   AcceptsTab="True"
+                   VerticalScrollBarVisibility="Visible"
                    Foreground="Black"
-                   Margin="10, 0, 0, 10"/>
-        </ScrollViewer>
+                   Margin="10, 0, 0, 50"/>
         <Button x:Name="btn_save"
                 Content="Сохранить"
                 Grid.Column="11" Grid.ColumnSpan="2"

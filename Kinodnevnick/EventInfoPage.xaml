@@ -122,7 +122,7 @@
                Grid.Column="12"
                Width="27"
                HorizontalAlignment="Right"
-               Margin="0,5,10,0"
+               Margin="0,5,20,0"
                MouseDown="img_redaction_MouseDown"/>
     </Grid>
 </Page>

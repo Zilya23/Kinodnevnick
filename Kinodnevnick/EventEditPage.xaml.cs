@@ -44,12 +44,33 @@ namespace Kinodnevnick
 
         private void tp_startTime_SelectedTimeChanged(object sender, RoutedPropertyChangedEventArgs<DateTime?> e)
         {
-            event_.ID_Film = (cb_film.SelectedItem as Film).ID;
+            TimeSpan timeStart = TimeSpan.Parse(tp_startTime.Text);
+            TimeSpan timeDuration = TimeSpan.FromMinutes(Convert.ToDouble(filmName.Duration));
+            TimeSpan timeEnd = timeStart + timeDuration;
+            TimeSpan timeSpanday = new TimeSpan(1, 0, 0, 0);
+            if (timeEnd > timeSpanday)
+            {
+                string time = timeEnd.ToString().Split('.')[1];
+                tb_end_time.Text = time.Split(':')[0];
+                tb_end_time.Text = tb_end_time.Text + ":" + timeEnd.ToString().Split(':')[1];
+            }
+            else
+            {
+                tb_end_time.Text = timeEnd.ToString().Split(':')[0];
+                tb_end_time.Text = tb_end_time.Text + ":" + timeEnd.ToString().Split(':')[1];
+            }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-
+            event_.ID_Film = (cb_film.SelectedItem as Film).ID;
+            TimeSpan timeStart = TimeSpan.Parse(tp_startTime.Text);
+            TimeSpan timeEnd = TimeSpan.Parse(tb_end_time.Text);
+            event_.Start_Time = timeStart;
+            event_.End_Time = timeEnd;
+            event_.Description = tb_comment.Text;
+            KalendarFunction.EditEvent(event_);
+            NavigationService.Navigate(new EventInfoPage(event_));
         }
     }
 }

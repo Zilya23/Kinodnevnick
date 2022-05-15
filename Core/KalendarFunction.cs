@@ -16,5 +16,11 @@ namespace Core
             calendars = new ObservableCollection<Film_Calendar>(bd_connection.connection.Film_Calendar.Where(a => a.ID_User == IDUser).ToList());
             return calendars;
         }
+
+        public static void EditEvent(Film_Calendar events)
+        {
+            Film_Calendar film_Calendar = events;
+            bd_connection.connection.SaveChanges();
+        }
     }
 }
