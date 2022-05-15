@@ -33,6 +33,8 @@ namespace Kinodnevnick
             {
                 cal_film.SelectedDates.Add((DateTime)i.Date);
             }
+
+            cal_film.SelectedDate = DateTime.Now;
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)

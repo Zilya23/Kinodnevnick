@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kinodnevnick"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="348.148" Width="800"
       Title="EventEditPage">
@@ -76,29 +77,30 @@
                    HorizontalAlignment="Right"
                    Margin="0, 0, 10, 0"/>
 
-        <TextBox x:Name="tb_film"
-                   Text="{Binding event_.Film.Name}"
+        <ComboBox x:Name="cb_film"
                    Grid.Column="4" Grid.ColumnSpan="7"
                    Grid.Row="1"
                    FontSize="20"
                    Foreground="Black"
+                   IsEditable="True"
+                   StaysOpenOnEdit="True"
                    Margin="10, 0, 0, 0"/>
-        <TextBox x:Name="tb_date"
-                   Text="{Binding event_.Date, StringFormat=dd.MM.yyyy}"
+        <TextBlock x:Name="tb_date"
                    Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="2"
                    FontSize="20"
                    Foreground="Black"
                    Margin="10, 0, 0, 0"/>
-        <TextBox x:Name="tb_start_time"
-                   Text="{Binding event_.Start_Time}"
-                   Grid.Column="4" Grid.ColumnSpan="4"
-                   Grid.Row="3"
-                   FontSize="20"
-                   Foreground="Black"
-                   Margin="10, 0, 0, 0"/>
+        <materialDesign:TimePicker
+            x:Name="tp_startTime"
+            Grid.Column="4" Grid.ColumnSpan="4"
+            Grid.Row="3"
+            FontSize="20"
+            Is24Hours="True"
+            Foreground="Black"
+            Margin="10, 0, 0, 0"
+            SelectedTimeChanged="tp_startTime_SelectedTimeChanged" />
         <TextBox x:Name="tb_end_time"
-                   Text="{Binding event_.End_Time}"
                    Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="4"
                    FontSize="20"
@@ -106,15 +108,23 @@
                    Margin="10, 0, 0, 0"/>
         <ScrollViewer Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="5" Grid.RowSpan="3"
-                      Margin="10, 0, 0, 50">
+                      Margin="10, 0, 0, 10">
             <TextBox x:Name="tb_comment"
-                   Text="{Binding event_.Description}"
                    TextWrapping="Wrap"
                    Grid.Column="4" Grid.ColumnSpan="4"
                    Grid.Row="5" Grid.RowSpan="3"
                    FontSize="20"
                    Foreground="Black"
-                   Margin="10, 0, 0, 50"/>
+                   Margin="10, 0, 0, 10"/>
         </ScrollViewer>
+        <Button x:Name="btn_save"
+                Content="Сохранить"
+                Grid.Column="11" Grid.ColumnSpan="2"
+                Grid.Row="0"
+                BorderBrush="White"
+                Background="#FF780000"
+                Foreground="White"
+                Margin="0, 0, 20, 0"
+                Click="btn_save_Click"/>
     </Grid>
 </Page>

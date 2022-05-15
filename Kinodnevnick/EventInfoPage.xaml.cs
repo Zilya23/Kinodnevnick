@@ -31,9 +31,11 @@ namespace Kinodnevnick
             filmName = bd_connection.connection.Film.Where(a => a.ID == event_.ID_Film).FirstOrDefault();
             tb_film.Text = filmName.Name;
             tb_comment.Text = event_.Description;
-            tb_date.Text = event_.Date.ToString();
-            tb_start_time.Text = event_.Start_Time.ToString();
-            tb_end_time.Text = event_.End_Time.ToString();
+            tb_date.Text = event_.Date.ToString().Split(' ')[0];
+            tb_start_time.Text = event_.Start_Time.ToString().Split(':')[0];
+            tb_start_time.Text = tb_start_time.Text+ ":" + event_.Start_Time.ToString().Split(':')[1];
+            tb_end_time.Text = event_.End_Time.ToString().Split(':')[0];
+            tb_end_time.Text = tb_end_time.Text + ":" + event_.End_Time.ToString().Split(':')[1];
         }
 
         private void img_redaction_MouseDown(object sender, MouseButtonEventArgs e)

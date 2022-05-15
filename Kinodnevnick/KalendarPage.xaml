@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      
-      xmlns:local="clr-namespace:Kinodnevnick" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Kinodnevnick" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KalendarPage">
@@ -59,7 +59,7 @@
                   SelectionMode="MultipleRange"
                   Grid.Column="2" Grid.ColumnSpan="4"
                   SelectedDatesChanged="cal_film_SelectedDatesChanged"
-                  Grid.Row="2" Grid.RowSpan="11" Margin="0,0,30,10.6"
+                  Grid.Row="2" Grid.RowSpan="11" Margin="0,0,0,11"
                   materialDesign:CalendarAssist.HeaderBackground ="#FF780000"/>
 
         <StackPanel Grid.Row="0"
