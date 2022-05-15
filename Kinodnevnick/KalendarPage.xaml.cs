@@ -27,14 +27,8 @@ namespace Kinodnevnick
         public KalendarPage()
         {
             InitializeComponent();
-            calendars = KalendarFunction.AllEvent(AuthorizationPage.user.ID);
-
-            foreach (var i in calendars)
-            {
-                cal_film.SelectedDates.Add((DateTime)i.Date);
-            }
-
-            cal_film.SelectedDate = DateTime.Now;
+            UpdateCalendar();
+            UpdateList();
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)
@@ -48,6 +42,44 @@ namespace Kinodnevnick
         }
 
         private void cal_film_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateList();
+        }
+
+        private void lv_event_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var events = lv_event.SelectedItem as Film_Calendar;
+            var n = (sender as ListView).SelectedItem as Film_Calendar;
+            if (n != null)
+            { 
+                EventWindow eventWindow = new EventWindow(n);
+                eventWindow.ShowDialog();
+            }
+        }
+
+        private void img_plus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DateTime dateEvent = (DateTime)cal_film.SelectedDate;
+            AddEventWindow addEvent = new AddEventWindow(dateEvent);
+            addEvent.ShowDialog();
+            UpdateCalendar();
+            UpdateList();
+        }
+
+        public void UpdateCalendar()
+        {
+            calendars = KalendarFunction.AllEvent(AuthorizationPage.user.ID);
+
+            foreach (var i in calendars)
+            {
+                cal_film.SelectedDates.Add((DateTime)i.Date);
+            }
+
+            cal_film.SelectedDate = DateTime.Now;
+            UpdateList();
+        }
+
+        public void UpdateList()
         {
             ObservableCollection<Film_Calendar> eventColl = new ObservableCollection<Film_Calendar>();
 
@@ -73,17 +105,6 @@ namespace Kinodnevnick
             }
 
             lv_event.ItemsSource = eventColl;
-        }
-
-        private void lv_event_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var events = lv_event.SelectedItem as Film_Calendar;
-            var n = (sender as ListView).SelectedItem as Film_Calendar;
-            if (n != null)
-            { 
-                EventWindow eventWindow = new EventWindow(n);
-                eventWindow.ShowDialog();
-            }
         }
     }
 }

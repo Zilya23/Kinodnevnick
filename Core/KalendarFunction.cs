@@ -22,5 +22,11 @@ namespace Core
             Film_Calendar film_Calendar = events;
             bd_connection.connection.SaveChanges();
         }
+
+        public static void AddEvent(Film_Calendar events)
+        {
+            bd_connection.connection.Film_Calendar.Add(events);
+            bd_connection.connection.SaveChanges();
+        }
     }
 }

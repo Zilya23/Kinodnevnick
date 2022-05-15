@@ -203,6 +203,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddEventWindow.xaml.cs">
+      <DependentUpon>AddEventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CollectionMainPage.xaml.cs">
       <DependentUpon>CollectionMainPage.xaml</DependentUpon>
     </Compile>
@@ -236,6 +239,10 @@
     <Compile Include="SelectionCollectionWindow.xaml.cs">
       <DependentUpon>SelectionCollectionWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -113,9 +113,17 @@
                   SelectionChanged="lv_event_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  DisplayMemberBinding="{Binding Film.Name}"/>
+                    <GridViewColumn  DisplayMemberBinding="{Binding Film.Name}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Image x:Name="img_plus" 
+               Source="img/plus2.png"
+               Grid.Column="12"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,5,10,1"
+               MouseDown="img_plus_MouseDown" 
+               Grid.Row="1"/>
     </Grid>
 </Page>
