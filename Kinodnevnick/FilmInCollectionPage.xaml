@@ -43,7 +43,7 @@
         <StackPanel Grid.Row="0"
                     Grid.Column="0" Grid.ColumnSpan="13" 
                     Background="#FF780000"/>
-        <TextBlock Text="{Binding filmToFill.Name}" 
+        <TextBlock Text="{Binding updateCollection.Name}" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
