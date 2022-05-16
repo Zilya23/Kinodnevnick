@@ -207,6 +207,7 @@
       <DependentUpon>KinoKursachModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmFunction.cs" />
+    <Compile Include="FriendFunction.cs" />
     <Compile Include="KalendarFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

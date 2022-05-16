@@ -227,6 +227,9 @@
     <Compile Include="FilmInCollectionPage.xaml.cs">
       <DependentUpon>FilmInCollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FriendCollectionPage.xaml.cs">
+      <DependentUpon>FriendCollectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KalendarPage.xaml.cs">
       <DependentUpon>KalendarPage.xaml</DependentUpon>
     </Compile>
@@ -280,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FriendCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
