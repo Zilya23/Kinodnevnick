@@ -148,5 +148,19 @@ namespace Core
             bd_connection.connection.Film_Collection.Remove(Film_CollectionForDelete);
             bd_connection.connection.SaveChanges();
         }
+
+        public static void InkognitoCollection(int IDColl)
+        {
+            Collection inckognitoCollection = bd_connection.connection.Collection.Where(a => a.ID == IDColl).FirstOrDefault();
+            inckognitoCollection.Inkognito = true;
+            bd_connection.connection.SaveChanges();
+        }
+
+        public static void NotInkognitoCollection(int IDColl)
+        {
+            Collection inckognitoCollection = bd_connection.connection.Collection.Where(a => a.ID == IDColl).FirstOrDefault();
+            inckognitoCollection.Inkognito = false;
+            bd_connection.connection.SaveChanges();
+        }
     }
 }

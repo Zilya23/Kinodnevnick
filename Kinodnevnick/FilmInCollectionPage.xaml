@@ -113,5 +113,12 @@
                Margin="0,5,52,0"
                MouseDown="img_delete_MouseDown" 
                Grid.ColumnSpan="2"/>
+        <Image x:Name="img_inckognito" 
+               Source="img/open.png"
+               Grid.Column="12"
+               Width="25"
+               HorizontalAlignment="Right"
+               Margin="0,4,11,1"
+               MouseDown="img_inckognito_MouseDown"/>
     </Grid>
 </Page>

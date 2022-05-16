@@ -44,6 +44,10 @@ namespace Kinodnevnick
             {
                 tb_isEmpty.Visibility = Visibility.Hidden;
             }
+            if(collection.Inkognito == true)
+            {
+                img_inckognito.Source = new BitmapImage(new Uri("img/locked.png", UriKind.Relative));
+            }
             IDCollection = collection.ID;
             this.DataContext = this;
         }
@@ -65,7 +69,7 @@ namespace Kinodnevnick
 
         private void img_redaction_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            EditCollectionWindow editCollection = new EditCollectionWindow(IDCollection);
+            EditCollectionWindow editCollection = new EditCollectionWindow(updateCollection.ID);
             editCollection.ShowDialog();
         }
 
@@ -120,6 +124,20 @@ namespace Kinodnevnick
             }
 
             lv_film.ItemsSource = filmsToFill;
+        }
+
+        private void img_inckognito_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(updateCollection.Inkognito != true)
+            {
+                CollectionFunction.InkognitoCollection(IDCollection);
+                img_inckognito.Source = new BitmapImage(new Uri("/img/locked.png", UriKind.Relative));
+            }
+            else
+            {
+                CollectionFunction.NotInkognitoCollection(IDCollection);
+                img_inckognito.Source = new BitmapImage(new Uri("/img/open.png", UriKind.Relative));
+            }
         }
     }
 }

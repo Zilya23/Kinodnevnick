@@ -426,6 +426,12 @@
   <ItemGroup>
     <Resource Include="img\sintez2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\locked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
