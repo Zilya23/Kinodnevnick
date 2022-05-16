@@ -251,6 +251,9 @@
     <Compile Include="SelectionCollectionWindow.xaml.cs">
       <DependentUpon>SelectionCollectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SinteszSelectionWindow.xaml.cs">
+      <DependentUpon>SinteszSelectionWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -345,6 +348,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectionCollectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SinteszSelectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

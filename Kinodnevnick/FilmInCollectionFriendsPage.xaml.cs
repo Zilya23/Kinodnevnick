@@ -33,7 +33,7 @@ namespace Kinodnevnick
                 img_merge.Visibility = Visibility.Hidden;
             }
             filmsToFill = CollectionFunction.GetFilmInCollection(collection.ID);
-            if (filmsToFill == null)
+            if (filmsToFill.Count == 0)
             {
                 tb_isEmpty.Visibility = Visibility.Visible;
             }
@@ -57,13 +57,23 @@ namespace Kinodnevnick
 
         private void lv_film_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var film = (lv_film.SelectedItem as Film_Collection).Film;
+            if (film != null)
+            {
+                NavigationService.Navigate(new FilmInfoPage(film));
+            }
         }
 
         private void img_merge_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MergeWindow mergeWindow = new MergeWindow(friendCollection.ID);
-            mergeWindow.ShowDialog();
+            ObservableCollection<Collection> coll = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == AuthorizationPage.user.ID && userCollectiom.IsDeleted != true)).ToList());
+            if (mergeWindow.ShowDialog() == true)
+            {
+                Collection mergeCollection = coll.Last();
+                NavigationService.Navigate(new FilmInCollectionPage(mergeCollection));
+            }
+            
         }
     }
 }

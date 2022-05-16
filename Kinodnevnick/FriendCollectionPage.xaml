@@ -144,6 +144,7 @@
                        HorizontalAlignment="Right"
                        FontWeight="Medium"/>
             <ComboBox Name="cb_searchFriend"
+                      FontSize="16"
                       Grid.Column="5" Grid.ColumnSpan="4"
                       Grid.Row="2"
                       IsEditable="True"

@@ -38,8 +38,15 @@ namespace Kinodnevnick
             {
                 var userColl = cb_collection.SelectedItem as Collection;
                 FriendFunction.MergeCollection(IdFriendColl, userColl.ID, AuthorizationPage.user.ID);
-                MessageBox.Show("Объединение успешно создано!");
-                this.DialogResult = true;
+                SinteszSelectionWindow sinteszSelectionWindow = new SinteszSelectionWindow();
+                if(sinteszSelectionWindow.ShowDialog() == true)
+                {
+                    this.DialogResult = true;
+                }
+                else
+                {
+                    this.DialogResult = false;
+                }
             }
         }
     }
