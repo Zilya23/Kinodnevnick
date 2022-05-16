@@ -153,7 +153,8 @@
                       Grid.Row="3" Grid.RowSpan="9"
                       Grid.Column="2" Grid.ColumnSpan="9"
                       Visibility="Hidden"
-                      FontSize="20">
+                      FontSize="20"
+                      SelectionChanged="lv_friendColl_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding Name}"/>

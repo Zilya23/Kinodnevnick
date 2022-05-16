@@ -61,5 +61,14 @@ namespace Kinodnevnick
         {
             NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
         }
+
+        private void lv_friendColl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Collection collection = lv_friendColl.SelectedItem as Collection;
+            if(collection != null)
+            {
+                NavigationService.Navigate(new FilmInCollectionFriendsPage(collection));
+            }
+        }
     }
 }
