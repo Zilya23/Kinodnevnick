@@ -58,5 +58,10 @@ namespace Kinodnevnick
         {
             NavigationService.Navigate(new KalendarPage());
         }
+
+        private void btn_searchFriend_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FriendCollectionPage());
+        }
     }
 }

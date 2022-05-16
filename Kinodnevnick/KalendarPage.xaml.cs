@@ -106,5 +106,10 @@ namespace Kinodnevnick
 
             lv_event.ItemsSource = eventColl;
         }
+
+        private void btn_searchFriend_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FriendCollectionPage());
+        }
     }
 }

@@ -38,6 +38,12 @@
                            FontSize="20"
                            HorizontalAlignment="Center"
                            Text="Меню"/>
+                <Button x:Name="btn_searchFriend"
+                        Content="Найти пользователя"
+                        HorizontalAlignment="Center"
+                        Margin="4"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="btn_searchFriend_Click"/>
                 <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
                         CommandParameter="{x:Static Dock.Left}"
                         Margin="4"
