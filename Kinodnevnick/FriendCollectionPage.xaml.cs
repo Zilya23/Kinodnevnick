@@ -38,7 +38,7 @@ namespace Kinodnevnick
             if(cb_searchFriend.SelectedItem != null)
             {
                 lv_friendColl.Visibility = Visibility.Visible;
-                ObservableCollection<Collection> friendCollections = CollectionFunction.GetCollection((cb_searchFriend.SelectedItem as User).ID);
+                ObservableCollection<Collection> friendCollections = CollectionFunction.GetFriendCollection((cb_searchFriend.SelectedItem as User).ID);
                 lv_friendColl.ItemsSource = friendCollections;
             }
         }

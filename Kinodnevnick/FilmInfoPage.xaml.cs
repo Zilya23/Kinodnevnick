@@ -66,5 +66,10 @@ namespace Kinodnevnick
         {
             CollectionFunction.UnviewedFilm(AuthorizationPage.user.ID, filmToFill.ID);
         }
+
+        private void img_calendar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

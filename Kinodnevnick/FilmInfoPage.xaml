@@ -103,6 +103,14 @@
                HorizontalAlignment="Right"
                Margin="0,20,10,20"
                MouseDown="img_plus_MouseDown" Grid.RowSpan="2"/>
+        <Image x:Name="img_calendar" 
+               Source="img/ca.png"
+               Grid.Column="11"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,20,50,20"
+               MouseDown="img_calendar_MouseDown" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <CheckBox x:Name="cb_watch"
                   Content="Просмотрено"
                   Grid.Column="5" Grid.ColumnSpan="3"

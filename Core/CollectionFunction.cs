@@ -20,6 +20,11 @@ namespace Core
             return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDeleted != true)).ToList());
         }
 
+        public static ObservableCollection<Collection> GetFriendCollection(int idUser)
+        {
+            return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDeleted != true && userCollectiom.Inkognito!= true)).ToList());
+        }
+
         public static ObservableCollection<Film_Collection> GetFilmInCollection(int idColl)
         {
             return films = new ObservableCollection<Film_Collection>((bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == idColl)).ToList());

@@ -13,6 +13,7 @@
           <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="ID_User" Type="int" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Inkognito" Type="bit" />
         </EntityType>
         <EntityType Name="Film">
           <Key>
@@ -159,6 +160,7 @@
           <NavigationProperty Name="User" Relationship="Self.FK_Collection_User" FromRole="Collection" ToRole="User" />
           <NavigationProperty Name="Film_Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Collection" ToRole="Film_Collection" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Inkognito" Type="Boolean" />
         </EntityType>
         <EntityType Name="Film">
           <Key>
@@ -308,6 +310,7 @@
           <EntitySetMapping Name="Collection">
             <EntityTypeMapping TypeName="KinodnevnickKursachNewModel.Collection">
               <MappingFragment StoreEntitySet="Collection">
+                <ScalarProperty Name="Inkognito" ColumnName="Inkognito" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
