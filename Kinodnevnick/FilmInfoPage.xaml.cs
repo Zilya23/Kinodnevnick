@@ -69,7 +69,8 @@ namespace Kinodnevnick
 
         private void img_calendar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            AddFilmEventWindow filmEventWindow = new AddFilmEventWindow(filmToFill);
+            filmEventWindow.ShowDialog();
         }
     }
 }

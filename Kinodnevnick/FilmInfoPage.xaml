@@ -110,7 +110,8 @@
                Width="27"
                HorizontalAlignment="Right"
                Margin="0,20,50,20"
-               MouseDown="img_calendar_MouseDown" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+               MouseDown="img_calendar_MouseDown" 
+               Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <CheckBox x:Name="cb_watch"
                   Content="Просмотрено"
                   Grid.Column="5" Grid.ColumnSpan="3"

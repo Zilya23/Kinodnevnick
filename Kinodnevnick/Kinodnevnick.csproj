@@ -206,6 +206,9 @@
     <Compile Include="AddEventWindow.xaml.cs">
       <DependentUpon>AddEventWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddFilmEventWindow.xaml.cs">
+      <DependentUpon>AddFilmEventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CollectionMainPage.xaml.cs">
       <DependentUpon>CollectionMainPage.xaml</DependentUpon>
     </Compile>
@@ -249,6 +252,10 @@
       <DependentUpon>SelectionCollectionWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddFilmEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -376,9 +383,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\fon3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\main.png" />
   </ItemGroup>
   <ItemGroup>
@@ -391,22 +395,10 @@
     <Resource Include="img\men.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\fon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\fon4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\fon5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\fonreg.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\plus2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\redaction.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\red.png" />
@@ -416,12 +408,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\del.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\merge.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\sintez.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\sintez2.png" />
