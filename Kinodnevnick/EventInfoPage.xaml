@@ -119,10 +119,18 @@
 
         <Image x:Name="img_redaction" 
                Source="img/red.png"
+               Grid.Column="11"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,0,55,5"
+               MouseDown="img_redaction_MouseDown" 
+               Grid.ColumnSpan="2"/>
+        <Image x:Name="img_delete" 
+               Source="img/del.png"
                Grid.Column="12"
                Width="27"
                HorizontalAlignment="Right"
-               Margin="0,5,20,0"
-               MouseDown="img_redaction_MouseDown"/>
+               Margin="0,0,23,5"
+               MouseDown="img_delete_MouseDown"/>
     </Grid>
 </Page>

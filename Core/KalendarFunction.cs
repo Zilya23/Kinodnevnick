@@ -28,5 +28,11 @@ namespace Core
             bd_connection.connection.Film_Calendar.Add(events);
             bd_connection.connection.SaveChanges();
         }
+
+        public static void DeleteEvent(Film_Calendar events)
+        {
+            bd_connection.connection.Film_Calendar.Remove(events);
+            bd_connection.connection.SaveChanges();
+        }
     }
 }

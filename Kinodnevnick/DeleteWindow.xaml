@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="DeleteWindow" Height="182.239" Width="646.266">
+        Title="DeleteWindow" Height="182.239" Width="404">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Вы действительно хотите удалить коллекцию и ее содержимое?"
+        <TextBlock Text="Вы действительно хотите удалить?"
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="4"
                    VerticalAlignment="Bottom"

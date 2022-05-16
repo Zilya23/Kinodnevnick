@@ -42,5 +42,15 @@ namespace Kinodnevnick
         {
             NavigationService.Navigate(new EventEditPage(event_));
         }
+
+        private void img_delete_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DeleteWindow deleteWindow = new DeleteWindow();
+            if(deleteWindow.ShowDialog() == true)
+            {
+                KalendarFunction.DeleteEvent(event_);
+                NavigationService.Navigate(new KalendarPage());
+            }
+        }
     }
 }
