@@ -55,6 +55,12 @@
                         HorizontalAlignment="Center"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Content="CLOSE ALL" />
+                <Button x:Name="btn_Statistic"
+                        Margin="4"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Статистика"
+                        Click="btn_Statistic_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
 

@@ -203,6 +203,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\AwardsPage.xaml.cs">
+      <DependentUpon>AwardsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEventWindow.xaml.cs">
       <DependentUpon>AddEventWindow.xaml</DependentUpon>
     </Compile>
@@ -254,6 +257,10 @@
     <Compile Include="Pages\SinteszSelectionWindow.xaml.cs">
       <DependentUpon>SinteszSelectionWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\AwardsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -355,8 +362,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\StatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

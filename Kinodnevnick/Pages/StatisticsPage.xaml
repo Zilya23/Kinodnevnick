@@ -1,0 +1,85 @@
+﻿<Page x:Class="Kinodnevnick.Pages.StatisticsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kinodnevnick.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StatisticsPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.RowSpan="4"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#FF780000"/>
+        <StackPanel Grid.Row="13"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#FF780000"/>
+        <TextBlock x:Name="tb_back"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="30"
+                   Margin="10,-7,0,7"
+                   MouseDown="tb_back_MouseDown"
+                   MouseEnter="tb_back_MouseEnter"
+                   MouseLeave="tb_back_MouseLeave"/>
+        <Button x:Name="btn_save"
+                Content="Сохранить"
+                Grid.Column="5" Grid.ColumnSpan="2"
+                Grid.Row="13"
+                Width="100"
+                HorizontalAlignment="Right"
+                Margin="0,5,10,5"
+                BorderBrush="White"
+                Background="#FF780000"
+                Foreground="White" 
+                Click="btn_save_Click"/>
+        <Button x:Name="btn_awards"
+                Content="Награды"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                Grid.Row="2"
+                Width="100"
+                HorizontalAlignment="Right"
+                Margin="0,5,10,5"
+                BorderBrush="White"
+                Background="#FF780000"
+                Foreground="White" 
+                Click="btn_awards_Click"/>
+        <Image x:Name="img_Profil" 
+            Source="{Binding user.Photo}" 
+
+               Grid.Column="5" Grid.ColumnSpan="3"
+               Grid.Row="0" Grid.RowSpan="4"/>
+    </Grid>
+</Page>
