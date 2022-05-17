@@ -34,7 +34,7 @@ namespace Kinodnevnick.Pages
 
 		private void btn_awards_Click(object sender, RoutedEventArgs e)
 		{
-
+			NavigationService.Navigate(new AwardsPage());
 		}
 		private void btn_save_Click(object sender, RoutedEventArgs e)
 		{
