@@ -118,7 +118,7 @@
         </ScrollViewer>
 
         <Image x:Name="img_redaction" 
-               Source="img/red.png"
+               Source="../img/red.png"
                Grid.Column="11"
                Width="27"
                HorizontalAlignment="Right"
@@ -126,7 +126,7 @@
                MouseDown="img_redaction_MouseDown" 
                Grid.ColumnSpan="2"/>
         <Image x:Name="img_delete" 
-               Source="img/del.png"
+               Source="../img/del.png"
                Grid.Column="12"
                Width="27"
                HorizontalAlignment="Right"

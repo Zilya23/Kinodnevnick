@@ -9,7 +9,7 @@
       Title="RegistrationPage">
 
     <Page.Background>
-        <ImageBrush ImageSource="img/fonreg.jpg"/>
+        <ImageBrush ImageSource="../img/fonreg.jpg"/>
     </Page.Background>
 
     <Grid>

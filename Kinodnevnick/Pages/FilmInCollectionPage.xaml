@@ -97,7 +97,7 @@
         </ListView>
 
         <Image x:Name="img_redaction" 
-               Source="img/red.png"
+               Source="../img/red.png"
                Grid.Column="12"
                Grid.Row="1"
                Width="27"
@@ -105,7 +105,7 @@
                Margin="0,5,11,0"
                MouseDown="img_redaction_MouseDown"/>
         <Image x:Name="img_delete" 
-               Source="img/del.png"
+               Source="../img/del.png"
                Grid.Column="11"
                Grid.Row="1"
                Width="27"
@@ -114,7 +114,7 @@
                MouseDown="img_delete_MouseDown" 
                Grid.ColumnSpan="2"/>
         <Image x:Name="img_inckognito" 
-               Source="img/open.png"
+               Source="../img/open.png"
                Grid.Column="12"
                Width="25"
                HorizontalAlignment="Right"

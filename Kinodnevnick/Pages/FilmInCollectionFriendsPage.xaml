@@ -93,7 +93,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Image x:Name="img_merge" 
-               Source="img/sintez2.png"
+               Source="../img/sintez2.png"
                Grid.Column="12"
                Grid.Row="1"
                Width="27"

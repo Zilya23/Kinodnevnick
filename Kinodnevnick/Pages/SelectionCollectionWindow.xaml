@@ -38,7 +38,7 @@
                 Background="#FF780000"
                 Click="btn_add_Click"/>
         <Image x:Name="img_plus" 
-               Source="img/plus2.png"
+               Source="../img/plus2.png"
                Grid.Column="1"
                Width="27"
                HorizontalAlignment="Right"

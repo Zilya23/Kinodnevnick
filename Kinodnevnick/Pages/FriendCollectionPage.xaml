@@ -106,7 +106,7 @@
                 Background="#FF780000" BorderBrush="Black"
                     Click="btn_main_Click"
                     Height="Auto">
-                <Image Source="img/main.png" Width="28"/>
+                <Image Source="../img/main.png" Width="28"/>
             </Button>
             <Button x:Name="btn_dairy"
                 Grid.Column="0"
@@ -115,14 +115,14 @@
                 Background="#FF780000" 
                 BorderBrush="Black"
                 Click="btn_dairy_Click" Height="Auto" RenderTransformOrigin="0.484,0.875">
-                <Image Source="img/ca.png" Width="28"/>
+                <Image Source="../img/ca.png" Width="28"/>
             </Button>
             <Button x:Name="btn_collection"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black"
                 Click="btn_collection_Click" Height="Auto" RenderTransformOrigin="0.484,0.86">
-                <Image Source="img/colle.png" Width="28"/>
+                <Image Source="../img/colle.png" Width="28"/>
             </Button>
 
             <Button
@@ -134,7 +134,7 @@
                 Height="Auto"
                 Background="#FF780000"
                 BorderBrush="#FF780000">
-                <Image Source="img/men.png" Width="35"/>
+                <Image Source="../img/men.png" Width="35"/>
             </Button>
 
             <TextBlock Text="Поиск: "

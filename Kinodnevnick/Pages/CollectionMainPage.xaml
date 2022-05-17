@@ -101,7 +101,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
         <Image x:Name="img_plus" 
-               Source="img/plus2.png"
+               Source="../img/plus2.png"
                Grid.Column="12"
                Grid.Row="1"
                Width="27"
@@ -128,19 +128,19 @@
                 Grid.Row="1" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black"
                 Click="btn_main_Click" Height="Auto">
-            <Image Source="img/main.png" Width="28"/>
+                <Image Source="../img/main.png" Width="28"/>
         </Button>
         <Button x:Name="btn_dairy"
                 Grid.Column="0"
                 Grid.Row="9" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black" Click="btn_dairy_Click" Height="Auto">
-            <Image Source="img/ca.png" Width="28"/>
+                <Image Source="../img/ca.png" Width="28"/>
         </Button>
             <Button x:Name="btn_collection"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black" Height="Auto">
-                <Image Source="img/colle.png" Width="28"/>
+                <Image Source="../img/colle.png" Width="28"/>
             </Button>
             <Button
                 Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
@@ -151,7 +151,7 @@
                 Height="Auto"
                 Background="#FF780000"
                 BorderBrush="#FF780000">
-                <Image Source="img/men.png" Width="35"/>
+                <Image Source="../img/men.png" Width="35"/>
             </Button>
         </Grid>
     </materialDesign:DrawerHost>
