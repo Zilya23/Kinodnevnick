@@ -10,23 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Kinodnevnick.Pages;
+using Core.DateBase;
 
-
-
-namespace Kinodnevnick
+namespace Kinodnevnick.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для EventWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EventWindow : Window
     {
-       public MainWindow()
+        public EventWindow(Film_Calendar Event_)
         {
             InitializeComponent();
-            frame_autoriz.NavigationService.Navigate(new AuthorizationPage());
+            frame_event.NavigationService.Navigate(new EventInfoPage(Event_));
         }
     }
 }

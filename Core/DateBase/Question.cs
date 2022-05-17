@@ -12,14 +12,18 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Film_Collection
+    public partial class Question
     {
         public int ID { get; set; }
-        public Nullable<int> ID_Film { get; set; }
-        public Nullable<int> ID_Collection { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<int> ID__Test { get; set; }
+        public string Question1 { get; set; }
+        public byte[] Photo { get; set; }
+        public string Answer_One { get; set; }
+        public string Answer_Two { get; set; }
+        public string Answer_Three { get; set; }
+        public string True_Answer { get; set; }
+        public Nullable<bool> IsDone { get; set; }
     
-        public virtual Collection Collection { get; set; }
-        public virtual Film Film { get; set; }
+        public virtual Test Test { get; set; }
     }
 }

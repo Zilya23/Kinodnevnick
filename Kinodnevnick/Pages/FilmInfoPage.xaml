@@ -1,0 +1,123 @@
+﻿<Page x:Class="Kinodnevnick.Pages.FilmInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kinodnevnick"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FilmInfoPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="13"
+                    Margin="0, 0, 0, 20"
+                    Background="#FF780000"/>
+        <TextBlock Text="{Binding filmToFill.Name}" 
+                   Grid.Row="0" Grid.RowSpan="1"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0, 5, 0, 0"
+                   FontSize="25" FontWeight="Bold"/>
+        <TextBlock x:Name="tb_back"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="35"
+                   Margin="10,-5,0,3"
+                   MouseDown="tb_back_MouseDown"
+                   MouseEnter="tb_back_MouseEnter"
+                   MouseLeave="tb_back_MouseLeave"/>
+
+        <Image x:Name="img_poster"
+               Source="{Binding filmToFill.Poster}"
+               Grid.Column="1" Grid.ColumnSpan="3"
+               Grid.Row="2" Grid.RowSpan="8"/>
+
+        <TextBlock Text="Дата выхода: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock Text="Длительность: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <TextBlock Text="Описание: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   FontSize="20"/>
+
+        <ScrollViewer Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="5" Grid.RowSpan="6">
+            <TextBlock Text="{Binding filmToFill.Description}"
+                   Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="5" Grid.RowSpan="6"
+                   FontSize="16"
+                   TextWrapping="Wrap" />
+        </ScrollViewer>
+        <TextBlock Text="{Binding filmToFill.Date_Issue, StringFormat=dd.MM.yyyy}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock x:Name="tb_duration"
+                   Text="{Binding filmToFill.Duration}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <Image x:Name="img_plus" 
+               Source="img/plus2.png"
+               Grid.Column="12"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,20,10,20"
+               MouseDown="img_plus_MouseDown" Grid.RowSpan="2"/>
+        <Image x:Name="img_calendar" 
+               Source="img/ca.png"
+               Grid.Column="11"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,20,50,20"
+               MouseDown="img_calendar_MouseDown" 
+               Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cb_watch"
+                  Content="Просмотрено"
+                  Grid.Column="5" Grid.ColumnSpan="3"
+                  Grid.Row="11"
+                  FontSize="20" 
+                  Checked="cb_watch_Checked"
+                  Unchecked="cb_watch_Unchecked"/>
+    </Grid>
+</Page>

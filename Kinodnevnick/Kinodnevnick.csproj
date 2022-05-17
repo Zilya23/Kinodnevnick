@@ -203,114 +203,114 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddEventWindow.xaml.cs">
+    <Compile Include="Pages\AddEventWindow.xaml.cs">
       <DependentUpon>AddEventWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddFilmEventWindow.xaml.cs">
+    <Compile Include="Pages\AddFilmEventWindow.xaml.cs">
       <DependentUpon>AddFilmEventWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CollectionMainPage.xaml.cs">
+    <Compile Include="Pages\CollectionMainPage.xaml.cs">
       <DependentUpon>CollectionMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeleteWindow.xaml.cs">
+    <Compile Include="Pages\DeleteWindow.xaml.cs">
       <DependentUpon>DeleteWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditCollectionWindow.xaml.cs">
+    <Compile Include="Pages\EditCollectionWindow.xaml.cs">
       <DependentUpon>EditCollectionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EventEditPage.xaml.cs">
+    <Compile Include="Pages\EventEditPage.xaml.cs">
       <DependentUpon>EventEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EventInfoPage.xaml.cs">
+    <Compile Include="Pages\EventInfoPage.xaml.cs">
       <DependentUpon>EventInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EventWindow.xaml.cs">
+    <Compile Include="Pages\EventWindow.xaml.cs">
       <DependentUpon>EventWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FilmInCollectionFriendsPage.xaml.cs">
+    <Compile Include="Pages\FilmInCollectionFriendsPage.xaml.cs">
       <DependentUpon>FilmInCollectionFriendsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FilmInCollectionPage.xaml.cs">
+    <Compile Include="Pages\FilmInCollectionPage.xaml.cs">
       <DependentUpon>FilmInCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FriendCollectionPage.xaml.cs">
+    <Compile Include="Pages\FriendCollectionPage.xaml.cs">
       <DependentUpon>FriendCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KalendarPage.xaml.cs">
+    <Compile Include="Pages\KalendarPage.xaml.cs">
       <DependentUpon>KalendarPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MergeWindow.xaml.cs">
+    <Compile Include="Pages\MergeWindow.xaml.cs">
       <DependentUpon>MergeWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewCollectionWindow.xaml.cs">
+    <Compile Include="Pages\NewCollectionWindow.xaml.cs">
       <DependentUpon>NewCollectionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationPage.xaml.cs">
+    <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectionCollectionWindow.xaml.cs">
+    <Compile Include="Pages\SelectionCollectionWindow.xaml.cs">
       <DependentUpon>SelectionCollectionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SinteszSelectionWindow.xaml.cs">
+    <Compile Include="Pages\SinteszSelectionWindow.xaml.cs">
       <DependentUpon>SinteszSelectionWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddEventWindow.xaml">
+    <Page Include="Pages\AddEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddFilmEventWindow.xaml">
+    <Page Include="Pages\AddFilmEventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthorizationPage.xaml">
+    <Page Include="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CollectionMainPage.xaml">
+    <Page Include="Pages\CollectionMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteWindow.xaml">
+    <Page Include="Pages\DeleteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditCollectionWindow.xaml">
+    <Page Include="Pages\EditCollectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EventEditPage.xaml">
+    <Page Include="Pages\EventEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EventInfoPage.xaml">
+    <Page Include="Pages\EventInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EventWindow.xaml">
+    <Page Include="Pages\EventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FilmInCollectionFriendsPage.xaml">
+    <Page Include="Pages\FilmInCollectionFriendsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FilmInCollectionPage.xaml">
+    <Page Include="Pages\FilmInCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FilmInfoPage.xaml">
+    <Page Include="Pages\FilmInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FilmMainPage.xaml">
+    <Page Include="Pages\FilmMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FriendCollectionPage.xaml">
+    <Page Include="Pages\FriendCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KalendarPage.xaml">
+    <Page Include="Pages\KalendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -322,36 +322,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AuthorizationPage.xaml.cs">
+    <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FilmInfoPage.xaml.cs">
+    <Compile Include="Pages\FilmInfoPage.xaml.cs">
       <DependentUpon>FilmInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FilmMainPage.xaml.cs">
+    <Compile Include="Pages\FilmMainPage.xaml.cs">
       <DependentUpon>FilmMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MergeWindow.xaml">
+    <Page Include="Pages\MergeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewCollectionWindow.xaml">
+    <Page Include="Pages\NewCollectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistrationPage.xaml">
+    <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectionCollectionWindow.xaml">
+    <Page Include="Pages\SelectionCollectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinteszSelectionWindow.xaml">
+    <Page Include="Pages\SinteszSelectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

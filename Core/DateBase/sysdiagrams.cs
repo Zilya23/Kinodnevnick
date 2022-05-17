@@ -12,14 +12,12 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Film_Collection
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public Nullable<int> ID_Film { get; set; }
-        public Nullable<int> ID_Collection { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-    
-        public virtual Collection Collection { get; set; }
-        public virtual Film Film { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -175,6 +175,12 @@
   <ItemGroup>
     <Compile Include="Authorization.cs" />
     <Compile Include="CollectionFunction.cs" />
+    <Compile Include="DateBase\Award.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\Award_User.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DateBase\bd_connection.cs" />
     <Compile Include="DateBase\Collection.cs">
       <DependentUpon>KinoKursachModel.tt</DependentUpon>
@@ -203,7 +209,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KinoKursachModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DateBase\Level.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\Question.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\sysdiagrams.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\Test.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DateBase\User.cs">
+      <DependentUpon>KinoKursachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateBase\User_Test.cs">
       <DependentUpon>KinoKursachModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmFunction.cs" />

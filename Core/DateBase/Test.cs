@@ -12,22 +12,25 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Collection
+    public partial class Test
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Collection()
+        public Test()
         {
-            this.Film_Collection = new HashSet<Film_Collection>();
+            this.Question = new HashSet<Question>();
+            this.User_Test = new HashSet<User_Test>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
-        public Nullable<bool> Inkognito { get; set; }
+        public string Title { get; set; }
+        public string Descriptin { get; set; }
+        public byte[] Photo { get; set; }
+        public Nullable<int> Id_Lvl { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual Level Level { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film_Collection> Film_Collection { get; set; }
+        public virtual ICollection<Question> Question { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Test> User_Test { get; set; }
     }
 }

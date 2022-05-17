@@ -12,22 +12,19 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Collection
+    public partial class Level
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Collection()
+        public Level()
         {
-            this.Film_Collection = new HashSet<Film_Collection>();
+            this.Test = new HashSet<Test>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
-        public Nullable<bool> Inkognito { get; set; }
+        public Nullable<int> Count_XP { get; set; }
+        public string Lvl_Award { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film_Collection> Film_Collection { get; set; }
+        public virtual ICollection<Test> Test { get; set; }
     }
 }
