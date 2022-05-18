@@ -23,10 +23,12 @@ namespace Kinodnevnick.Pages
     /// </summary>
     public partial class FilmMainPage : Page
     {
+        public static User profil { get; set; }
         public static ObservableCollection<Film> filmList { get; set; }
         public FilmMainPage(Core.DateBase.User user)
         {
             InitializeComponent();
+            tb_Name.Text = user.Nickname;
             filmList = Core.FilmFunction.GetFilm();
             this.DataContext = this;
         }
@@ -77,6 +79,21 @@ namespace Kinodnevnick.Pages
 		private void btn_Statistic_Click(object sender, RoutedEventArgs e)
 		{
             NavigationService.Navigate(new StatisticsPage(AuthorizationPage.user));
+		}
+
+		private void btn_Exit_Click(object sender, RoutedEventArgs e)
+		{
+            NavigationService.Navigate(new AuthorizationPage());
+		}
+
+		private void btn_Friends_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void btn_Tests_Click(object sender, RoutedEventArgs e)
+		{
+            NavigationService.Navigate(new TestsPage());
 		}
 	}
 }

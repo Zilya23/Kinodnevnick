@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,12 +28,13 @@ namespace Kinodnevnick.Pages
 		{
 			InitializeComponent();
 			profil = user;
+			//tb_name.Text = user.Nickname;
 			this.DataContext = this;
 		}
 
 		private void btn_awards_Click(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new AwardsPage());
+			NavigationService.Navigate(new AwardsPage(profil));
 		}
 		private void btn_save_Click(object sender, RoutedEventArgs e)
 		{
@@ -53,6 +53,10 @@ namespace Kinodnevnick.Pages
 		private void tb_back_MouseLeave(object sender, MouseEventArgs e)
 		{
 			tb_back.Foreground = new SolidColorBrush(Colors.Black);
+		}
+		private void img_redaction_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			
 		}
 	}
 }

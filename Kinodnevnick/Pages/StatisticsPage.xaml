@@ -55,31 +55,56 @@
                    MouseEnter="tb_back_MouseEnter"
                    MouseLeave="tb_back_MouseLeave"/>
         <Button x:Name="btn_save"
-                Content="Сохранить"
-                Grid.Column="5" Grid.ColumnSpan="2"
+                Content="Сохранить в документ"
+                Grid.Column="4" Grid.ColumnSpan="5"
                 Grid.Row="13"
-                Width="100"
-                HorizontalAlignment="Right"
-                Margin="0,5,10,5"
+                Width="300" 
+                Height="30"
+                HorizontalAlignment="Center"
                 BorderBrush="White"
                 Background="#FF780000"
                 Foreground="White" 
                 Click="btn_save_Click"/>
         <Button x:Name="btn_awards"
                 Content="Награды"
-                Grid.Column="1" Grid.ColumnSpan="2"
+                Grid.Column="1" Grid.ColumnSpan="3"
                 Grid.Row="2"
-                Width="100"
-                HorizontalAlignment="Right"
-                Margin="0,5,10,5"
+                Width="180"
+                HorizontalAlignment="Center"
                 BorderBrush="White"
                 Background="#FF780000"
                 Foreground="White" 
                 Click="btn_awards_Click"/>
         <Image x:Name="img_Profil" 
-            Source="{Binding user.Photo}" 
-
+            Source="{Binding profil.Photo}" 
                Grid.Column="5" Grid.ColumnSpan="3"
                Grid.Row="0" Grid.RowSpan="4"/>
+        <TextBlock Text="{Binding profil.Nickname}"
+                   x:Name="tb_name"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Margin="5,0,0,0"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="1"/>
+        <Image x:Name="img_redaction" 
+               Source="../img/red.png"
+               Grid.Column="11"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Left"
+               MouseDown="img_redaction_MouseDown"/>
+        <ProgressBar x:Name="pb_lvl"
+                    Grid.Column="8" Grid.ColumnSpan="4"
+                    Grid.Row="2"
+                    Margin="5,0,0,0"
+                    Value="10"
+                    Height="12" Background="White"/>
+        <ScrollViewer Grid.Column="2" Grid.ColumnSpan="9" Grid.Row="4" Grid.RowSpan="8" >
+            <StackPanel Grid.Column="2" Grid.ColumnSpan="9" 
+                    Grid.Row="4" Grid.RowSpan="8">
+                <TextBlock x:Name="tb_viewed" Text="Всего фильмов просмотрено: " Height="30"/>
+            </StackPanel>
+        </ScrollViewer>
+        
     </Grid>
 </Page>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
+using Core.DateBase;
 
 namespace Kinodnevnick.Pages
 {
@@ -20,9 +23,13 @@ namespace Kinodnevnick.Pages
 	/// </summary>
 	public partial class AwardsPage : Page
 	{
-		public AwardsPage()
+		public static User profil { get; set; }
+		public static ObservableCollection<Award> awardList { get; set; }
+		public AwardsPage(User user)
 		{
 			InitializeComponent();
+			tb_name.Text = user.Nickname + ".Награды";
+			this.DataContext = this;
 		}
 		private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
 		{
