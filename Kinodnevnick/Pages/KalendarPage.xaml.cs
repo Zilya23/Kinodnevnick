@@ -24,6 +24,7 @@ namespace Kinodnevnick.Pages
     public partial class KalendarPage : Page
     {
         public static ObservableCollection<Film_Calendar> calendars { get; set; }
+        public static EventWindow eventWindow { get; set; }
         public KalendarPage()
         {
             InitializeComponent();
@@ -52,8 +53,11 @@ namespace Kinodnevnick.Pages
             var n = (sender as ListView).SelectedItem as Film_Calendar;
             if (n != null)
             { 
-                EventWindow eventWindow = new EventWindow(n);
-                eventWindow.ShowDialog();
+                eventWindow = new EventWindow(n);
+                if(eventWindow.ShowDialog() == true)
+                {
+                    UpdateCalendar();
+                }
             }
         }
 

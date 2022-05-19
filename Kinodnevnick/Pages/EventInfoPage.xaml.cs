@@ -49,7 +49,7 @@ namespace Kinodnevnick.Pages
             if(deleteWindow.ShowDialog() == true)
             {
                 KalendarFunction.DeleteEvent(event_);
-                NavigationService.Navigate(new KalendarPage());
+                KalendarPage.eventWindow.DialogResult = true;
             }
         }
     }
