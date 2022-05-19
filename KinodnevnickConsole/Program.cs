@@ -37,12 +37,16 @@ namespace KinodnevnickConsole
                         Console.WriteLine("2) Посмотреть информацию о фильме");
                         Console.WriteLine("3) Посмотреть меню функций");
                         break;
+                    default:
+                        Console.WriteLine("Действие не найдено, повторите попытку");
+                        break;
                 }
             }
             catch
             {
                 Console.WriteLine("Действие не найдено, повторите попытку");
             }
+            Console.ReadKey();
         }
     }
 }
