@@ -28,6 +28,7 @@ namespace Kinodnevnick.Pages
 		public AwardsPage(User user)
 		{
 			InitializeComponent();
+			awardList = AwardFunction.GetAwards();
 			tb_name.Text = user.Nickname + ".Награды";
 			this.DataContext = this;
 		}
@@ -44,6 +45,13 @@ namespace Kinodnevnick.Pages
 		private void tb_back_MouseLeave(object sender, MouseEventArgs e)
 		{
 			tb_back.Foreground = new SolidColorBrush(Colors.Black);
+		}
+
+		private void lv_Awards_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			var award = lv_Awards.SelectedItem as Award; 
+			AwardInfoWindow awardInfo = new AwardInfoWindow(award);
+			awardInfo.ShowDialog();
 		}
 	}
 }

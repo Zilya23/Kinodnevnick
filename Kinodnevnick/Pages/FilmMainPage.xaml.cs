@@ -25,17 +25,18 @@ namespace Kinodnevnick.Pages
     {
         public static User profil { get; set; }
         public static ObservableCollection<Film> filmList { get; set; }
-        public FilmMainPage(Core.DateBase.User user)
+        public FilmMainPage(User user)
         {
             InitializeComponent();
+            profil = user;
             tb_Name.Text = user.Nickname;
-            filmList = Core.FilmFunction.GetFilm();
+            filmList = FilmFunction.GetFilm();
             this.DataContext = this;
         }
 
         private void lv_films_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var isSelected = lv_films.SelectedItem as Core.DateBase.Film;
+            var isSelected = lv_films.SelectedItem as Film;
             if(isSelected != null)
             {
                 NavigationService.Navigate(new FilmInfoPage(isSelected));
@@ -44,7 +45,7 @@ namespace Kinodnevnick.Pages
 
         private void tbx_search_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            filmList = Core.FilmFunction.GetFilm();
+            filmList = FilmFunction.GetFilm();
             if (tbx_search.Text != "")
             {
                 filmList = new ObservableCollection<Film>(bd_connection.connection.Film.Where(a => a.Name.Contains(tbx_search.Text)).ToList());

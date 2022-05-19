@@ -12,15 +12,12 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class User_Test
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<int> ID_Test { get; set; }
-        public Nullable<bool> IsComplite { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-    
-        public virtual Test Test { get; set; }
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

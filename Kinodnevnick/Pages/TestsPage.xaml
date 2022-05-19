@@ -126,7 +126,7 @@
                   SelectionChanged="lv_tests_SelectionChanged">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="2"/>
+                        <UniformGrid Columns="3"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
@@ -136,11 +136,11 @@
                                 <TextBlock.Text>
                                     <MultiBinding StringFormat="{}{0}|{1}">
                                         <Binding Path="testList.Title"/>
-                                        <Binding Path="Name"/>
+                                        <Binding Path="Title"/>
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
-                            <Image Source="{Binding Photo}" Width="300" Height="300"/>
+                            <Image Source="{Binding Photo}" Width="150" Height="150" HorizontalAlignment="Center"/>
                             <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" FontSize="20" Foreground="Black"/>
                         </StackPanel>
                     </DataTemplate>

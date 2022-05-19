@@ -56,7 +56,8 @@ namespace Kinodnevnick.Pages
 		}
 		private void img_redaction_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			
+			EditProfilWindow editProfil = new EditProfilWindow(profil);
+			editProfil.ShowDialog();
 		}
 	}
 }

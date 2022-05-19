@@ -24,5 +24,12 @@ namespace Core
                 return userExists;
             }
         }
+        public static void EditUser(int id, byte[] photo, string nick)
+        {
+            var user = bd_connection.connection.User.Where(x => x.ID == id).FirstOrDefault();
+            user.Nickname = nick;
+            user.Photo = photo;
+            bd_connection.connection.SaveChanges();
+        }
     }
 }

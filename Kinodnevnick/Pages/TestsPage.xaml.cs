@@ -23,10 +23,11 @@ namespace Kinodnevnick.Pages
 	/// </summary>
 	public partial class TestsPage : Page
 	{
-		public static ObservableCollection<Test> testsList { get; set; }
+		public static ObservableCollection<Test> testList { get; set; }
 		public TestsPage()
 		{
 			InitializeComponent();
+			testList = TestFunction.GetTests();
 			this.DataContext = this;
 		}
 
@@ -56,7 +57,7 @@ namespace Kinodnevnick.Pages
 
 		private void btn_Exit_Click(object sender, RoutedEventArgs e)
 		{
-
+			NavigationService.Navigate(new AuthorizationPage());
 		}
 
 		private void btn_Friends_Click(object sender, RoutedEventArgs e)

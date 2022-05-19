@@ -209,6 +209,9 @@
     <Compile Include="Pages\AddFilmEventWindow.xaml.cs">
       <DependentUpon>AddFilmEventWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AwardInfoWindow.xaml.cs">
+      <DependentUpon>AwardInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AwardsPage.xaml.cs">
       <DependentUpon>AwardsPage.xaml</DependentUpon>
     </Compile>
@@ -220,6 +223,9 @@
     </Compile>
     <Compile Include="Pages\EditCollectionWindow.xaml.cs">
       <DependentUpon>EditCollectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditProfilWindow.xaml.cs">
+      <DependentUpon>EditProfilWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EventEditPage.xaml.cs">
       <DependentUpon>EventEditPage.xaml</DependentUpon>
@@ -269,6 +275,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AwardInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AwardsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -282,6 +292,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditCollectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditProfilWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
