@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinodnevnick", "Kinodnevnic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{211DE46C-E8C4-4E62-A8EC-BAB06252E627}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinodnevnickConsole", "KinodnevnickConsole\KinodnevnickConsole.csproj", "{AE0700C8-4459-4F32-ABAA-770C48E1B223}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{211DE46C-E8C4-4E62-A8EC-BAB06252E627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE0700C8-4459-4F32-ABAA-770C48E1B223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE0700C8-4459-4F32-ABAA-770C48E1B223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE0700C8-4459-4F32-ABAA-770C48E1B223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE0700C8-4459-4F32-ABAA-770C48E1B223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
