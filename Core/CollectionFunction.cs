@@ -22,7 +22,7 @@ namespace Core
 
         public static ObservableCollection<Collection> GetFriendCollection(int idUser)
         {
-            return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDeleted != true && userCollectiom.Inkognito!= true)).ToList());
+            return collections = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDeleted != true && userCollectiom.Inkognito != true)).ToList());
         }
 
         public static ObservableCollection<Film_Collection> GetFilmInCollection(int idColl)

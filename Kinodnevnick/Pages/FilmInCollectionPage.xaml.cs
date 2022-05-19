@@ -46,7 +46,7 @@ namespace Kinodnevnick.Pages
             }
             if(collection.Inkognito == true)
             {
-                img_inckognito.Source = new BitmapImage(new Uri("img/locked.png", UriKind.Relative));
+                img_inckognito.Source = new BitmapImage(new Uri("/img/locked.png", UriKind.Relative));
             }
             IDCollection = collection.ID;
             this.DataContext = this;
