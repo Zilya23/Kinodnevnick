@@ -42,20 +42,24 @@ namespace Kinodnevnick.Pages
 
 		private void btn_add_Click(object sender, RoutedEventArgs e)
 		{
-			//var Usr = new User();
-			//Usr.ID = usrId;
-			//var frnd = (lv_followers.SelectedItem as Follow).User;
-			//var isUsr = bd_connection.connection.Follow.Where(a => a.ID_Following_User == frnd.ID && a.ID_Following_User != a.ID_Follower_User).Count();
-			//if (isUsr == 0)
-			//{
-			//	bd_connection.connection.Film_Collection.Add(FilmColl);
-			//	bd_connection.connection.SaveChanges();
-			//	this.DialogResult = true;
-			//}
-			//else
-			//{
-			//	MessageBox.Show("Фильм уже добавлен в коллекцию", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-			//}
+			var follower = new Follow();
+			var senderButton = sender as Button;
+			var followr = senderButton.DataContext as Follow;
+			follower.ID_Following_User = followr.ID_Follower_User;
+			follower.ID_Follower_User = AuthorizationPage.user.ID;
+			follower.Date_follow = DateTime.Now;
+			var isFolvr = bd_connection.connection.Follow.Where(a => a.ID_Following_User == follower.ID_Following_User && a.ID_Follower_User == follower.ID_Follower_User).Count();
+			if (isFolvr == 0)
+			{
+				bd_connection.connection.Follow.Add(follower);
+				bd_connection.connection.SaveChanges();
+				MessageBox.Show("Вы успешно подписались");
+				
+			}
+			else
+			{
+				MessageBox.Show("Вы уже подписаны на этого пользователя", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
 
 		}
 	}

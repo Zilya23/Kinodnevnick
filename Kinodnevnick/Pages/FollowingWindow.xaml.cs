@@ -42,7 +42,26 @@ namespace Kinodnevnick.Pages
 
 		private void btn_del_Click(object sender, RoutedEventArgs e)
 		{
+			var following = new Follow();
+			var senderButton = sender as Button;
+			var followng = senderButton.DataContext as Follow;
+			following.ID_Following_User = followng.ID_Following_User;
+			following.ID_Follower_User = followng.ID_Follower_User;
+			var isFolng = bd_connection.connection.Follow.Where(a => a.ID_Following_User == following.ID_Following_User && a.ID_Follower_User == following.ID_Follower_User).FirstOrDefault();
+			if (isFolng != null)
+			{
+				bd_connection.connection.Follow.Remove(isFolng);
+				bd_connection.connection.SaveChanges();
+				MessageBox.Show("Вы отписались от данного пользователя");
+				UpdateList();
+			}
 
+
+		}
+		public void UpdateList() 
+		{
+			folowingList = FollowFunction.GetFollows(AuthorizationPage.user.ID);
+			lv_follow.ItemsSource = folowingList;
 		}
 	}
 }
