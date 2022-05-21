@@ -19,12 +19,13 @@ namespace KinodnevnikApi.Controllers
 
         }
         //GET ALL Film
-        //ICollection<Core.DateBase.Film_Calendar> film_Calendars { get; set; }
-        //ICollection<Core.DateBase.Film_Collection> film_Collections { get; set; }
+        
         [HttpGet]
-        public ActionResult<ObservableCollection<Core.DateBase.Film>> GetAllFilm()
+        public ActionResult<List<Core.DateBase.Film>> GetAllFilm()
         {
-            var films = FilmServices.GetAllFilm();
+            var films = new List<Core.DateBase.Film>(FilmServices.GetAllFilm());
+            //ICollection<Core.DateBase.Film_Calendar> film_Calendars = new Collection<Core.DateBase.Film_Calendar>();
+            //ICollection<Core.DateBase.Film_Collection> film_Collections = new Collection<Core.DateBase.Film_Collection>();
             foreach (var f in films)
             {
                 f.Poster = null;
