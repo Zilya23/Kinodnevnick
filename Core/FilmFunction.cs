@@ -21,5 +21,10 @@ namespace Core
             Film selectedFilm = bd_connection.connection.Film.Where(filmId => filmId.ID == film.ID).FirstOrDefault();
             return selectedFilm;
         }
+
+        public static ObservableCollection<Film> SearchFilm(string name)
+        {
+            return films = new ObservableCollection<Film>(bd_connection.connection.Film.Where(a => a.Name.Contains(name)).ToList());
+        }
     }
 }

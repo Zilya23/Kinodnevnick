@@ -31,5 +31,10 @@ namespace Core
             user.Photo = photo;
             bd_connection.connection.SaveChanges();
         }
+
+        public static ObservableCollection<User> SearchUser(string nick)
+        {
+            return users = new ObservableCollection<User>(bd_connection.connection.User.Where(a => a.Nickname == nick).ToList());
+        }
     }
 }

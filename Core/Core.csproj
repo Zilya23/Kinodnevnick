@@ -177,56 +177,53 @@
     <Compile Include="AwardFunction.cs" />
     <Compile Include="CollectionFunction.cs" />
     <Compile Include="DateBase\Award.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Award_User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\bd_connection.cs" />
     <Compile Include="DateBase\Collection.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Calendar.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Film_Collection.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Level.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.Context.cs">
+    <Compile Include="DateBase\Model1oo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>Model1oo.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.cs">
+    <Compile Include="DateBase\Model1oo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\Model1.Designer.cs">
+    <Compile Include="DateBase\Model1oo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>Model1oo.edmx</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Question.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DateBase\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\Test.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="DateBase\User_Test.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>Model1oo.tt</DependentUpon>
     </Compile>
     <Compile Include="FilmFunction.cs" />
     <Compile Include="FriendFunction.cs" />
@@ -238,12 +235,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DateBase\Model1.edmx">
+    <EntityDeploy Include="DateBase\Model1oo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1oo.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DateBase\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="DateBase\Model1oo.edmx.diagram">
+      <DependentUpon>Model1oo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -251,15 +248,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DateBase\Model1.Context.tt">
+    <Content Include="DateBase\Model1oo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1oo.edmx</DependentUpon>
+      <LastGenOutput>Model1oo.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DateBase\Model1.tt">
+    <Content Include="DateBase\Model1oo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>Model1oo.edmx</DependentUpon>
+      <LastGenOutput>Model1oo.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
