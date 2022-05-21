@@ -12,15 +12,14 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class User_Test
+    public partial class Follow
     {
         public int ID { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<int> ID_Test { get; set; }
-        public Nullable<bool> IsComplite { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<int> ID_Follower_User { get; set; }
+        public Nullable<int> ID_Following_User { get; set; }
+        public Nullable<System.DateTime> Date_follow { get; set; }
     
-        public virtual Test Test { get; set; }
         public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

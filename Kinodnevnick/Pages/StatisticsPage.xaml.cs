@@ -59,5 +59,37 @@ namespace Kinodnevnick.Pages
 			EditProfilWindow editProfil = new EditProfilWindow(profil);
 			editProfil.ShowDialog();
 		}
+
+		private void tb_Folowers_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			FollowersWindow followers = new FollowersWindow();
+			followers.ShowDialog();
+		}
+
+		private void tb_Folowers_MouseEnter(object sender, MouseEventArgs e)
+		{
+
+		}
+
+		private void tb_Folowers_MouseLeave(object sender, MouseEventArgs e)
+		{
+
+		}
+
+		private void tb_Following_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			FollowingWindow following = new FollowingWindow();
+			following.ShowDialog();
+		}
+
+		private void tb_Following_MouseEnter(object sender, MouseEventArgs e)
+		{
+
+		}
+
+		private void tb_Following_MouseLeave(object sender, MouseEventArgs e)
+		{
+
+		}
 	}
 }
