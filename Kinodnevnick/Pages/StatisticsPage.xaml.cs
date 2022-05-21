@@ -24,6 +24,7 @@ namespace Kinodnevnick.Pages
 	public partial class StatisticsPage : Page
 	{
 		public static User profil { get; set; }
+		public static User frienfUser { get; set; }
 		public StatisticsPage(User user)
 		{
 			InitializeComponent();
@@ -63,33 +64,39 @@ namespace Kinodnevnick.Pages
 		private void tb_Folowers_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			FollowersWindow followers = new FollowersWindow();
-			followers.ShowDialog();
+			if (followers.ShowDialog() == true)
+			{
+				NavigationService.Navigate(new FollowUserPage(frienfUser));
+			}
 		}
 
 		private void tb_Folowers_MouseEnter(object sender, MouseEventArgs e)
 		{
-
+			tb_Folowers.Foreground = new SolidColorBrush(Colors.White);
 		}
 
 		private void tb_Folowers_MouseLeave(object sender, MouseEventArgs e)
 		{
-
+			tb_Folowers.Foreground = new SolidColorBrush(Colors.Black);
 		}
 
 		private void tb_Following_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			FollowingWindow following = new FollowingWindow();
-			following.ShowDialog();
+			if (following.ShowDialog() == true)
+			{
+				NavigationService.Navigate(new FollowUserPage(frienfUser));
+			}
 		}
 
 		private void tb_Following_MouseEnter(object sender, MouseEventArgs e)
 		{
-
+			tb_Following.Foreground = new SolidColorBrush(Colors.White);
 		}
 
 		private void tb_Following_MouseLeave(object sender, MouseEventArgs e)
 		{
-
+			tb_Following.Foreground = new SolidColorBrush(Colors.Black);
 		}
 	}
 }

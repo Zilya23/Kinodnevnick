@@ -32,7 +32,12 @@ namespace Kinodnevnick.Pages
 
 		private void lv_follow_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			
+			if (lv_follow.SelectedItem != null)
+			{
+				var frnd = (lv_follow.SelectedItem as Follow).User1;
+				StatisticsPage.frienfUser = frnd;
+				this.DialogResult = true;
+			}
 		}
 
 		private void btn_del_Click(object sender, RoutedEventArgs e)

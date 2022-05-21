@@ -32,11 +32,30 @@ namespace Kinodnevnick.Pages
 
 		private void lv_followers_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-
+			if (lv_followers.SelectedItem != null)
+			{
+				var frnd = (lv_followers.SelectedItem as Follow).User;
+				StatisticsPage.frienfUser = frnd;
+				this.DialogResult = true;
+			}
 		}
 
 		private void btn_add_Click(object sender, RoutedEventArgs e)
 		{
+			//var Usr = new User();
+			//Usr.ID = usrId;
+			//var frnd = (lv_followers.SelectedItem as Follow).User;
+			//var isUsr = bd_connection.connection.Follow.Where(a => a.ID_Following_User == frnd.ID && a.ID_Following_User != a.ID_Follower_User).Count();
+			//if (isUsr == 0)
+			//{
+			//	bd_connection.connection.Film_Collection.Add(FilmColl);
+			//	bd_connection.connection.SaveChanges();
+			//	this.DialogResult = true;
+			//}
+			//else
+			//{
+			//	MessageBox.Show("Фильм уже добавлен в коллекцию", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			//}
 
 		}
 	}
