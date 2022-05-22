@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using KinodnevnikApi.Models;
 using KinodnevnikApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.ObjectModel;
 using Core;
+using Core.DateBase;
 
 namespace KinodnevnikApi.Controllers
 {
@@ -26,13 +26,13 @@ namespace KinodnevnikApi.Controllers
             var films = new List<Core.DateBase.Film>(FilmServices.GetAllFilm());
             //ICollection<Core.DateBase.Film_Calendar> film_Calendars = new Collection<Core.DateBase.Film_Calendar>();
             //ICollection<Core.DateBase.Film_Collection> film_Collections = new Collection<Core.DateBase.Film_Collection>();
+            List<Film> films2 = new List<Film>();
             foreach (var f in films)
             {
                 f.Poster = null;
-                //f.Film_Calendar = film_Calendars;
-                //f.Film_Collection = film_Collections;
+                films2.Add(f);
             }
-            return films;
+            return films2;
         }
 
 

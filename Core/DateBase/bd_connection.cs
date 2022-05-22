@@ -8,6 +8,6 @@ namespace Core.DateBase
 {
     public static class bd_connection
     {
-        public static seven_bdEntities1 connection = new seven_bdEntities1();
+        public static kinoodEntities connection = new kinoodEntities();
     }
 }

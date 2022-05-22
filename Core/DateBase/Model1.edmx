@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="seven_bdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище kinoodModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -96,16 +96,6 @@
           <Property Name="Answer_Three" Type="nvarchar(max)" />
           <Property Name="True_Answer" Type="nvarchar(max)" />
           <Property Name="IsDone" Type="bit" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Test">
           <Key>
@@ -295,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="seven_bdModelStoreContainer">
+        <EntityContainer Name="Хранилище kinoodModelContainer">
           <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Award_User" EntityType="Self.Award_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
@@ -305,7 +295,6 @@
           <EntitySet Name="Follow" EntityType="Self.Follow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Test" EntityType="Self.User_Test" Schema="dbo" store:Type="Tables" />
@@ -362,10 +351,11 @@
             <End Role="User_Test" EntitySet="User_Test" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="seven_bdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="kinoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -438,6 +428,17 @@
           <NavigationProperty Name="Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Film_Collection" ToRole="Collection" />
           <NavigationProperty Name="Film" Relationship="Self.FK_Film_Collection_Film" FromRole="Film_Collection" ToRole="Film" />
         </EntityType>
+        <EntityType Name="Follow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Follower_User" Type="Int32" />
+          <Property Name="ID_Following_User" Type="Int32" />
+          <Property Name="Date_follow" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Follow_User" FromRole="Follow" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Follow_User1" FromRole="Follow" ToRole="User" />
+        </EntityType>
         <EntityType Name="Level">
           <Key>
             <PropertyRef Name="ID" />
@@ -461,16 +462,6 @@
           <Property Name="True_Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IsDone" Type="Boolean" />
           <NavigationProperty Name="Test" Relationship="Self.FK_Question_Test" FromRole="Question" ToRole="Test" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Test">
           <Key>
@@ -499,9 +490,9 @@
           <NavigationProperty Name="Award_User" Relationship="Self.FK_Award_User_User" FromRole="User" ToRole="Award_User" />
           <NavigationProperty Name="Collection" Relationship="Self.FK_Collection_User" FromRole="User" ToRole="Collection" />
           <NavigationProperty Name="Film_Calendar" Relationship="Self.FK_Film_Calendar_User" FromRole="User" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Follow" Relationship="Self.FK_Follow_User" FromRole="User" ToRole="Follow" />
+          <NavigationProperty Name="Follow1" Relationship="Self.FK_Follow_User1" FromRole="User" ToRole="Follow" />
           <NavigationProperty Name="User_Test" Relationship="Self.FK_User_Test_User" FromRole="User" ToRole="User_Test" />
-          <NavigationProperty Name="Follow" Relationship="seven_bdModel.FK_Follow_User" FromRole="User" ToRole="Follow" />
-          <NavigationProperty Name="Follow1" Relationship="seven_bdModel.FK_Follow_User1" FromRole="User" ToRole="Follow" />
         </EntityType>
         <EntityType Name="User_Test">
           <Key>
@@ -599,6 +590,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Follow_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="ID_Follower_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_User1">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="ID_Following_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Test_Level">
           <End Role="Level" Type="Self.Level" Multiplicity="0..1" />
           <End Role="Test" Type="Self.Test" Multiplicity="*" />
@@ -647,16 +662,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="seven_bdEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="kinoodEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Award" EntityType="Self.Award" />
           <EntitySet Name="Award_User" EntityType="Self.Award_User" />
           <EntitySet Name="Collection" EntityType="Self.Collection" />
           <EntitySet Name="Film" EntityType="Self.Film" />
           <EntitySet Name="Film_Calendar" EntityType="Self.Film_Calendar" />
           <EntitySet Name="Film_Collection" EntityType="Self.Film_Collection" />
+          <EntitySet Name="Follow" EntityType="Self.Follow" />
           <EntitySet Name="Level" EntityType="Self.Level" />
           <EntitySet Name="Question" EntityType="Self.Question" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Test" EntityType="Self.Test" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="User_Test" EntityType="Self.User_Test" />
@@ -688,6 +703,14 @@
             <End Role="User" EntitySet="User" />
             <End Role="Film_Calendar" EntitySet="Film_Calendar" />
           </AssociationSet>
+          <AssociationSet Name="FK_Follow_User" Association="Self.FK_Follow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_User1" Association="Self.FK_Follow_User1">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
           <AssociationSet Name="FK_Test_Level" Association="Self.FK_Test_Level">
             <End Role="Level" EntitySet="Level" />
             <End Role="Test" EntitySet="Test" />
@@ -704,59 +727,15 @@
             <End Role="User" EntitySet="User" />
             <End Role="User_Test" EntitySet="User_Test" />
           </AssociationSet>
-          <EntitySet Name="Follow" EntityType="seven_bdModel.Follow" />
-          <AssociationSet Name="FK_Follow_User" Association="seven_bdModel.FK_Follow_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Follow" EntitySet="Follow" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Follow_User1" Association="seven_bdModel.FK_Follow_User1">
-            <End Role="User" EntitySet="User" />
-            <End Role="Follow" EntitySet="Follow" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Follow">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Follower_User" Type="Int32" />
-          <Property Name="ID_Following_User" Type="Int32" />
-          <Property Name="Date_follow" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="User" Relationship="seven_bdModel.FK_Follow_User" FromRole="Follow" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="seven_bdModel.FK_Follow_User1" FromRole="Follow" ToRole="User" />
-        </EntityType>
-        <Association Name="FK_Follow_User">
-          <End Type="seven_bdModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="seven_bdModel.Follow" Role="Follow" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Follow">
-              <PropertyRef Name="ID_Follower_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Follow_User1">
-          <End Type="seven_bdModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="seven_bdModel.Follow" Role="Follow" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Follow">
-              <PropertyRef Name="ID_Following_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="seven_bdModelStoreContainer" CdmEntityContainer="seven_bdEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище kinoodModelContainer" CdmEntityContainer="kinoodEntities">
           <EntitySetMapping Name="Award">
-            <EntityTypeMapping TypeName="seven_bdModel.Award">
+            <EntityTypeMapping TypeName="kinoodModel.Award">
               <MappingFragment StoreEntitySet="Award">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -767,7 +746,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Award_User">
-            <EntityTypeMapping TypeName="seven_bdModel.Award_User">
+            <EntityTypeMapping TypeName="kinoodModel.Award_User">
               <MappingFragment StoreEntitySet="Award_User">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Award" ColumnName="ID_Award" />
@@ -777,7 +756,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Collection">
-            <EntityTypeMapping TypeName="seven_bdModel.Collection">
+            <EntityTypeMapping TypeName="kinoodModel.Collection">
               <MappingFragment StoreEntitySet="Collection">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -788,7 +767,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film">
-            <EntityTypeMapping TypeName="seven_bdModel.Film">
+            <EntityTypeMapping TypeName="kinoodModel.Film">
               <MappingFragment StoreEntitySet="Film">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -800,7 +779,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Calendar">
-            <EntityTypeMapping TypeName="seven_bdModel.Film_Calendar">
+            <EntityTypeMapping TypeName="kinoodModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -813,7 +792,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Collection">
-            <EntityTypeMapping TypeName="seven_bdModel.Film_Collection">
+            <EntityTypeMapping TypeName="kinoodModel.Film_Collection">
               <MappingFragment StoreEntitySet="Film_Collection">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
@@ -822,8 +801,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Follow">
+            <EntityTypeMapping TypeName="kinoodModel.Follow">
+              <MappingFragment StoreEntitySet="Follow">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Follower_User" ColumnName="ID_Follower_User" />
+                <ScalarProperty Name="ID_Following_User" ColumnName="ID_Following_User" />
+                <ScalarProperty Name="Date_follow" ColumnName="Date_follow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Level">
-            <EntityTypeMapping TypeName="seven_bdModel.Level">
+            <EntityTypeMapping TypeName="kinoodModel.Level">
               <MappingFragment StoreEntitySet="Level">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
@@ -832,7 +821,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Question">
-            <EntityTypeMapping TypeName="seven_bdModel.Question">
+            <EntityTypeMapping TypeName="kinoodModel.Question">
               <MappingFragment StoreEntitySet="Question">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID__Test" ColumnName="ID__Test" />
@@ -846,19 +835,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="seven_bdModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Test">
-            <EntityTypeMapping TypeName="seven_bdModel.Test">
+            <EntityTypeMapping TypeName="kinoodModel.Test">
               <MappingFragment StoreEntitySet="Test">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -869,7 +847,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="seven_bdModel.User">
+            <EntityTypeMapping TypeName="kinoodModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nickname" ColumnName="Nickname" />
@@ -882,23 +860,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Test">
-            <EntityTypeMapping TypeName="seven_bdModel.User_Test">
+            <EntityTypeMapping TypeName="kinoodModel.User_Test">
               <MappingFragment StoreEntitySet="User_Test">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
                 <ScalarProperty Name="ID_Test" ColumnName="ID_Test" />
                 <ScalarProperty Name="IsComplite" ColumnName="IsComplite" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Follow">
-            <EntityTypeMapping TypeName="seven_bdModel.Follow">
-              <MappingFragment StoreEntitySet="Follow">
-                <ScalarProperty Name="Date_follow" ColumnName="Date_follow" />
-                <ScalarProperty Name="ID_Following_User" ColumnName="ID_Following_User" />
-                <ScalarProperty Name="ID_Follower_User" ColumnName="ID_Follower_User" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -919,7 +887,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
