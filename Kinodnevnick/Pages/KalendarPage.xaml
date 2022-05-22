@@ -35,29 +35,45 @@
         <materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel Margin="16"
                         Width="200">
-                <TextBlock Margin="4"
+                <Image x:Name="img_Profil" 
+                       Source="{Binding profil.Photo}" 
+                        Width="150"
+                        Height="150"/>
+                <TextBlock x:Name="tb_Name"
                            FontSize="20"
                            HorizontalAlignment="Center"
-                           Text="Меню"/>
+                           FontWeight="Bold"/>
+                <ProgressBar x:Name="pb_lvl"
+                    Margin="5,0,0,0"
+                    Value="10"
+                    Height="12" Background="White"/>
+                <Button x:Name="btn_Statistic"
+                        Margin="4"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Content="Профиль"
+                        Click="btn_Statistic_Click"/>
                 <Button x:Name="btn_searchFriend"
                         Content="Найти пользователя"
                         HorizontalAlignment="Center"
                         Margin="4"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Click="btn_searchFriend_Click"/>
-                <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
-                        CommandParameter="{x:Static Dock.Left}"
+                <Button x:Name="btn_Tests"
+                        Content="Тесты"
+                        HorizontalAlignment="Center"
+                        Margin="4"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Click="btn_Tests_Click"/>
+                <Button x:Name="btn_Exit"
                         Margin="4"
                         HorizontalAlignment="Center"
                         Style="{StaticResource MaterialDesignFlatButton}"
-                        Content="CLOSE THIS" />
-                <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
-                        Margin="4"
-                        HorizontalAlignment="Center"
-                        Style="{StaticResource MaterialDesignFlatButton}"
-                        Content="CLOSE ALL" />
+                        Content="Выйти"
+                        Click="btn_Exit_Click"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
+
         <Grid>
             <Grid.Resources>
                 <Style

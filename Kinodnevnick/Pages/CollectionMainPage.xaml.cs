@@ -63,5 +63,21 @@ namespace Kinodnevnick.Pages
         {
             NavigationService.Navigate(new FriendCollectionPage());
         }
+
+        private void btn_Statistic_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new StatisticsPage(AuthorizationPage.user));
+        }
+
+        private void btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AuthorizationPage());
+        }
+
+
+        private void btn_Tests_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TestsPage());
+        }
     }
 }

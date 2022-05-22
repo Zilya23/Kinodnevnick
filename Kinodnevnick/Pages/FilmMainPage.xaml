@@ -58,12 +58,7 @@
                         Margin="4"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Click="btn_searchFriend_Click"/>
-                <Button x:Name="btn_Friends"
-                        Content="Друзья"
-                        HorizontalAlignment="Center"
-                        Margin="4"
-                        Style="{StaticResource MaterialDesignFlatButton}"
-                        Click="btn_Friends_Click"/>
+
                 <Button x:Name="btn_Tests"
                         Content="Тесты"
                         HorizontalAlignment="Center"

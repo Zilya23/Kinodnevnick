@@ -30,6 +30,8 @@ namespace Kinodnevnick.Pages
             InitializeComponent();
             UpdateCalendar();
             UpdateList();
+
+
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)
@@ -114,6 +116,21 @@ namespace Kinodnevnick.Pages
         private void btn_searchFriend_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new FriendCollectionPage());
+        }
+
+        private void btn_Statistic_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new StatisticsPage(AuthorizationPage.user));
+        }
+
+        private void btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AuthorizationPage());
+        }
+
+        private void btn_Tests_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TestsPage());
         }
     }
 }

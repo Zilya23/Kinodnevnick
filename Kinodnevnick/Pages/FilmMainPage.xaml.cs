@@ -87,11 +87,6 @@ namespace Kinodnevnick.Pages
             NavigationService.Navigate(new AuthorizationPage());
 		}
 
-		private void btn_Friends_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
 		private void btn_Tests_Click(object sender, RoutedEventArgs e)
 		{
             NavigationService.Navigate(new TestsPage());
