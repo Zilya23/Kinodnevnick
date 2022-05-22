@@ -263,6 +263,9 @@
     <Compile Include="Pages\NewCollectionWindow.xaml.cs">
       <DependentUpon>NewCollectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\QuestionPage.xaml.cs">
+      <DependentUpon>QuestionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
@@ -385,6 +388,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\QuestionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -401,6 +408,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TestsHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TestsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -409,6 +420,9 @@
   <ItemGroup>
     <Compile Include="Pages\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestsHistoryPage.xaml.cs">
+      <DependentUpon>TestsHistoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TestsPage.xaml.cs">
       <DependentUpon>TestsPage.xaml</DependentUpon>

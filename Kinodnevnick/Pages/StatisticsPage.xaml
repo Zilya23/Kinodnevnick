@@ -46,7 +46,7 @@
                     Grid.Column="0" Grid.ColumnSpan="13" 
                     Background="#FF780000"/>
         <TextBlock x:Name="tb_Folowers" Text="Подписчики" Grid.Column="8" Grid.ColumnSpan="2"
-                   Grid.Row="3" FontSize="20" Margin="10,0,0,0"
+                   Grid.Row="3" FontSize="20" Margin="5,0,0,0"
                    MouseDown="tb_Folowers_MouseDown"
                    MouseEnter="tb_Folowers_MouseEnter"
                    MouseLeave="tb_Folowers_MouseLeave"/>
