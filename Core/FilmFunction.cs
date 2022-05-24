@@ -16,10 +16,19 @@ namespace Core
             return new ObservableCollection<Film>(bd_connection.connection.Film.ToList());
         }
 
-        public static Film GetFilmInfo(Film film)
+        public static Film GetFilmInfo(int id)
         {
-            Film selectedFilm = bd_connection.connection.Film.Where(filmId => filmId.ID == film.ID).FirstOrDefault();
-            return selectedFilm;
+            Film selectedFilm = bd_connection.connection.Film.Where(filmId => filmId.ID == id).FirstOrDefault();
+            Film film = new Film()
+            {
+                ID = selectedFilm.ID,
+                Name = selectedFilm.Name,
+                Poster = null,
+                Description = selectedFilm.Description,
+                Date_Issue = selectedFilm.Date_Issue,
+                Duration = selectedFilm.Duration
+            };
+            return film;
         }
 
         public static ObservableCollection<Film> SearchFilm(string name)

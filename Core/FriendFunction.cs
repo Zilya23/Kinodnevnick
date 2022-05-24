@@ -48,5 +48,33 @@ namespace Core
                 }
             }
         }
+
+        public static List<Film_Collection> TestMerge()
+        {
+            ObservableCollection<Film_Collection> friendFilms = CollectionFunction.GetFilmInCollection(3);
+            ObservableCollection<Film_Collection> userFilms = CollectionFunction.GetFilmInCollection(1);
+
+            int IDUserColl = 15;
+            List<Film_Collection> allFIlm = new List<Film_Collection>();
+
+            foreach (var friends in friendFilms)
+            {
+                foreach (var users in userFilms)
+                {
+                    if (friends.ID_Film == users.ID_Film)
+                    {
+                        Film_Collection newFilm_Collection = new Film_Collection();
+                        newFilm_Collection.ID_Film = users.ID_Film;
+                        newFilm_Collection.ID_Collection = IDUserColl;
+                        var isColl = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == IDUserColl && a.ID_Film == users.ID_Film).Count();
+                        if (isColl == 0)
+                        {
+                            allFIlm.Add(newFilm_Collection);
+                        }
+                    }
+                }
+            }
+            return allFIlm;
+        }
     }
 }

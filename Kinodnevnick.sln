@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KinodnevnikApi", "Kinodnevn
 		{211DE46C-E8C4-4E62-A8EC-BAB06252E627} = {211DE46C-E8C4-4E62-A8EC-BAB06252E627}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinodnevnickUnitTest", "KinodnevnickUnitTest\KinodnevnickUnitTest.csproj", "{B99EBC9A-AA7B-4060-A662-081F0B185AA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{5F820694-22B0-423F-A114-3C8B3BEBA2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F820694-22B0-423F-A114-3C8B3BEBA2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F820694-22B0-423F-A114-3C8B3BEBA2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99EBC9A-AA7B-4060-A662-081F0B185AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99EBC9A-AA7B-4060-A662-081F0B185AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99EBC9A-AA7B-4060-A662-081F0B185AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99EBC9A-AA7B-4060-A662-081F0B185AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
