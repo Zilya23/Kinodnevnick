@@ -106,12 +106,6 @@ namespace KinodnevnickConsole
                                 Console.WriteLine("Фильм не найден");
                             }
                         break;
-                    case "3":
-                        Console.WriteLine("Что бы вы хотели сделать?");
-                        Console.WriteLine("1) Посмотреть коллекции пользователей");
-                        Console.WriteLine("2) Посмотреть информацию о фильме");
-                        Console.WriteLine("3) Посмотреть меню функций");
-                        break;
                     default:
                         Console.WriteLine("Действие не найдено, повторите попытку");
                         break;

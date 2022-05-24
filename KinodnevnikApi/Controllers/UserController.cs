@@ -18,11 +18,11 @@ namespace KinodnevnikApi.Controllers
         public ActionResult<ObservableCollection<User>> GetAllUser()
         {
             var users = new ObservableCollection<User>(UserServices.GetAllUser());
-            //foreach (var f in users)
-            //{
-            //    f.Poster = null;
-            //    films2.Add(f);
-            //}
+            foreach (var f in users)
+            {
+                f.Login = null;
+                f.Password = null;
+            }
             return users;
         }
     }
