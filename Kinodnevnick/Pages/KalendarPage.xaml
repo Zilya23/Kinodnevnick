@@ -123,7 +123,7 @@
                   SelectionMode="MultipleRange"
                   Grid.Column="2" Grid.ColumnSpan="4"
                   SelectedDatesChanged="cal_film_SelectedDatesChanged"
-                  Grid.Row="2" Grid.RowSpan="11" Margin="0,0,0,11"
+                  Grid.Row="2" Grid.RowSpan="11"
                   materialDesign:CalendarAssist.HeaderBackground ="#FF780000"/>
 
             <StackPanel Grid.Row="0"

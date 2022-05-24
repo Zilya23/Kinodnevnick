@@ -67,9 +67,9 @@ namespace Kinodnevnick.Pages
         private void img_merge_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MergeWindow mergeWindow = new MergeWindow(friendCollection.ID);
-            ObservableCollection<Collection> coll = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == AuthorizationPage.user.ID && userCollectiom.IsDeleted != true)).ToList());
             if (mergeWindow.ShowDialog() == true)
             {
+                ObservableCollection<Collection> coll = new ObservableCollection<Collection>((bd_connection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == AuthorizationPage.user.ID && userCollectiom.IsDeleted != true)).ToList());
                 Collection mergeCollection = coll.Last();
                 NavigationService.Navigate(new FilmInCollectionPage(mergeCollection));
             }
