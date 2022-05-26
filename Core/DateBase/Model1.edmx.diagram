@@ -4,32 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="db3ea2400ab24f82ad1c0bc5b0ed7dd7" Name="Diagram1">
-        <EntityTypeShape EntityType="KinodnevvvModel.Award" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Award_User" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Collection" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Film" Width="1.5" PointX="3.75" PointY="20.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Film_Calendar" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Film_Collection" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Follow" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Level" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Question" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.Test" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.User" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinodnevvvModel.User_Test" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Award_User_Award" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Award_User_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Collection_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Film_Collection_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Film_Calendar_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Follow_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Follow_User1" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Test_Level" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_Question_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_User_Test_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="KinodnevvvModel.FK_User_Test_User" ManuallyRouted="false" />
+      <Diagram DiagramId="a963d17bc8db473e9744925b869159bc" Name="Diagram1">
+        <EntityTypeShape EntityType="seven_bdModel.Award" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Award_User" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Collection" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Film" Width="1.5" PointX="3.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Film_Calendar" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Film_Collection" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Follow" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Level" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Question" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.Test" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.User" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seven_bdModel.User_Test" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="seven_bdModel.FK_Award_User_Award" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Award_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Film_Collection_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Film_Calendar_User" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Follow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Follow_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Test_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_Question_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_User_Test_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="seven_bdModel.FK_User_Test_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

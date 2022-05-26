@@ -24,21 +24,24 @@ namespace Kinodnevnick.Pages
 	public partial class TestsPage : Page
 	{
 		public static ObservableCollection<Test> testList { get; set; }
+		public static User profil { get; set; }
 		public TestsPage()
 		{
 			InitializeComponent();
 			testList = TestFunction.GetTests();
+			profil = AuthorizationPage.user;
+			tb_Name.Text = profil.Nickname;
 			this.DataContext = this;
 		}
 
 		private void btn_TestHistory_Click(object sender, RoutedEventArgs e)
 		{
-
+			NavigationService.Navigate(new TestsHistoryPage());
 		}
 
 		private void btn_TestStatistic_Click(object sender, RoutedEventArgs e)
 		{
-
+			NavigationService.Navigate(new LeaderBoardPage());
 		}
 
 		private void lv_tests_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,10 +64,9 @@ namespace Kinodnevnick.Pages
 			NavigationService.Navigate(new AuthorizationPage());
 		}
 
-		private void btn_Friends_Click(object sender, RoutedEventArgs e)
+		private void btn_main_Click(object sender, RoutedEventArgs e)
 		{
-
+			NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
 		}
-
 	}
 }

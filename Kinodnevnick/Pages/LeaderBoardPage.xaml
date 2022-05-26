@@ -1,15 +1,13 @@
-﻿<Page x:Class="Kinodnevnick.Pages.KalendarPage"
+﻿<Page x:Class="Kinodnevnick.Pages.LeaderBoardPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      xmlns:local="clr-namespace:Kinodnevnick" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Kinodnevnick.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="KalendarPage">
-
+      Title="LeaderBoardPage">
     <materialDesign:DrawerHost
             x:Name="DrawerHost"
             Height="420"
@@ -35,8 +33,12 @@
         <materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel Margin="16"
                         Width="200">
+                <TextBlock Margin="4"
+                           FontSize="20"
+                           HorizontalAlignment="Center"
+                           Text="Меню"/>
                 <Image x:Name="img_Profil" 
-                       Source="{Binding profil.Photo}"
+                       Source="{Binding profil.Photo}" 
                         Width="150"
                         Height="150"/>
                 <TextBlock x:Name="tb_Name"
@@ -59,12 +61,6 @@
                         Margin="4"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Click="btn_searchFriend_Click"/>
-                <Button x:Name="btn_Tests"
-                        Content="Тесты"
-                        HorizontalAlignment="Center"
-                        Margin="4"
-                        Style="{StaticResource MaterialDesignFlatButton}"
-                        Click="btn_Tests_Click"/>
                 <Button x:Name="btn_Exit"
                         Margin="4"
                         HorizontalAlignment="Center"
@@ -75,86 +71,90 @@
         </materialDesign:DrawerHost.LeftDrawerContent>
 
         <Grid>
-            <Grid.Resources>
-                <Style
-      x:Key="SecondaryCalendarButton"
-      TargetType="CalendarButton"
-      BasedOn="{StaticResource MaterialDesignCalendarButton}">
-                    <Setter
-        Property="materialDesign:CalendarAssist.SelectionColor"
-        Value="{DynamicResource SecondaryHueMidBrush}" />
-                    <Setter
-        Property="materialDesign:CalendarAssist.SelectionForegroundColor"
-        Value="{DynamicResource SecondaryHueMidForegroundBrush}" />
-                </Style>
-            </Grid.Resources>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Calendar x:Name="cal_film"
-                  SelectionMode="MultipleRange"
-                  Grid.Column="2" Grid.ColumnSpan="4"
-                  SelectedDatesChanged="cal_film_SelectedDatesChanged"
-                  Grid.Row="2" Grid.RowSpan="11"
-                  materialDesign:CalendarAssist.HeaderBackground ="#FF780000"/>
-
-            <StackPanel Grid.Row="0"
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
                     Grid.Column="0" Grid.ColumnSpan="13" 
                     Background="#FF780000"/>
             <StackPanel Grid.Column="0"
                     Grid.Row="0" Grid.RowSpan="13"
                     Background="#FF780000"/>
-            <TextBlock Text="КинокраД" 
+            <TextBlock Text="КинокраД.Тесты" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
+            <ListView x:Name="prod" ItemsSource="{Binding products}"
+                      Grid.Column="2" Grid.ColumnSpan="10"
+                      Grid.Row="2" Grid.RowSpan="10"
+                      BorderBrush="{x:Null}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Место" DisplayMemberBinding="{Binding id}"/>
+                    <GridViewColumn Header="Фото">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Photo}" Height="70"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Никнейм"  DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Количество очков" DisplayMemberBinding="{Binding CountXP}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
             <Button x:Name="btn_main"
-                Grid.Column="0" Grid.RowSpan="4"
-                Background="#FF780000" BorderBrush="Black" Click="btn_main_Click" Height="Auto" Grid.Row="1">
+                Grid.Column="0"
+                Grid.Row="1" Grid.RowSpan="4"
+                Background="#FF780000" BorderBrush="Black" Height="Auto"
+                    Click="btn_main_Click">
                 <Image Source="../img/main.png" Width="28"/>
             </Button>
-            <Button x:Name="btn_dairy"
+            <Button x:Name="btn_TestHistory"
                 Grid.Column="0"
-                Grid.Row="9" Grid.RowSpan="4"
-                Background="#FF780000" BorderBrush="Black" Height="Auto">
-                <Image Source="../img/ca.png" Width="28"/>
+                Grid.Row="9" 
+                Grid.RowSpan="4"
+                Background="#FF780000" 
+                BorderBrush="Black"
+                Height="Auto" RenderTransformOrigin="0.484,0.875">
+                <Image Source="../img/History.png" Width="28"/>
             </Button>
-            <Button x:Name="btn_collection"
+            <Button x:Name="btn_TestStatistic"
                 Grid.Column="0"
                 Grid.Row="5" Grid.RowSpan="4"
                 Background="#FF780000" BorderBrush="Black"
-                Click="btn_collection_Click" Height="Auto">
-                <Image Source="../img/colle.png" Width="28"/>
+               Height="Auto" RenderTransformOrigin="0.484,0.86">
+                <Image Source="../img/Stat.png" Width="28"/>
             </Button>
+
             <Button
                 Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
                 CommandParameter="{x:Static Dock.Left}"
@@ -166,34 +166,6 @@
                 BorderBrush="#FF780000">
                 <Image Source="../img/men.png" Width="35"/>
             </Button>
-            <TextBlock x:Name="tb_isEmpty" 
-                   Text="Нет событий на этот день" 
-                   Grid.Row="6" Grid.Column="7" 
-                   Grid.ColumnSpan="5" 
-                   Visibility="Hidden"
-                   FontSize="20"
-                   HorizontalAlignment="Center"/>
-            <ListView x:Name="lv_event"
-                  ItemsSource="{Binding eventColl}"
-                  Grid.Column="7" Grid.ColumnSpan="5"
-                  Grid.Row="2" Grid.RowSpan="8"
-                  Foreground="Black"
-                  FontSize="20"
-                  SelectionChanged="lv_event_SelectionChanged">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn  DisplayMemberBinding="{Binding Film.Name}" Width="200"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <Image x:Name="img_plus" 
-               Source="../img/plus2.png"
-               Grid.Column="12"
-               Width="27"
-               HorizontalAlignment="Right"
-               Margin="0,5,10,1"
-               MouseDown="img_plus_MouseDown" 
-               Grid.Row="1"/>
         </Grid>
     </materialDesign:DrawerHost>
 </Page>

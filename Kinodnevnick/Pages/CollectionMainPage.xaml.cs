@@ -24,9 +24,12 @@ namespace Kinodnevnick.Pages
     public partial class CollectionMainPage : Page
     {
         public static ObservableCollection<Collection> fullColl { get; set; }
+        public static User profil { get; set; }
         public CollectionMainPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            profil = AuthorizationPage.user;
+            tb_Name.Text = profil.Nickname;
             fullColl = CollectionFunction.GetCollection(AuthorizationPage.user.ID);
             this.DataContext = this;
         }

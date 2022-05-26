@@ -24,14 +24,16 @@ namespace Kinodnevnick.Pages
     public partial class KalendarPage : Page
     {
         public static ObservableCollection<Film_Calendar> calendars { get; set; }
+        public static User profil { get; set; }
         public static EventWindow eventWindow { get; set; }
         public KalendarPage()
         {
             InitializeComponent();
             UpdateCalendar();
             UpdateList();
-
-
+            profil = AuthorizationPage.user;
+            tb_Name.Text = profil.Nickname;
+            this.DataContext = this;
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)

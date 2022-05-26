@@ -25,12 +25,16 @@ namespace Kinodnevnick.Pages
     {
         public static ObservableCollection<Collection> collectionsFriend { get; set; }
         public static ObservableCollection<User> users { get; set; }
+        public static User profil { get; set; }
         public FriendCollectionPage()
         {
             InitializeComponent();
             ObservableCollection<User> allUser = FriendFunction.GetUsers();
             cb_searchFriend.ItemsSource = allUser;
             cb_searchFriend.DisplayMemberPath = "Nickname";
+            profil = AuthorizationPage.user;
+            tb_Name.Text = profil.Nickname;
+            this.DataContext = this;
         }
 
         private void cb_searchFriend_SelectionChanged(object sender, SelectionChangedEventArgs e)

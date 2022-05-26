@@ -62,12 +62,6 @@
                         Margin="4"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Click="btn_searchFriend_Click"/>
-                <Button x:Name="btn_Friends"
-                        Content="Друзья"
-                        HorizontalAlignment="Center"
-                        Margin="4"
-                        Style="{StaticResource MaterialDesignFlatButton}"
-                        Click="btn_Friends_Click"/>
                 <Button x:Name="btn_Exit"
                         Margin="4"
                         HorizontalAlignment="Center"
@@ -149,7 +143,8 @@
             <Button x:Name="btn_main"
                 Grid.Column="0"
                 Grid.Row="1" Grid.RowSpan="4"
-                Background="#FF780000" BorderBrush="Black" Height="Auto">
+                Background="#FF780000" BorderBrush="Black" Height="Auto"
+                    Click="btn_main_Click">
                 <Image Source="../img/main.png" Width="28"/>
             </Button>
             <Button x:Name="btn_TestHistory"

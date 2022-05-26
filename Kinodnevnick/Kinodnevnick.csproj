@@ -257,6 +257,9 @@
     <Compile Include="Pages\KalendarPage.xaml.cs">
       <DependentUpon>KalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LeaderBoardPage.xaml.cs">
+      <DependentUpon>LeaderBoardPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MergeWindow.xaml.cs">
       <DependentUpon>MergeWindow.xaml</DependentUpon>
     </Compile>
@@ -380,6 +383,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\LeaderBoardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MergeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
