@@ -38,7 +38,6 @@ namespace Kinodnevnick.Pages
             pb_lvl.Maximum = (double)lvl.Max_Count_XP;
             pb_lvl.Value = (double)profil.Count_XP;
             this.DataContext = this;
-            this.DataContext = this;
         }
 
         private void btn_collection_Click(object sender, RoutedEventArgs e)
