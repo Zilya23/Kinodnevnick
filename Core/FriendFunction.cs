@@ -76,5 +76,13 @@ namespace Core
             }
             return allFIlm;
         }
+
+        public static List<User> GetLeader()
+        {
+            List<User> leaders = GetUsers().ToList();
+            leaders = leaders.OrderByDescending(x => x.Count_XP).ToList();
+            return leaders;
+            
+        }
     }
 }

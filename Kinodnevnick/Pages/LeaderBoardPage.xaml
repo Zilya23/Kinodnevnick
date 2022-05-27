@@ -112,22 +112,32 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
-            <ListView x:Name="prod" ItemsSource="{Binding products}"
+            <ListView x:Name="prod" ItemsSource="{Binding leaders}"
                       Grid.Column="2" Grid.ColumnSpan="10"
                       Grid.Row="2" Grid.RowSpan="10"
                       BorderBrush="{x:Null}">
-            <ListView.View>
+                <ListView.Resources>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                    <local:OrdinalConverter x:Key="OrdinalConverter" />
+                    <DataTemplate x:Key="OrdinalColumnDataTemplate">
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListViewItem},
+                    Converter={StaticResource ResourceKey=OrdinalConverter}}" HorizontalAlignment="Right" />
+                    </DataTemplate>
+                </ListView.Resources>
+                <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Место" DisplayMemberBinding="{Binding id}"/>
-                    <GridViewColumn Header="Фото">
+                        <GridViewColumn Header="Место" CellTemplate="{StaticResource ResourceKey=OrdinalColumnDataTemplate}" />
+                        <GridViewColumn Header="Фото">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding Photo}" Height="70"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Никнейм"  DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Количество очков" DisplayMemberBinding="{Binding CountXP}"/>
+                    <GridViewColumn Header="Никнейм"  DisplayMemberBinding="{Binding Nickname}" />
+                    <GridViewColumn Header="Количество очков" DisplayMemberBinding="{Binding Count_XP}"/>
                 </GridView>
             </ListView.View>
         </ListView>
