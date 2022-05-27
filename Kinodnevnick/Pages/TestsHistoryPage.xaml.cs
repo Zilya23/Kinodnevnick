@@ -43,11 +43,7 @@ namespace Kinodnevnick.Pages
 		{
 			NavigationService.Navigate(new LeaderBoardPage());
 		}
-		private void lv_tests_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			var test = lv_tests.SelectedItem as Test;
-			NavigationService.Navigate(new QuestionPage(test.ID));
-		}
+
 		private void btn_searchFriend_Click(object sender, RoutedEventArgs e)
 		{
 			NavigationService.Navigate(new FriendCollectionPage());

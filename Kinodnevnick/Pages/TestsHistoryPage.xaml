@@ -116,8 +116,7 @@
             <ListView x:Name="lv_tests" 
                   ItemsSource="{Binding testList}" 
                   Grid.Row="2" Grid.RowSpan="12"
-                  Grid.Column="2" Grid.ColumnSpan="10"
-                  SelectionChanged="lv_tests_SelectionChanged">
+                  Grid.Column="2" Grid.ColumnSpan="10">
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal">
