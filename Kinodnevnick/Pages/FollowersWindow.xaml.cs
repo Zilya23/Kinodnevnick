@@ -60,7 +60,6 @@ namespace Kinodnevnick.Pages
 			{
 				MessageBox.Show("Вы уже подписаны на этого пользователя", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-
 		}
 	}
 }

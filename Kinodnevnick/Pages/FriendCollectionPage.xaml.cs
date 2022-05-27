@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Core.DateBase;
 using Core;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace Kinodnevnick.Pages
 {
@@ -39,10 +40,17 @@ namespace Kinodnevnick.Pages
 
         private void cb_searchFriend_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(cb_searchFriend.SelectedItem != null)
+            if (cb_searchFriend.SelectedItem != null)
             {
                 lv_friendColl.Visibility = Visibility.Visible;
+                img_photo.Visibility = Visibility.Visible;
+                tb_friendName.Visibility = Visibility.Visible;
+                btn_follow.Visibility = Visibility.Visible;
                 ObservableCollection<Collection> friendCollections = CollectionFunction.GetFriendCollection((cb_searchFriend.SelectedItem as User).ID);
+                User frienduser = cb_searchFriend.SelectedItem as User;
+                BitmapImage bd = ToBitmapImage(frienduser.Photo);
+                img_photo.Source = bd;
+                tb_friendName.Text = frienduser.Nickname;
                 lv_friendColl.ItemsSource = friendCollections;
             }
         }
@@ -69,7 +77,7 @@ namespace Kinodnevnick.Pages
         private void lv_friendColl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Collection collection = lv_friendColl.SelectedItem as Collection;
-            if(collection != null)
+            if (collection != null)
             {
                 NavigationService.Navigate(new FilmInCollectionFriendsPage(collection));
             }
@@ -89,6 +97,53 @@ namespace Kinodnevnick.Pages
         private void btn_Tests_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new TestsPage());
+        }
+
+        public static BitmapImage ToBitmapImage(byte[] data)
+        {
+            if(data != null)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+
+                    BitmapImage img = new BitmapImage();
+                    img.BeginInit();
+                    img.CacheOption = BitmapCacheOption.OnLoad;
+                    img.StreamSource = ms;
+                    img.EndInit();
+
+                    if (img.CanFreeze)
+                    {
+                        img.Freeze();
+                    }
+                    return img;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private void btn_follow_Click(object sender, RoutedEventArgs e)
+        {
+            var follower = new Follow();
+            User frienduser = cb_searchFriend.SelectedItem as User;
+            follower.ID_Following_User = frienduser.ID;
+            follower.ID_Follower_User = AuthorizationPage.user.ID;
+            follower.Date_follow = DateTime.Now;
+            var isFolvr = bd_connection.connection.Follow.Where(a => a.ID_Following_User == follower.ID_Following_User && a.ID_Follower_User == follower.ID_Follower_User).Count();
+            if (isFolvr == 0)
+            {
+                bd_connection.connection.Follow.Add(follower);
+                bd_connection.connection.SaveChanges();
+                MessageBox.Show("Вы успешно подписались");
+
+            }
+            else
+            {
+                MessageBox.Show("Вы уже подписаны на этого пользователя", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
