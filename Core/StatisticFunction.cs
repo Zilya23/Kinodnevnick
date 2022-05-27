@@ -52,5 +52,11 @@ namespace Core
             }
             return userPlace;
         }
+
+        public static int CountAward(int idUser)
+        {
+            var awards = bd_connection.connection.Award_User.Where(x => x.ID_User == idUser && x.IsDone == true).Count();
+            return awards;
+        }
     }
 }

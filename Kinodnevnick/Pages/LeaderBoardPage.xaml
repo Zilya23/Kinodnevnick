@@ -112,10 +112,11 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
-            <ListView x:Name="prod" ItemsSource="{Binding leaders}"
+            <ListView x:Name="lv_leader" ItemsSource="{Binding leaders}"
                       Grid.Column="2" Grid.ColumnSpan="10"
                       Grid.Row="2" Grid.RowSpan="10"
-                      BorderBrush="{x:Null}">
+                      BorderBrush="{x:Null}"
+                      SelectionChanged="prod_SelectionChanged">
                 <ListView.Resources>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

@@ -54,8 +54,18 @@ namespace Kinodnevnick.Pages
 		{
 			NavigationService.Navigate(new AuthorizationPage());
 		}
-	}
-	public class OrdinalConverter : IValueConverter
+
+        private void prod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+			FollowersWindow followers = new FollowersWindow();
+			if(lv_leader.SelectedItem != null)
+			{
+				var leadUser = lv_leader.SelectedItem as User;
+				NavigationService.Navigate(new FollowUserPage(leadUser));
+			}
+		}
+    }
+    public class OrdinalConverter : IValueConverter
 	{
 		public object Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{

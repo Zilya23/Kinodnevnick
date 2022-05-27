@@ -33,6 +33,7 @@ namespace Kinodnevnick.Pages
 			tb_viewedTime.Text = tb_viewedTime.Text + StatisticFunction.CountTimeViewedFilm(user.ID) + " мин.";
 			tb_doneTest.Text = tb_doneTest.Text + StatisticFunction.CountDoneTest(user.ID);
 			tb_raitingPlace.Text = tb_raitingPlace.Text + StatisticFunction.RatingUser(user.ID);
+			tb_awardsCount.Text = tb_awardsCount.Text + StatisticFunction.CountAward(user.ID);
 			this.DataContext = this;
 		}
 

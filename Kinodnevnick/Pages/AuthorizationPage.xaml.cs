@@ -54,6 +54,7 @@ namespace Kinodnevnick.Pages
                         Properties.Settings.Default.Login = null;
                         Properties.Settings.Default.Save();
                     }
+
                     NavigationService.Navigate(new FilmMainPage(user));
                 }
                 else

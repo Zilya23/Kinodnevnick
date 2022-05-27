@@ -22,10 +22,14 @@ namespace Core
 			var allAwards = GetAwards();
 			foreach(var award in allAwards)
             {
-				award_User.ID_Award = award.ID;
-				award_User.ID_User = IDUser;
-				bd_connection.connection.Award_User.Add(award_User);
-				bd_connection.connection.SaveChanges();
+				List<Award_User> newAward = bd_connection.connection.Award_User.Where(a => a.ID_Award == award.ID && a.ID_User == IDUser).ToList();
+				if (newAward.Count == 0)
+                {
+					award_User.ID_Award = award.ID;
+					award_User.ID_User = IDUser;
+					bd_connection.connection.Award_User.Add(award_User);
+					bd_connection.connection.SaveChanges();
+				}
             }
         }
 

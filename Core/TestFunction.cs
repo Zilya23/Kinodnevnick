@@ -40,10 +40,14 @@ namespace Core
 			var allTest = GetTests();
 			foreach(var test in allTest)
             {
-				user_Test.ID_User = idUser;
-				user_Test.ID_Test = test.ID;
-				bd_connection.connection.User_Test.Add(user_Test);
-				bd_connection.connection.SaveChanges();
+				List<User_Test> newTests = bd_connection.connection.User_Test.Where(a => a.ID_Test == test.ID && a.ID_User == idUser).ToList();
+				if(newTests.Count == 0)
+                {
+					user_Test.ID_User = idUser;
+					user_Test.ID_Test = test.ID;
+					bd_connection.connection.User_Test.Add(user_Test);
+					bd_connection.connection.SaveChanges();
+				}
 			}
         }
 

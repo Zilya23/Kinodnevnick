@@ -17,6 +17,8 @@ namespace Core
             var userExists = users.Where(user => user.Login == login && user.Password == password).FirstOrDefault();
             if(userExists != null)
             {
+                TestFunction.CreateUser_Test(userExists.ID);
+                AwardFunction.CreateUser_Award(userExists.ID);
                 return userExists;
             }
             else
