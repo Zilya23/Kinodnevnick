@@ -42,6 +42,13 @@
         <StackPanel Grid.Row="0" Grid.RowSpan="4"
                     Grid.Column="0" Grid.ColumnSpan="13"
                     Background="#FF780000"/>
+        <Button x:Name="btn_follow"
+                Content="Подписаться"
+                Grid.Column="8" Grid.ColumnSpan="2"
+                Grid.Row="2" Grid.RowSpan="2"
+                VerticalAlignment="Center"
+                Height="25"
+                Click="btn_follow_Click"/>
         <Image x:Name="img_Profil" 
             Source="{Binding profil.Photo}" 
                Grid.Column="5" Grid.ColumnSpan="3"

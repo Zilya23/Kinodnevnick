@@ -155,7 +155,8 @@
                 Grid.RowSpan="4"
                 Background="#FF780000" 
                 BorderBrush="Black"
-                Height="Auto" RenderTransformOrigin="0.484,0.875">
+                Height="Auto" 
+                Click="btn_TestHistory_Click">
                 <Image Source="../img/History.png" Width="28"/>
             </Button>
             <Button x:Name="btn_TestStatistic"

@@ -68,6 +68,11 @@ namespace Kinodnevnick.Pages
 				NavigationService.Navigate(new FollowUserPage(leadUser));
 			}
 		}
+
+        private void btn_TestHistory_Click(object sender, RoutedEventArgs e)
+        {
+			NavigationService.Navigate(new TestsHistoryPage());
+        }
     }
     public class OrdinalConverter : IValueConverter
 	{

@@ -31,6 +31,18 @@ namespace Kinodnevnick.Pages
 			profil = user;
 			collections = CollectionFunction.GetFriendCollection(user.ID);
 			lv_userColl.ItemsSource = collections;
+			var follower = bd_connection.connection.Follow.Where(z => z.ID_Follower_User == AuthorizationPage.user.ID && z.ID_Following_User == user.ID).FirstOrDefault();
+
+			if (follower == null)
+            {
+				btn_follow.Visibility = Visibility.Visible;
+            }
+
+			if (user.ID == AuthorizationPage.user.ID)
+			{
+				btn_follow.Visibility = Visibility.Hidden;
+			}
+
 			this.DataContext = this;
 		}
 
@@ -56,5 +68,25 @@ namespace Kinodnevnick.Pages
 		{
 			tb_back.Foreground = new SolidColorBrush(Colors.Black);
 		}
-	}
+
+        private void btn_follow_Click(object sender, RoutedEventArgs e)
+        {
+			var follower = new Follow();
+			follower.ID_Following_User = profil.ID;
+			follower.ID_Follower_User = AuthorizationPage.user.ID;
+			follower.Date_follow = DateTime.Now;
+			var isFolvr = bd_connection.connection.Follow.Where(a => a.ID_Following_User == follower.ID_Following_User && a.ID_Follower_User == follower.ID_Follower_User).Count();
+			if (isFolvr == 0)
+			{
+				bd_connection.connection.Follow.Add(follower);
+				bd_connection.connection.SaveChanges();
+				MessageBox.Show("Вы успешно подписались");
+
+			}
+			else
+			{
+				MessageBox.Show("Вы уже подписаны на этого пользователя", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+    }
 }
