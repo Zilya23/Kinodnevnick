@@ -112,7 +112,11 @@
         <ScrollViewer Grid.Column="2" Grid.ColumnSpan="9" Grid.Row="4" Grid.RowSpan="8" >
             <StackPanel Grid.Column="2" Grid.ColumnSpan="9" 
                     Grid.Row="4" Grid.RowSpan="8">
-                <TextBlock x:Name="tb_viewed" Text="Всего фильмов просмотрено: " Height="30"/>
+                <TextBlock x:Name="tb_viewedCount" Text="Всего фильмов просмотрено: " FontSize="20" Height="30"/>
+                <TextBlock x:Name="tb_viewedTime" Text="Всего потрачено времени на просмотр: " FontSize="20" Height="30"/>
+                <TextBlock x:Name="tb_doneTest" Text="Всего решено тестов: " FontSize="20" Height="30"/>
+                <TextBlock x:Name="tb_awardsCount" Text="Всего получено наград: " FontSize="20" Height="30"/>
+                <TextBlock x:Name="tb_raitingPlace" Text="Место в рейтинге: " FontSize="20" Height="30"/>
             </StackPanel>
         </ScrollViewer>
         

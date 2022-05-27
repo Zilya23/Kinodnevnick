@@ -30,10 +30,12 @@ namespace Kinodnevnick.Pages
 		public static int numberQuestion;
 		public static Question question;
 		public static int countTrueAnswer = 0;
+		public static int IDTest;
 
 		public QuestionPage(int testId)
 		{
 			InitializeComponent();
+			IDTest = testId;
 			questionList = TestFunction.GetQuestions(testId);
 			viewedQuestion = questionList.Count - 1;
 			numberQuestion = 0;
@@ -89,7 +91,8 @@ namespace Kinodnevnick.Pages
 					countTrueAnswer++;
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
-				NavigationService.GoBack();
+				TestFunction.TestDone(AuthorizationPage.user.ID ,IDTest);
+				NavigationService.Navigate(new TestsPage());
 			}
 		}
 
@@ -137,7 +140,8 @@ namespace Kinodnevnick.Pages
 					countTrueAnswer++;
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
-				NavigationService.GoBack();
+				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				NavigationService.Navigate(new TestsPage());
 			}
 		}
 
@@ -166,7 +170,8 @@ namespace Kinodnevnick.Pages
 					countTrueAnswer++;
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
-				NavigationService.GoBack();
+				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				NavigationService.Navigate(new TestsPage());
 			}
 		}
 
@@ -195,7 +200,8 @@ namespace Kinodnevnick.Pages
 					countTrueAnswer++;
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
-				NavigationService.GoBack();
+				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				NavigationService.Navigate(new TestsPage());
 			}
 		}
 	}

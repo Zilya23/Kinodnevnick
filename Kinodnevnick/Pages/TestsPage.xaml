@@ -113,6 +113,13 @@
                    Grid.Column="0" Grid.ColumnSpan="12" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
                    FontSize="20" FontWeight="Bold"/>
+            <TextBlock x:Name="tb_IsEmpty"
+                       Text="Вы решили все тесты"
+                       Grid.Column="5" Grid.ColumnSpan="4"
+                       Grid.Row="6"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       Visibility="Hidden"/>
             <ListView x:Name="lv_tests" 
                   ItemsSource="{Binding testList}" 
                   Grid.Row="2" Grid.RowSpan="12"

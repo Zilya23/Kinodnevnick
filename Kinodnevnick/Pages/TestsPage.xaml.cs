@@ -28,7 +28,11 @@ namespace Kinodnevnick.Pages
 		public TestsPage()
 		{
 			InitializeComponent();
-			testList = TestFunction.GetTests();
+			testList = TestFunction.UnresolvedTest(AuthorizationPage.user.ID);
+			if(testList.Count == 0)
+            {
+				tb_IsEmpty.Visibility = Visibility.Visible;
+            }
 			profil = AuthorizationPage.user;
 			tb_Name.Text = profil.Nickname;
 			this.DataContext = this;

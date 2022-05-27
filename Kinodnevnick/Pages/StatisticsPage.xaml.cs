@@ -29,7 +29,10 @@ namespace Kinodnevnick.Pages
 		{
 			InitializeComponent();
 			profil = user;
-			//tb_name.Text = user.Nickname;
+			tb_viewedCount.Text = tb_viewedCount.Text + StatisticFunction.CountViewedFilm(user.ID);
+			tb_viewedTime.Text = tb_viewedTime.Text + StatisticFunction.CountTimeViewedFilm(user.ID) + " мин.";
+			tb_doneTest.Text = tb_doneTest.Text + StatisticFunction.CountDoneTest(user.ID);
+			tb_raitingPlace.Text = tb_raitingPlace.Text + StatisticFunction.RatingUser(user.ID);
 			this.DataContext = this;
 		}
 

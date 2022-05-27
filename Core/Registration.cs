@@ -28,6 +28,8 @@ namespace Core
             bd_connection.connection.User.Add(newUser);
             bd_connection.connection.SaveChanges();
             NewUserCollection();
+            User newRegUser = FriendFunction.GetUsers().Last();
+            TestFunction.CreateUser_Test(newRegUser.ID);
         }
 
         public static bool UniqueLogin(string login)
