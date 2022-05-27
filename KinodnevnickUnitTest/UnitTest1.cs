@@ -18,7 +18,9 @@ namespace KinodnevnickUnitTest
                 new Film_Collection { ID_Film = 2, ID_Collection = 15 }
             };
             List<Film_Collection> actualFilm_Collection = FriendFunction.TestMerge();
-            CollectionAssert.AreEqual(expectedFilm_Collection, actualFilm_Collection);
+            
+            CollectionAssert.AreEqual(expectedFilm_Collection.Select(c => c.ID_Collection).ToList(), actualFilm_Collection.Select(c => c.ID_Collection).ToList());
+            CollectionAssert.AreEqual(expectedFilm_Collection.Select(c => c.ID_Film).ToList(), actualFilm_Collection.Select(c => c.ID_Film).ToList());
         }
 
         [TestMethod]
@@ -38,7 +40,8 @@ namespace KinodnevnickUnitTest
                 Duration = 176
             };
             Film actualFilm = FilmFunction.GetFilmInfo(1);
-            Assert.AreEqual(expectedFilm, actualFilm);
+            Assert.AreEqual(expectedFilm.ID, actualFilm.ID);
+            Assert.AreEqual(expectedFilm.Name, actualFilm.Name);
         }
     }
 }
