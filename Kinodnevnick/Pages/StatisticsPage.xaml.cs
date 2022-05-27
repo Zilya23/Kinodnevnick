@@ -34,6 +34,14 @@ namespace Kinodnevnick.Pages
 			tb_doneTest.Text = tb_doneTest.Text + StatisticFunction.CountDoneTest(user.ID);
 			tb_raitingPlace.Text = tb_raitingPlace.Text + StatisticFunction.RatingUser(user.ID);
 			tb_awardsCount.Text = tb_awardsCount.Text + StatisticFunction.CountAward(user.ID);
+
+			Level lvl = StatisticFunction.GetUserLevel(user);
+			pb_lvl.Minimum = (double)lvl.Min_Count_XP;
+			pb_lvl.Maximum = (double)lvl.Max_Count_XP;
+			pb_lvl.Value = (double)user.Count_XP;
+
+			tb_lvl.Text = lvl.ID.ToString() + " ур.";
+
 			this.DataContext = this;
 		}
 

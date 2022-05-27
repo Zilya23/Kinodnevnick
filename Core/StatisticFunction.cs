@@ -58,5 +58,18 @@ namespace Core
             var awards = bd_connection.connection.Award_User.Where(x => x.ID_User == idUser && x.IsDone == true).Count();
             return awards;
         }
+
+        public static Level GetUserLevel(User user)
+        {
+            List<Level> levels = bd_connection.connection.Level.ToList();
+            foreach(var lvl in levels)
+            {
+                if (user.Count_XP < lvl.Max_Count_XP)
+                {
+                    return lvl;
+                }
+            }
+            return levels.Last();
+        }
     }
 }

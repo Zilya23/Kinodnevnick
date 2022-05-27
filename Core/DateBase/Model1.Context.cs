@@ -13,10 +13,10 @@ namespace Core.DateBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KinodnevnickEntities : DbContext
+    public partial class Kinodnev1Entities : DbContext
     {
-        public KinodnevnickEntities()
-            : base("name=KinodnevnickEntities")
+        public Kinodnev1Entities()
+            : base("name=Kinodnev1Entities")
         {
         }
     
@@ -34,6 +34,7 @@ namespace Core.DateBase
         public virtual DbSet<Follow> Follow { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Test> Test { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<User_Test> User_Test { get; set; }

@@ -33,6 +33,11 @@ namespace Kinodnevnick.Pages
             UpdateList();
             profil = AuthorizationPage.user;
             tb_Name.Text = profil.Nickname;
+            Level lvl = StatisticFunction.GetUserLevel(profil);
+            pb_lvl.Minimum = (double)lvl.Min_Count_XP;
+            pb_lvl.Maximum = (double)lvl.Max_Count_XP;
+            pb_lvl.Value = (double)profil.Count_XP;
+            this.DataContext = this;
             this.DataContext = this;
         }
 
