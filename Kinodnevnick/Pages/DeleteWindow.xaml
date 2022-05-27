@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="DeleteWindow" Height="182.239" Width="404">
+        Title="DeleteWindow" 
+        Height="182.239" Width="404"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

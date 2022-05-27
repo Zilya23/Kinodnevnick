@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick.Pages"
         mc:Ignorable="d"
-        Title="EditProfilWindow" Height="450" Width="800">
+        Title="EditProfilWindow" 
+        Height="450" Width="800"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

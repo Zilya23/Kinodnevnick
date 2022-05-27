@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="SinteszSelectionWindow" Height="222" Width="589">
+        Title="SinteszSelectionWindow" Height="222" Width="589"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

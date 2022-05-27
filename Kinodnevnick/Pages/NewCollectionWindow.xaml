@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="Добавить новую коллекцию" Height="237.813" Width="604.214">
+        Title="Добавить новую коллекцию" Height="237.813" Width="604.214"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

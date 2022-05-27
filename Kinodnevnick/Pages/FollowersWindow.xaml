@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick.Pages"
         mc:Ignorable="d"
-        Title="FollowersWindow" Height="450" Width="400">
+        Title="FollowersWindow" Height="450" Width="400"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

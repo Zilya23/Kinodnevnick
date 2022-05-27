@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
         Title="Выберите коллекцию" 
-        Height="237.813" Width="604.214">
+        Height="237.813" Width="604.214"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

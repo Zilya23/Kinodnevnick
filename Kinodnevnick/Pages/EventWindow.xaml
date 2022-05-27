@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kinodnevnick"
         mc:Ignorable="d"
-        Title="Событие" Height="348.148" Width="800">
+        Title="Событие" Height="348.148" Width="800"
+        ResizeMode="NoResize">
     <Grid>
         <Frame x:Name="frame_event" NavigationUIVisibility="Hidden"/>
     </Grid>
