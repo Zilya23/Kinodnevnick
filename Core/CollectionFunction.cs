@@ -88,6 +88,7 @@ namespace Core
             {
                 bd_connection.connection.Film_Collection.Add(FilmColl);
                 bd_connection.connection.SaveChanges();
+                AwardFunction.FilmAward(idUser);
             }
         }
 

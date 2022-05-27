@@ -53,6 +53,7 @@ namespace Core
 			test.IsComplite = true;
 			test.Date = DateTime.Now;
 			bd_connection.connection.SaveChanges();
+			AwardFunction.TestAward(idUser);
         }
 
 		public static ObservableCollection<Test> TestHistory(int idUser)

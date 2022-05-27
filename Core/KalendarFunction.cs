@@ -27,6 +27,7 @@ namespace Core
         {
             bd_connection.connection.Film_Calendar.Add(events);
             bd_connection.connection.SaveChanges();
+            AwardFunction.EventAward((int)events.ID_User);
         }
 
         public static void DeleteEvent(Film_Calendar events)

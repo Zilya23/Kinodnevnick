@@ -39,7 +39,12 @@
                    Grid.Row="2" Grid.RowSpan="6"
                    TextWrapping="Wrap"/> 
         </ScrollViewer>
-        
-
+        <TextBlock x:Name="tb_received"
+                   Text="Награда получена"
+                   Foreground="Green"
+                   Grid.Column="2" 
+                   Grid.Row="5"
+                   FontSize="20"
+                   Visibility="Hidden"/>
     </Grid>
 </Window>

@@ -29,8 +29,12 @@ namespace Kinodnevnick.Pages
 			award = awrd;
 			tb_AwardName.Text = award.Name;
 			tb_AwardDisk.Text = award.Description;
+			Award_User award_User = bd_connection.connection.Award_User.Where(a => a.ID_Award == awrd.ID && a.ID_User == AuthorizationPage.user.ID).FirstOrDefault();
+			if(award_User.IsDone == true)
+            {
+				tb_received.Visibility = Visibility.Visible;
+            }
 			this.DataContext = this;
-
 		}
 	}
 }
