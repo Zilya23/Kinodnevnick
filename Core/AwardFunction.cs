@@ -46,6 +46,7 @@ namespace Core
 		public static void TestAward(int idUser)
         {
 			FirstTestAward(idUser);
+			TenTestAward(idUser);
         }
 
 

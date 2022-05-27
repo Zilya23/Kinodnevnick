@@ -4,33 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2aa1377e2a524c7d993914bc2f8fdaba" Name="Diagram1">
-        <EntityTypeShape EntityType="Kinodnev1Model.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Film" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.User" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Kinodnev1Model.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Award_User_Award" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Award_User_User" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Collection_User" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Film_Collection_Collection" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Film_Calendar_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Film_Collection_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Film_Calendar_User" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Follow_User" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Follow_User1" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Test_Level" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_Question_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_User_Test_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="Kinodnev1Model.FK_User_Test_User" ManuallyRouted="false" />
+      <Diagram DiagramId="c56c8ad844044f808981795a9ec55989" Name="Diagram1">
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Film" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.User" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinodnevnickkkModel.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Award_User_Award" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Award_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Film_Collection_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Film_Calendar_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Follow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Follow_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Test_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_Question_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_User_Test_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="KinodnevnickkkModel.FK_User_Test_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
