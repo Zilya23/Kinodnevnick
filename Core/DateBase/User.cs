@@ -29,7 +29,6 @@ namespace Core.DateBase
         public string Nickname { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public Nullable<int> User_Level { get; set; }
         public byte[] Photo { get; set; }
         public Nullable<int> Count_XP { get; set; }
     

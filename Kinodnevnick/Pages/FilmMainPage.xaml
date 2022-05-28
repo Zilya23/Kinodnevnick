@@ -145,17 +145,15 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock>
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0}|{1}">
-                                        <Binding Path="filmList.Name"/>
-                                        <Binding Path="Name"/>
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
                             <Image Source="{Binding Poster}" Width="300" Height="300"/>
-                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" FontSize="20" Foreground="Black"/>
+                            <TextBlock Text="{Binding Name}" 
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="20" 
+                                       Foreground="Black"
+                                       
+                                       TextWrapping="Wrap"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

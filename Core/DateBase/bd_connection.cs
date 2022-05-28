@@ -8,6 +8,6 @@ namespace Core.DateBase
 {
     public static class bd_connection
     {
-        public static KinodnevnickkkEntities connection = new KinodnevnickkkEntities();
+        public static BDKinodnevnickEntities1 connection = new BDKinodnevnickEntities1();
     }
 }

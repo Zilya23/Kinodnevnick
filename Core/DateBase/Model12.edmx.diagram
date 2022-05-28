@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cfd133cc64ac436daa72e5cf8e9126af" Name="Diagram1">
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Film" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDKinodnevnickModel.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Award_User_Award" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Award_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Film_Collection_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Film_Calendar_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Follow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Follow_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Test_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_Question_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_User_Test_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="BDKinodnevnickModel.FK_User_Test_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

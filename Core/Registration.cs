@@ -21,7 +21,6 @@ namespace Core
             newUser.Nickname = nick;
             newUser.Login = login;
             newUser.Password = password;
-            newUser.User_Level = startLvl;
             newUser.Count_XP = startXP;
             newUser.Photo = photo;
 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище KinodnevnickkkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище BDKinodnevnickModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -116,7 +116,6 @@
           <Property Name="Nickname" Type="nvarchar(max)" />
           <Property Name="Login" Type="nvarchar(max)" />
           <Property Name="Password" Type="nvarchar(max)" />
-          <Property Name="User_Level" Type="int" />
           <Property Name="Photo" Type="varbinary(max)" />
           <Property Name="Count_XP" Type="int" />
         </EntityType>
@@ -286,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище KinodnevnickkkModelContainer">
+        <EntityContainer Name="Хранилище BDKinodnevnickModelContainer">
           <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Award_User" EntityType="Self.Award_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
@@ -356,7 +355,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="KinodnevnickkkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BDKinodnevnickModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -486,7 +485,6 @@
           <Property Name="Nickname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="User_Level" Type="Int32" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Count_XP" Type="Int32" />
           <NavigationProperty Name="Award_User" Relationship="Self.FK_Award_User_User" FromRole="User" ToRole="Award_User" />
@@ -664,7 +662,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KinodnevnickkkEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BDKinodnevnickEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Award" EntityType="Self.Award" />
           <EntitySet Name="Award_User" EntityType="Self.Award_User" />
           <EntitySet Name="Collection" EntityType="Self.Collection" />
@@ -735,9 +733,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище KinodnevnickkkModelContainer" CdmEntityContainer="KinodnevnickkkEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BDKinodnevnickModelContainer" CdmEntityContainer="BDKinodnevnickEntities1">
           <EntitySetMapping Name="Award">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Award">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Award">
               <MappingFragment StoreEntitySet="Award">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -748,7 +746,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Award_User">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Award_User">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Award_User">
               <MappingFragment StoreEntitySet="Award_User">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Award" ColumnName="ID_Award" />
@@ -758,7 +756,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Collection">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Collection">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Collection">
               <MappingFragment StoreEntitySet="Collection">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -769,7 +767,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Film">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Film">
               <MappingFragment StoreEntitySet="Film">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -781,7 +779,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Calendar">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Film_Calendar">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -794,7 +792,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Collection">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Film_Collection">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Film_Collection">
               <MappingFragment StoreEntitySet="Film_Collection">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
@@ -804,7 +802,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Follow">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Follow">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Follow">
               <MappingFragment StoreEntitySet="Follow">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Follower_User" ColumnName="ID_Follower_User" />
@@ -814,7 +812,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Level">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Level">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Level">
               <MappingFragment StoreEntitySet="Level">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Min_Count_XP" ColumnName="Min_Count_XP" />
@@ -824,7 +822,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Question">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Question">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Question">
               <MappingFragment StoreEntitySet="Question">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID__Test" ColumnName="ID__Test" />
@@ -839,7 +837,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Test">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.Test">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.Test">
               <MappingFragment StoreEntitySet="Test">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -850,20 +848,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.User">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nickname" ColumnName="Nickname" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="User_Level" ColumnName="User_Level" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Test">
-            <EntityTypeMapping TypeName="KinodnevnickkkModel.User_Test">
+            <EntityTypeMapping TypeName="BDKinodnevnickModel.User_Test">
               <MappingFragment StoreEntitySet="User_Test">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />
