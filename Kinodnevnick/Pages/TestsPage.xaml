@@ -123,7 +123,7 @@
                   SelectionChanged="lv_tests_SelectionChanged">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="3"/>
+                        <UniformGrid Columns="2"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
@@ -137,7 +137,7 @@
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
-                            <Image Source="{Binding Photo}" Width="150" Height="150" HorizontalAlignment="Center"/>
+                            <Image Source="{Binding Photo}" Width="170" Height="170" HorizontalAlignment="Center"/>
                             <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" FontSize="20" Foreground="Black"/>
                         </StackPanel>
                     </DataTemplate>
