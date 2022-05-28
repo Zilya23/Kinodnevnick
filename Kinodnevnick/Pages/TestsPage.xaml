@@ -34,10 +34,6 @@
         <materialDesign:DrawerHost.LeftDrawerContent>
             <StackPanel Margin="16"
                         Width="200">
-                <TextBlock Margin="4"
-                           FontSize="20"
-                           HorizontalAlignment="Center"
-                           Text="Меню"/>
                 <Image x:Name="img_Profil" 
                        Source="{Binding profil.Photo}" 
                         Width="150"
