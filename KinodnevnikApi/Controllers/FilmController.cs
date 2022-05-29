@@ -21,9 +21,9 @@ namespace KinodnevnikApi.Controllers
         //GET ALL Film
         
         [HttpGet]
-        public ActionResult<List<Core.DateBase.Film>> GetAllFilm()
+        public ActionResult<List<Film>> GetAllFilm()
         {
-            var films = new List<Core.DateBase.Film>(FilmServices.GetAllFilm());
+            var films = new List<Film>(FilmServices.GetAllFilm());
             //ICollection<Core.DateBase.Film_Calendar> film_Calendars = new Collection<Core.DateBase.Film_Calendar>();
             //ICollection<Core.DateBase.Film_Collection> film_Collections = new Collection<Core.DateBase.Film_Collection>();
             List<Film> films2 = new List<Film>();
@@ -38,7 +38,7 @@ namespace KinodnevnikApi.Controllers
 
         // GET by ID Film
         [HttpGet("{id}")]
-        public ActionResult<Core.DateBase.Film> GetFilm(int id)
+        public ActionResult<Film> GetFilm(int id)
         {
             var films = FilmServices.GetFilm(id);
             if (films == null)

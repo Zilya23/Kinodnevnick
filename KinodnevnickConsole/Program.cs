@@ -12,7 +12,7 @@ namespace KinodnevnickConsole
     class Program
     {
         static void Main(string[] args)
-        {
+        {          
             Console.WriteLine("Добро пожаловать в приложение для ведения кинодневника \"Кинокрад\"!");
             while(true)
             {

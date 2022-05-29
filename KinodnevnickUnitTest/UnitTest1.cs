@@ -4,6 +4,7 @@ using Core;
 using Core.DateBase;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace KinodnevnickUnitTest
 {
@@ -15,11 +16,10 @@ namespace KinodnevnickUnitTest
         {
             List<Film_Collection> expectedFilm_Collection = new List<Film_Collection>()
             {
-                new Film_Collection { ID_Film = 2, ID_Collection = 15 }
+                new Film_Collection { ID_Film = 2 }
             };
             List<Film_Collection> actualFilm_Collection = FriendFunction.TestMerge();
             
-            CollectionAssert.AreEqual(expectedFilm_Collection.Select(c => c.ID_Collection).ToList(), actualFilm_Collection.Select(c => c.ID_Collection).ToList());
             CollectionAssert.AreEqual(expectedFilm_Collection.Select(c => c.ID_Film).ToList(), actualFilm_Collection.Select(c => c.ID_Film).ToList());
         }
 
@@ -77,6 +77,19 @@ namespace KinodnevnickUnitTest
             int actualTC = StatisticFunction.CountDoneTest(7);
             int exeptedTC = 5;
             Assert.AreEqual(actualTC, exeptedTC);
-         }
+        }
+
+        [TestMethod]
+        public void TestFilmInCollection()
+        {
+            ObservableCollection<Film_Collection> expectedFilm_Coll = new ObservableCollection<Film_Collection>()
+            {
+                new Film_Collection { ID_Collection = 5, ID_Film = 1, Date = null }   
+            };
+            ObservableCollection<Film_Collection> actualFilm_Coll = CollectionFunction.GetFilmInCollection(5);
+            CollectionAssert.AreEqual(expectedFilm_Coll.Select(x => x.ID_Collection).ToList(), actualFilm_Coll.Select(x => x.ID_Collection).ToList());
+            CollectionAssert.AreEqual(expectedFilm_Coll.Select(x => x.ID_Film).ToList(), actualFilm_Coll.Select(x => x.ID_Film).ToList());
+            CollectionAssert.AreEqual(expectedFilm_Coll.Select(x => x.Date).ToList(), actualFilm_Coll.Select(x => x.Date).ToList());
+        }
     }
 }

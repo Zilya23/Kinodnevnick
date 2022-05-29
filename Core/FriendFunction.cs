@@ -66,11 +66,7 @@ namespace Core
                         Film_Collection newFilm_Collection = new Film_Collection();
                         newFilm_Collection.ID_Film = users.ID_Film;
                         newFilm_Collection.ID_Collection = IDUserColl;
-                        var isColl = bd_connection.connection.Film_Collection.Where(a => a.ID_Collection == IDUserColl && a.ID_Film == users.ID_Film).Count();
-                        if (isColl == 0)
-                        {
                             allFIlm.Add(newFilm_Collection);
-                        }
                     }
                 }
             }

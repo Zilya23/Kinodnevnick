@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FullModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище preendModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -97,16 +97,6 @@
           <Property Name="Answer_Three" Type="nvarchar(max)" />
           <Property Name="True_Answer" Type="nvarchar(max)" />
           <Property Name="Answer_Four" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Test">
           <Key>
@@ -295,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FullModelStoreContainer">
+        <EntityContainer Name="Хранилище preendModelContainer">
           <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Award_User" EntityType="Self.Award_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
@@ -305,7 +295,6 @@
           <EntitySet Name="Follow" EntityType="Self.Follow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Test" EntityType="Self.User_Test" Schema="dbo" store:Type="Tables" />
@@ -362,77 +351,11 @@
             <End Role="User_Test" EntitySet="User_Test" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="FullModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="FullEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Award" EntityType="FullModel.Award" />
-          <EntitySet Name="Award_User" EntityType="FullModel.Award_User" />
-          <EntitySet Name="Collection" EntityType="FullModel.Collection" />
-          <EntitySet Name="Film" EntityType="FullModel.Film" />
-          <EntitySet Name="Film_Calendar" EntityType="FullModel.Film_Calendar" />
-          <EntitySet Name="Film_Collection" EntityType="FullModel.Film_Collection" />
-          <EntitySet Name="Follow" EntityType="FullModel.Follow" />
-          <EntitySet Name="Level" EntityType="FullModel.Level" />
-          <EntitySet Name="Question" EntityType="FullModel.Question" />
-          <EntitySet Name="sysdiagrams" EntityType="FullModel.sysdiagrams" />
-          <EntitySet Name="Test" EntityType="FullModel.Test" />
-          <EntitySet Name="User" EntityType="FullModel.User" />
-          <EntitySet Name="User_Test" EntityType="FullModel.User_Test" />
-          <AssociationSet Name="FK_Award_User_Award" Association="FullModel.FK_Award_User_Award">
-            <End Role="Award" EntitySet="Award" />
-            <End Role="Award_User" EntitySet="Award_User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Award_User_User" Association="FullModel.FK_Award_User_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Award_User" EntitySet="Award_User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Collection_User" Association="FullModel.FK_Collection_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Collection" EntitySet="Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Collection_Collection" Association="FullModel.FK_Film_Collection_Collection">
-            <End Role="Collection" EntitySet="Collection" />
-            <End Role="Film_Collection" EntitySet="Film_Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Calendar_Film" Association="FullModel.FK_Film_Calendar_Film">
-            <End Role="Film" EntitySet="Film" />
-            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Collection_Film" Association="FullModel.FK_Film_Collection_Film">
-            <End Role="Film" EntitySet="Film" />
-            <End Role="Film_Collection" EntitySet="Film_Collection" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Film_Calendar_User" Association="FullModel.FK_Film_Calendar_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Follow_User" Association="FullModel.FK_Follow_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Follow" EntitySet="Follow" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Follow_User1" Association="FullModel.FK_Follow_User1">
-            <End Role="User" EntitySet="User" />
-            <End Role="Follow" EntitySet="Follow" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Test_Level" Association="FullModel.FK_Test_Level">
-            <End Role="Level" EntitySet="Level" />
-            <End Role="Test" EntitySet="Test" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Question_Test" Association="FullModel.FK_Question_Test">
-            <End Role="Test" EntitySet="Test" />
-            <End Role="Question" EntitySet="Question" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Test_Test" Association="FullModel.FK_User_Test_Test">
-            <End Role="Test" EntitySet="Test" />
-            <End Role="User_Test" EntitySet="User_Test" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Test_User" Association="FullModel.FK_User_Test_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="User_Test" EntitySet="User_Test" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="preendModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Award">
           <Key>
             <PropertyRef Name="ID" />
@@ -442,7 +365,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="CountXP" Type="Int32" />
-          <NavigationProperty Name="Award_User" Relationship="FullModel.FK_Award_User_Award" FromRole="Award" ToRole="Award_User" />
+          <NavigationProperty Name="Award_User" Relationship="Self.FK_Award_User_Award" FromRole="Award" ToRole="Award_User" />
         </EntityType>
         <EntityType Name="Award_User">
           <Key>
@@ -452,8 +375,8 @@
           <Property Name="ID_Award" Type="Int32" />
           <Property Name="ID_User" Type="Int32" />
           <Property Name="IsDone" Type="Boolean" />
-          <NavigationProperty Name="Award" Relationship="FullModel.FK_Award_User_Award" FromRole="Award_User" ToRole="Award" />
-          <NavigationProperty Name="User" Relationship="FullModel.FK_Award_User_User" FromRole="Award_User" ToRole="User" />
+          <NavigationProperty Name="Award" Relationship="Self.FK_Award_User_Award" FromRole="Award_User" ToRole="Award" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Award_User_User" FromRole="Award_User" ToRole="User" />
         </EntityType>
         <EntityType Name="Collection">
           <Key>
@@ -464,8 +387,8 @@
           <Property Name="ID_User" Type="Int32" />
           <Property Name="IsDeleted" Type="Boolean" />
           <Property Name="Inkognito" Type="Boolean" />
-          <NavigationProperty Name="User" Relationship="FullModel.FK_Collection_User" FromRole="Collection" ToRole="User" />
-          <NavigationProperty Name="Film_Collection" Relationship="FullModel.FK_Film_Collection_Collection" FromRole="Collection" ToRole="Film_Collection" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Collection_User" FromRole="Collection" ToRole="User" />
+          <NavigationProperty Name="Film_Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Collection" ToRole="Film_Collection" />
         </EntityType>
         <EntityType Name="Film">
           <Key>
@@ -477,8 +400,8 @@
           <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Date_Issue" Type="DateTime" Precision="0" />
           <Property Name="Duration" Type="Int32" />
-          <NavigationProperty Name="Film_Calendar" Relationship="FullModel.FK_Film_Calendar_Film" FromRole="Film" ToRole="Film_Calendar" />
-          <NavigationProperty Name="Film_Collection" Relationship="FullModel.FK_Film_Collection_Film" FromRole="Film" ToRole="Film_Collection" />
+          <NavigationProperty Name="Film_Calendar" Relationship="Self.FK_Film_Calendar_Film" FromRole="Film" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Film_Collection" Relationship="Self.FK_Film_Collection_Film" FromRole="Film" ToRole="Film_Collection" />
         </EntityType>
         <EntityType Name="Film_Calendar">
           <Key>
@@ -491,8 +414,8 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Start_Time" Type="Time" Precision="7" />
           <Property Name="End_Time" Type="Time" Precision="7" />
-          <NavigationProperty Name="Film" Relationship="FullModel.FK_Film_Calendar_Film" FromRole="Film_Calendar" ToRole="Film" />
-          <NavigationProperty Name="User" Relationship="FullModel.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Calendar_Film" FromRole="Film_Calendar" ToRole="Film" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Film_Calendar_User" FromRole="Film_Calendar" ToRole="User" />
         </EntityType>
         <EntityType Name="Film_Collection">
           <Key>
@@ -502,8 +425,8 @@
           <Property Name="ID_Film" Type="Int32" />
           <Property Name="ID_Collection" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Collection" Relationship="FullModel.FK_Film_Collection_Collection" FromRole="Film_Collection" ToRole="Collection" />
-          <NavigationProperty Name="Film" Relationship="FullModel.FK_Film_Collection_Film" FromRole="Film_Collection" ToRole="Film" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Film_Collection_Collection" FromRole="Film_Collection" ToRole="Collection" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Collection_Film" FromRole="Film_Collection" ToRole="Film" />
         </EntityType>
         <EntityType Name="Follow">
           <Key>
@@ -513,8 +436,8 @@
           <Property Name="ID_Follower_User" Type="Int32" />
           <Property Name="ID_Following_User" Type="Int32" />
           <Property Name="Date_follow" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="User" Relationship="FullModel.FK_Follow_User" FromRole="Follow" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="FullModel.FK_Follow_User1" FromRole="Follow" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Follow_User" FromRole="Follow" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Follow_User1" FromRole="Follow" ToRole="User" />
         </EntityType>
         <EntityType Name="Level">
           <Key>
@@ -524,7 +447,7 @@
           <Property Name="Min_Count_XP" Type="Int32" />
           <Property Name="Lvl_Award" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Max_Count_XP" Type="Int32" />
-          <NavigationProperty Name="Test" Relationship="FullModel.FK_Test_Level" FromRole="Level" ToRole="Test" />
+          <NavigationProperty Name="Test" Relationship="Self.FK_Test_Level" FromRole="Level" ToRole="Test" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -539,17 +462,7 @@
           <Property Name="Answer_Three" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="True_Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Answer_Four" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Test" Relationship="FullModel.FK_Question_Test" FromRole="Question" ToRole="Test" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Test" Relationship="Self.FK_Question_Test" FromRole="Question" ToRole="Test" />
         </EntityType>
         <EntityType Name="Test">
           <Key>
@@ -560,9 +473,9 @@
           <Property Name="Descriptin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Id_Lvl" Type="Int32" />
-          <NavigationProperty Name="Level" Relationship="FullModel.FK_Test_Level" FromRole="Test" ToRole="Level" />
-          <NavigationProperty Name="Question" Relationship="FullModel.FK_Question_Test" FromRole="Test" ToRole="Question" />
-          <NavigationProperty Name="User_Test" Relationship="FullModel.FK_User_Test_Test" FromRole="Test" ToRole="User_Test" />
+          <NavigationProperty Name="Level" Relationship="Self.FK_Test_Level" FromRole="Test" ToRole="Level" />
+          <NavigationProperty Name="Question" Relationship="Self.FK_Question_Test" FromRole="Test" ToRole="Question" />
+          <NavigationProperty Name="User_Test" Relationship="Self.FK_User_Test_Test" FromRole="Test" ToRole="User_Test" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -574,12 +487,12 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Count_XP" Type="Int32" />
-          <NavigationProperty Name="Award_User" Relationship="FullModel.FK_Award_User_User" FromRole="User" ToRole="Award_User" />
-          <NavigationProperty Name="Collection" Relationship="FullModel.FK_Collection_User" FromRole="User" ToRole="Collection" />
-          <NavigationProperty Name="Film_Calendar" Relationship="FullModel.FK_Film_Calendar_User" FromRole="User" ToRole="Film_Calendar" />
-          <NavigationProperty Name="Follow" Relationship="FullModel.FK_Follow_User" FromRole="User" ToRole="Follow" />
-          <NavigationProperty Name="Follow1" Relationship="FullModel.FK_Follow_User1" FromRole="User" ToRole="Follow" />
-          <NavigationProperty Name="User_Test" Relationship="FullModel.FK_User_Test_User" FromRole="User" ToRole="User_Test" />
+          <NavigationProperty Name="Award_User" Relationship="Self.FK_Award_User_User" FromRole="User" ToRole="Award_User" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Collection_User" FromRole="User" ToRole="Collection" />
+          <NavigationProperty Name="Film_Calendar" Relationship="Self.FK_Film_Calendar_User" FromRole="User" ToRole="Film_Calendar" />
+          <NavigationProperty Name="Follow" Relationship="Self.FK_Follow_User" FromRole="User" ToRole="Follow" />
+          <NavigationProperty Name="Follow1" Relationship="Self.FK_Follow_User1" FromRole="User" ToRole="Follow" />
+          <NavigationProperty Name="User_Test" Relationship="Self.FK_User_Test_User" FromRole="User" ToRole="User_Test" />
         </EntityType>
         <EntityType Name="User_Test">
           <Key>
@@ -590,12 +503,12 @@
           <Property Name="ID_Test" Type="Int32" />
           <Property Name="IsComplite" Type="Boolean" />
           <Property Name="Date" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Test" Relationship="FullModel.FK_User_Test_Test" FromRole="User_Test" ToRole="Test" />
-          <NavigationProperty Name="User" Relationship="FullModel.FK_User_Test_User" FromRole="User_Test" ToRole="User" />
+          <NavigationProperty Name="Test" Relationship="Self.FK_User_Test_Test" FromRole="User_Test" ToRole="Test" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Test_User" FromRole="User_Test" ToRole="User" />
         </EntityType>
         <Association Name="FK_Award_User_Award">
-          <End Type="FullModel.Award" Role="Award" Multiplicity="0..1" />
-          <End Type="FullModel.Award_User" Role="Award_User" Multiplicity="*" />
+          <End Role="Award" Type="Self.Award" Multiplicity="0..1" />
+          <End Role="Award_User" Type="Self.Award_User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Award">
               <PropertyRef Name="ID" />
@@ -606,8 +519,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Award_User_User">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.Award_User" Role="Award_User" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Award_User" Type="Self.Award_User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -618,8 +531,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Collection_User">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.Collection" Role="Collection" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -630,8 +543,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Collection_Collection">
-          <End Type="FullModel.Collection" Role="Collection" Multiplicity="0..1" />
-          <End Type="FullModel.Film_Collection" Role="Film_Collection" Multiplicity="*" />
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <End Role="Film_Collection" Type="Self.Film_Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Collection">
               <PropertyRef Name="ID" />
@@ -642,8 +555,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Calendar_Film">
-          <End Type="FullModel.Film" Role="Film" Multiplicity="0..1" />
-          <End Type="FullModel.Film_Calendar" Role="Film_Calendar" Multiplicity="*" />
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Film_Calendar" Type="Self.Film_Calendar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Film">
               <PropertyRef Name="ID" />
@@ -654,8 +567,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Collection_Film">
-          <End Type="FullModel.Film" Role="Film" Multiplicity="0..1" />
-          <End Type="FullModel.Film_Collection" Role="Film_Collection" Multiplicity="*" />
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Film_Collection" Type="Self.Film_Collection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Film">
               <PropertyRef Name="ID" />
@@ -666,8 +579,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Film_Calendar_User">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.Film_Calendar" Role="Film_Calendar" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Film_Calendar" Type="Self.Film_Calendar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -678,8 +591,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Follow_User">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.Follow" Role="Follow" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -690,8 +603,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Follow_User1">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.Follow" Role="Follow" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -702,8 +615,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Test_Level">
-          <End Type="FullModel.Level" Role="Level" Multiplicity="0..1" />
-          <End Type="FullModel.Test" Role="Test" Multiplicity="*" />
+          <End Role="Level" Type="Self.Level" Multiplicity="0..1" />
+          <End Role="Test" Type="Self.Test" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Level">
               <PropertyRef Name="ID" />
@@ -714,8 +627,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Question_Test">
-          <End Type="FullModel.Test" Role="Test" Multiplicity="0..1" />
-          <End Type="FullModel.Question" Role="Question" Multiplicity="*" />
+          <End Role="Test" Type="Self.Test" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Test">
               <PropertyRef Name="ID" />
@@ -726,8 +639,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Test_Test">
-          <End Type="FullModel.Test" Role="Test" Multiplicity="0..1" />
-          <End Type="FullModel.User_Test" Role="User_Test" Multiplicity="*" />
+          <End Role="Test" Type="Self.Test" Multiplicity="0..1" />
+          <End Role="User_Test" Type="Self.User_Test" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Test">
               <PropertyRef Name="ID" />
@@ -738,8 +651,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Test_User">
-          <End Type="FullModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="FullModel.User_Test" Role="User_Test" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User_Test" Type="Self.User_Test" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="ID" />
@@ -749,156 +662,211 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="preendEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Award" EntityType="Self.Award" />
+          <EntitySet Name="Award_User" EntityType="Self.Award_User" />
+          <EntitySet Name="Collection" EntityType="Self.Collection" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="Film_Calendar" EntityType="Self.Film_Calendar" />
+          <EntitySet Name="Film_Collection" EntityType="Self.Film_Collection" />
+          <EntitySet Name="Follow" EntityType="Self.Follow" />
+          <EntitySet Name="Level" EntityType="Self.Level" />
+          <EntitySet Name="Question" EntityType="Self.Question" />
+          <EntitySet Name="Test" EntityType="Self.Test" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="User_Test" EntityType="Self.User_Test" />
+          <AssociationSet Name="FK_Award_User_Award" Association="Self.FK_Award_User_Award">
+            <End Role="Award" EntitySet="Award" />
+            <End Role="Award_User" EntitySet="Award_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Award_User_User" Association="Self.FK_Award_User_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Award_User" EntitySet="Award_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Collection_User" Association="Self.FK_Collection_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Collection_Collection" Association="Self.FK_Film_Collection_Collection">
+            <End Role="Collection" EntitySet="Collection" />
+            <End Role="Film_Collection" EntitySet="Film_Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Calendar_Film" Association="Self.FK_Film_Calendar_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Collection_Film" Association="Self.FK_Film_Collection_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Collection" EntitySet="Film_Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Calendar_User" Association="Self.FK_Film_Calendar_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Film_Calendar" EntitySet="Film_Calendar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_User" Association="Self.FK_Follow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_User1" Association="Self.FK_Follow_User1">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Level" Association="Self.FK_Test_Level">
+            <End Role="Level" EntitySet="Level" />
+            <End Role="Test" EntitySet="Test" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Question_Test" Association="Self.FK_Question_Test">
+            <End Role="Test" EntitySet="Test" />
+            <End Role="Question" EntitySet="Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Test_Test" Association="Self.FK_User_Test_Test">
+            <End Role="Test" EntitySet="Test" />
+            <End Role="User_Test" EntitySet="User_Test" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Test_User" Association="Self.FK_User_Test_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="User_Test" EntitySet="User_Test" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FullModelStoreContainer" CdmEntityContainer="FullEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище preendModelContainer" CdmEntityContainer="preendEntities">
           <EntitySetMapping Name="Award">
-            <EntityTypeMapping TypeName="FullModel.Award">
+            <EntityTypeMapping TypeName="preendModel.Award">
               <MappingFragment StoreEntitySet="Award">
-                <ScalarProperty Name="CountXP" ColumnName="CountXP" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="CountXP" ColumnName="CountXP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Award_User">
-            <EntityTypeMapping TypeName="FullModel.Award_User">
+            <EntityTypeMapping TypeName="preendModel.Award_User">
               <MappingFragment StoreEntitySet="Award_User">
-                <ScalarProperty Name="IsDone" ColumnName="IsDone" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-                <ScalarProperty Name="ID_Award" ColumnName="ID_Award" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Award" ColumnName="ID_Award" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="IsDone" ColumnName="IsDone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Collection">
-            <EntityTypeMapping TypeName="FullModel.Collection">
+            <EntityTypeMapping TypeName="preendModel.Collection">
               <MappingFragment StoreEntitySet="Collection">
-                <ScalarProperty Name="Inkognito" ColumnName="Inkognito" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Inkognito" ColumnName="Inkognito" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film">
-            <EntityTypeMapping TypeName="FullModel.Film">
+            <EntityTypeMapping TypeName="preendModel.Film">
               <MappingFragment StoreEntitySet="Film">
-                <ScalarProperty Name="Duration" ColumnName="Duration" />
-                <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
-                <ScalarProperty Name="Poster" ColumnName="Poster" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
+                <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Calendar">
-            <EntityTypeMapping TypeName="FullModel.Film_Calendar">
+            <EntityTypeMapping TypeName="preendModel.Film_Calendar">
               <MappingFragment StoreEntitySet="Film_Calendar">
-                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
-                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Film_Collection">
-            <EntityTypeMapping TypeName="FullModel.Film_Collection">
+            <EntityTypeMapping TypeName="preendModel.Film_Collection">
               <MappingFragment StoreEntitySet="Film_Collection">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ID_Collection" ColumnName="ID_Collection" />
-                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Collection" ColumnName="ID_Collection" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Follow">
-            <EntityTypeMapping TypeName="FullModel.Follow">
+            <EntityTypeMapping TypeName="preendModel.Follow">
               <MappingFragment StoreEntitySet="Follow">
-                <ScalarProperty Name="Date_follow" ColumnName="Date_follow" />
-                <ScalarProperty Name="ID_Following_User" ColumnName="ID_Following_User" />
-                <ScalarProperty Name="ID_Follower_User" ColumnName="ID_Follower_User" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Follower_User" ColumnName="ID_Follower_User" />
+                <ScalarProperty Name="ID_Following_User" ColumnName="ID_Following_User" />
+                <ScalarProperty Name="Date_follow" ColumnName="Date_follow" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Level">
-            <EntityTypeMapping TypeName="FullModel.Level">
+            <EntityTypeMapping TypeName="preendModel.Level">
               <MappingFragment StoreEntitySet="Level">
-                <ScalarProperty Name="Max_Count_XP" ColumnName="Max_Count_XP" />
-                <ScalarProperty Name="Lvl_Award" ColumnName="Lvl_Award" />
-                <ScalarProperty Name="Min_Count_XP" ColumnName="Min_Count_XP" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Min_Count_XP" ColumnName="Min_Count_XP" />
+                <ScalarProperty Name="Lvl_Award" ColumnName="Lvl_Award" />
+                <ScalarProperty Name="Max_Count_XP" ColumnName="Max_Count_XP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Question">
-            <EntityTypeMapping TypeName="FullModel.Question">
+            <EntityTypeMapping TypeName="preendModel.Question">
               <MappingFragment StoreEntitySet="Question">
-                <ScalarProperty Name="Answer_Four" ColumnName="Answer_Four" />
-                <ScalarProperty Name="True_Answer" ColumnName="True_Answer" />
-                <ScalarProperty Name="Answer_Three" ColumnName="Answer_Three" />
-                <ScalarProperty Name="Answer_Two" ColumnName="Answer_Two" />
-                <ScalarProperty Name="Answer_One" ColumnName="Answer_One" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Question1" ColumnName="Question" />
-                <ScalarProperty Name="ID__Test" ColumnName="ID__Test" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="FullModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID__Test" ColumnName="ID__Test" />
+                <ScalarProperty Name="Question1" ColumnName="Question" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Answer_One" ColumnName="Answer_One" />
+                <ScalarProperty Name="Answer_Two" ColumnName="Answer_Two" />
+                <ScalarProperty Name="Answer_Three" ColumnName="Answer_Three" />
+                <ScalarProperty Name="True_Answer" ColumnName="True_Answer" />
+                <ScalarProperty Name="Answer_Four" ColumnName="Answer_Four" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Test">
-            <EntityTypeMapping TypeName="FullModel.Test">
+            <EntityTypeMapping TypeName="preendModel.Test">
               <MappingFragment StoreEntitySet="Test">
-                <ScalarProperty Name="Id_Lvl" ColumnName="Id_Lvl" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Descriptin" ColumnName="Descriptin" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Descriptin" ColumnName="Descriptin" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Id_Lvl" ColumnName="Id_Lvl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="FullModel.User">
+            <EntityTypeMapping TypeName="preendModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Count_XP" ColumnName="Count_XP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Test">
-            <EntityTypeMapping TypeName="FullModel.User_Test">
+            <EntityTypeMapping TypeName="preendModel.User_Test">
               <MappingFragment StoreEntitySet="User_Test">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="IsComplite" ColumnName="IsComplite" />
-                <ScalarProperty Name="ID_Test" ColumnName="ID_Test" />
-                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Test" ColumnName="ID_Test" />
+                <ScalarProperty Name="IsComplite" ColumnName="IsComplite" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -919,7 +887,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
