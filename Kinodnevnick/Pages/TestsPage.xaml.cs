@@ -76,5 +76,10 @@ namespace Kinodnevnick.Pages
 		{
 			NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
 		}
+
+		private void Story_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			NavigationService.Navigate(new StoryPage());
+		}
 	}
 }

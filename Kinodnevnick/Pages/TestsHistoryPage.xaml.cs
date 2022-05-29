@@ -44,7 +44,7 @@ namespace Kinodnevnick.Pages
 
 		private void btn_main_Click(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new TestsPage());
+			NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
 		}
 
 		private void btn_TestStatistic_Click(object sender, RoutedEventArgs e)
@@ -65,6 +65,10 @@ namespace Kinodnevnick.Pages
 		private void btn_Exit_Click(object sender, RoutedEventArgs e)
 		{
 			NavigationService.Navigate(new AuthorizationPage());
+		}
+		private void btn_Tests_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new TestsPage());
 		}
 	}
 }

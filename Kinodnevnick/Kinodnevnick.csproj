@@ -415,6 +415,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\StoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TestsHistoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -427,6 +431,9 @@
   <ItemGroup>
     <Compile Include="Pages\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StoryPage.xaml.cs">
+      <DependentUpon>StoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TestsHistoryPage.xaml.cs">
       <DependentUpon>TestsHistoryPage.xaml</DependentUpon>
@@ -505,6 +512,9 @@
   <ItemGroup>
     <Resource Include="img\History.png" />
     <Resource Include="img\Stat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Story.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.4.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

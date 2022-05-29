@@ -54,6 +54,7 @@ namespace Core
         {
 			Award_User award_User = bd_connection.connection.Award_User.Where(a => a.ID_User == IDUser && a.ID_Award == 1).FirstOrDefault();
 			award_User.IsDone = true;
+			LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 			bd_connection.connection.SaveChanges();
         }
 
@@ -67,6 +68,7 @@ namespace Core
 				if(award_User.IsDone != true)
                 {
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
 			}
@@ -81,6 +83,7 @@ namespace Core
 				if (award_User.IsDone != true)
                 {
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
             }
@@ -95,6 +98,7 @@ namespace Core
 				if (award_User.IsDone != true)
 				{
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
 			}
@@ -110,6 +114,7 @@ namespace Core
 				if (award_User.IsDone != true)
 				{
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
 			}
@@ -124,6 +129,7 @@ namespace Core
 				if (award_User.IsDone != true)
 				{
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
 			}
@@ -138,6 +144,7 @@ namespace Core
 				if (award_User.IsDone != true)
 				{
 					award_User.IsDone = true;
+					LevelFunction.AwardIsDoneXP(IDUser, award_User.Award);
 					bd_connection.connection.SaveChanges();
 				}
 			}

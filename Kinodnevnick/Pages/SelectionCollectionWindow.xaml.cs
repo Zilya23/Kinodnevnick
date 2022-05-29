@@ -54,6 +54,7 @@ namespace Kinodnevnick.Pages
                     bd_connection.connection.Film_Collection.Add(FilmColl);
                     bd_connection.connection.SaveChanges();
                     this.DialogResult = true;
+                    LevelFunction.FilmAddCollXP(AuthorizationPage.user.ID);
                 }
                 else
                 {

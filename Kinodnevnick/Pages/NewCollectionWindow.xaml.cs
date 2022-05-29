@@ -36,6 +36,7 @@ namespace Kinodnevnick.Pages
                 {
                         MessageBox.Show("Коллекция успешно создана!");
                         this.DialogResult = true;
+                        LevelFunction.CollectionAddXP(AuthorizationPage.user.ID);
                 }
                 else
                 {

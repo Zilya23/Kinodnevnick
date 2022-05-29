@@ -5,31 +5,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4c09241a734649569de9e99f4f5bb5a6" Name="Diagram1">
-        <EntityTypeShape EntityType="FullModel.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Film" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FullModel.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="FullModel.FK_Award_User_Award" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Award_User_User" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Collection_User" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Film_Collection_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Film_Calendar_User" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Follow_User" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Follow_User1" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Test_Level" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_Question_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_User_Test_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="FullModel.FK_User_Test_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FullModel.Award" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="FullModel.Award_User" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="FullModel.Collection" Width="1.5" PointX="3" PointY="13" />
+        <EntityTypeShape EntityType="FullModel.Film" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FullModel.Film_Calendar" Width="1.5" PointX="6" PointY="7.625" />
+        <EntityTypeShape EntityType="FullModel.Film_Collection" Width="1.5" PointX="5.25" PointY="13.125" />
+        <EntityTypeShape EntityType="FullModel.Follow" Width="1.5" PointX="3" PointY="19" />
+        <EntityTypeShape EntityType="FullModel.Level" Width="1.5" PointX="1.5" PointY="22" />
+        <EntityTypeShape EntityType="FullModel.Question" Width="1.5" PointX="3" PointY="25.5" />
+        <EntityTypeShape EntityType="FullModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FullModel.Test" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="FullModel.User" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="FullModel.User_Test" Width="1.5" PointX="3" PointY="7.875" />
+        <AssociationConnector Association="FullModel.FK_Award_User_Award" />
+        <AssociationConnector Association="FullModel.FK_Award_User_User" />
+        <AssociationConnector Association="FullModel.FK_Collection_User" />
+        <AssociationConnector Association="FullModel.FK_Film_Collection_Collection" />
+        <AssociationConnector Association="FullModel.FK_Film_Calendar_Film" />
+        <AssociationConnector Association="FullModel.FK_Film_Collection_Film" />
+        <AssociationConnector Association="FullModel.FK_Film_Calendar_User" />
+        <AssociationConnector Association="FullModel.FK_Follow_User" />
+        <AssociationConnector Association="FullModel.FK_Follow_User1" />
+        <AssociationConnector Association="FullModel.FK_Test_Level" />
+        <AssociationConnector Association="FullModel.FK_Question_Test" />
+        <AssociationConnector Association="FullModel.FK_User_Test_Test" />
+        <AssociationConnector Association="FullModel.FK_User_Test_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

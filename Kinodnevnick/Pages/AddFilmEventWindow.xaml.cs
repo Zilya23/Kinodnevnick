@@ -44,6 +44,7 @@ namespace Kinodnevnick.Pages
                 events.End_Time = timeEnd;
                 KalendarFunction.AddEvent(events);
                 this.DialogResult = true;
+                LevelFunction.EventAddXP(AuthorizationPage.user.ID);
             }
             catch
             {

@@ -40,7 +40,7 @@ namespace Kinodnevnick.Pages
 		}
 		private void btn_main_Click(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new TestsPage());
+			NavigationService.Navigate(new FilmMainPage(AuthorizationPage.user));
 		}
 
 
@@ -58,8 +58,12 @@ namespace Kinodnevnick.Pages
 		{
 			NavigationService.Navigate(new AuthorizationPage());
 		}
+		private void btn_Tests_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new TestsPage());
+		}
 
-        private void prod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void prod_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 			FollowersWindow followers = new FollowersWindow();
 			if(lv_leader.SelectedItem != null)

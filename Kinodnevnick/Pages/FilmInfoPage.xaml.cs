@@ -60,6 +60,7 @@ namespace Kinodnevnick.Pages
         private void cb_watch_Checked(object sender, RoutedEventArgs e)
         {
             CollectionFunction.ViewedFilm(AuthorizationPage.user.ID, filmToFill.ID);
+            LevelFunction.WachedFilmXP(AuthorizationPage.user.ID);
         }
 
         private void cb_watch_Unchecked(object sender, RoutedEventArgs e)

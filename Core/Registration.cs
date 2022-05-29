@@ -16,7 +16,6 @@ namespace Core
         {
             User newUser = new User();
             int startXP = 0;
-            int startLvl = 1;
 
             newUser.Nickname = nick;
             newUser.Login = login;

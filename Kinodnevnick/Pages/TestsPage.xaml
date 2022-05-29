@@ -104,6 +104,9 @@
             <StackPanel Grid.Column="0"
                     Grid.Row="0" Grid.RowSpan="13"
                     Background="#FF780000"/>
+            <Image x:Name="Story" Source="../img\Story.png"
+                   Grid.Column="11" Grid.Row="0"
+                   MouseDown="Story_MouseDown"/>
             <TextBlock Text="КинокраД.Тесты" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 
@@ -128,17 +131,9 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock>
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0}|{1}">
-                                        <Binding Path="testList.Title"/>
-                                        <Binding Path="Title"/>
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
+                        <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Center">
                             <Image Source="{Binding Photo}" Width="170" Height="170" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" FontSize="20" Foreground="Black"/>
+                            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" FontSize="20" Foreground="Black" TextWrapping="Wrap"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

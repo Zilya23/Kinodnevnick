@@ -39,20 +39,23 @@ namespace Kinodnevnick.Pages
 			questionList = TestFunction.GetQuestions(testId);
 			viewedQuestion = questionList.Count - 1;
 			numberQuestion = 0;
+			tb_QuestionCount.Text = (numberQuestion + 1).ToString() + " из " + (viewedQuestion + 1).ToString();
 
 			question = questionList[numberQuestion];
 			BitmapImage bd = ToBitmapImage(question.Photo);
 			img_Qphoto.Source = bd;
 
 			tb_Qestion.Text = question.Question1;
-			btn_answr1.Content = question.Answer_One;
-			btn_answr2.Content = question.Answer_Two;
-			btn_answr3.Content = question.Answer_Three;
-			btn_answr4.Content = question.Answer_Four;
+			btn_answr1.Content = question.Answer_One.Trim();
+			btn_answr2.Content = question.Answer_Two.Trim();
+			btn_answr3.Content = question.Answer_Three.Trim();
+			btn_answr4.Content = question.Answer_Four.Trim();
 			this.DataContext = this;
 		}
 		private void tb_back_MouseDown(object sender, MouseButtonEventArgs e)
 		{
+			numberQuestion = 0;
+			countTrueAnswer = 0;
 			NavigationService.GoBack();
 		}
 
@@ -79,10 +82,11 @@ namespace Kinodnevnick.Pages
 				BitmapImage bd = ToBitmapImage(question.Photo);
 				img_Qphoto.Source = bd;
 				tb_Qestion.Text = question.Question1;
-				btn_answr1.Content = question.Answer_One;
-				btn_answr2.Content = question.Answer_Two;
-				btn_answr3.Content = question.Answer_Three;
-				btn_answr4.Content = question.Answer_Four;
+				btn_answr1.Content = question.Answer_One.Trim();
+				btn_answr2.Content = question.Answer_Two.Trim();
+				btn_answr3.Content = question.Answer_Three.Trim();
+				btn_answr4.Content = question.Answer_Four.Trim();
+				tb_QuestionCount.Text = (numberQuestion + 1).ToString() + " из " + (viewedQuestion + 1).ToString();
 			}
 			else 
 			{
@@ -92,6 +96,9 @@ namespace Kinodnevnick.Pages
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
 				TestFunction.TestDone(AuthorizationPage.user.ID ,IDTest);
+				LevelFunction.TestIsDoneXP(AuthorizationPage.user.ID, (countTrueAnswer * 5));
+				numberQuestion = 0;
+				countTrueAnswer = 0;
 				NavigationService.Navigate(new TestsPage());
 			}
 		}
@@ -128,10 +135,11 @@ namespace Kinodnevnick.Pages
 				BitmapImage bd = ToBitmapImage(question.Photo);
 				img_Qphoto.Source = bd;
 				tb_Qestion.Text = question.Question1;
-				btn_answr1.Content = question.Answer_One;
-				btn_answr2.Content = question.Answer_Two;
-				btn_answr3.Content = question.Answer_Three;
-				btn_answr4.Content = question.Answer_Four;
+				btn_answr1.Content = question.Answer_One.Trim();
+				btn_answr2.Content = question.Answer_Two.Trim();
+				btn_answr3.Content = question.Answer_Three.Trim();
+				btn_answr4.Content = question.Answer_Four.Trim();
+				tb_QuestionCount.Text = (numberQuestion + 1).ToString() + " из " + (viewedQuestion + 1).ToString();
 			}
 			else 
 			{
@@ -141,6 +149,9 @@ namespace Kinodnevnick.Pages
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
 				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				LevelFunction.TestIsDoneXP(AuthorizationPage.user.ID, (countTrueAnswer * 5));
+				numberQuestion = 0;
+				countTrueAnswer = 0;
 				NavigationService.Navigate(new TestsPage());
 			}
 		}
@@ -158,10 +169,11 @@ namespace Kinodnevnick.Pages
 				BitmapImage bd = ToBitmapImage(question.Photo);
 				img_Qphoto.Source = bd;
 				tb_Qestion.Text = question.Question1;
-				btn_answr1.Content = question.Answer_One;
-				btn_answr2.Content = question.Answer_Two;
-				btn_answr3.Content = question.Answer_Three;
-				btn_answr4.Content = question.Answer_Four;
+				btn_answr1.Content = question.Answer_One.Trim();
+				btn_answr2.Content = question.Answer_Two.Trim();
+				btn_answr3.Content = question.Answer_Three.Trim();
+				btn_answr4.Content = question.Answer_Four.Trim();
+				tb_QuestionCount.Text = (numberQuestion + 1).ToString() + " из " + (viewedQuestion + 1).ToString();
 			}
 			else
 			{
@@ -171,6 +183,9 @@ namespace Kinodnevnick.Pages
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
 				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				LevelFunction.TestIsDoneXP(AuthorizationPage.user.ID, (countTrueAnswer * 5));
+				numberQuestion = 0;
+				countTrueAnswer = 0;
 				NavigationService.Navigate(new TestsPage());
 			}
 		}
@@ -188,10 +203,11 @@ namespace Kinodnevnick.Pages
 				BitmapImage bd = ToBitmapImage(question.Photo);
 				img_Qphoto.Source = bd;
 				tb_Qestion.Text = question.Question1;
-				btn_answr1.Content = question.Answer_One;
-				btn_answr2.Content = question.Answer_Two;
-				btn_answr3.Content = question.Answer_Three;
-				btn_answr4.Content = question.Answer_Four;
+				btn_answr1.Content = question.Answer_One.Trim();
+				btn_answr2.Content = question.Answer_Two.Trim();
+				btn_answr3.Content = question.Answer_Three.Trim();
+				btn_answr4.Content = question.Answer_Four.Trim();
+				tb_QuestionCount.Text = (numberQuestion + 1).ToString() + " из " + (viewedQuestion + 1).ToString();
 			}
 			else
 			{
@@ -201,6 +217,9 @@ namespace Kinodnevnick.Pages
 				}
 				MessageBox.Show("Тест пройден! \nРезультаты теста:" + " правильных ответов " + countTrueAnswer + " из " + (viewedQuestion + 1));
 				TestFunction.TestDone(AuthorizationPage.user.ID, IDTest);
+				LevelFunction.TestIsDoneXP(AuthorizationPage.user.ID, (countTrueAnswer * 5));
+				numberQuestion = 0;
+				countTrueAnswer = 0;
 				NavigationService.Navigate(new TestsPage());
 			}
 		}

@@ -24,7 +24,7 @@ namespace Core.DateBase
         public string Name { get; set; }
         public string Description { get; set; }
         public byte[] Photo { get; set; }
-        public string Achievement_Condition { get; set; }
+        public Nullable<int> CountXP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Award_User> Award_User { get; set; }

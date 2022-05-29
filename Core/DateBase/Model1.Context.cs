@@ -34,6 +34,7 @@ namespace Core.DateBase
         public virtual DbSet<Follow> Follow { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Test> Test { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<User_Test> User_Test { get; set; }
