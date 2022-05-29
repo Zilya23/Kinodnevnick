@@ -11,6 +11,7 @@ namespace KinodnevnikApi.Services
     public class UserServices
     {
         static ObservableCollection<User> users = FriendFunction.GetUsers();
+        
 
         public static ObservableCollection<User> GetAllUser() => users;
     }

@@ -43,5 +43,40 @@ namespace KinodnevnickUnitTest
             Assert.AreEqual(expectedFilm.ID, actualFilm.ID);
             Assert.AreEqual(expectedFilm.Name, actualFilm.Name);
         }
+
+        [TestMethod]
+        public void TestAwardDone()
+        {
+            List<Award_User> exeptedAward_s = new List<Award_User>()
+            {
+                new Award_User { ID_Award = 1, ID_User = 7, IsDone = null },
+                new Award_User { ID_Award = 2, ID_User = 7, IsDone = true },
+                new Award_User { ID_Award = 3, ID_User = 7, IsDone = null },
+                new Award_User { ID_Award = 4, ID_User = 7, IsDone = null },
+                new Award_User { ID_Award = 5, ID_User = 7, IsDone = null },
+                new Award_User { ID_Award = 6, ID_User = 7, IsDone = true },
+                new Award_User { ID_Award = 7, ID_User = 7, IsDone = null }
+            };
+            List<Award_User> actualAward_s = AwardFunction.GetAward_Users(7);
+            CollectionAssert.AreEqual(exeptedAward_s.Select(x => x.ID_User).ToList(), actualAward_s.Select(x => x.ID_User).ToList());
+            CollectionAssert.AreEqual(exeptedAward_s.Select(x => x.ID_Award).ToList(), actualAward_s.Select(x => x.ID_Award).ToList());
+            CollectionAssert.AreEqual(exeptedAward_s.Select(x => x.IsDone).ToList(), actualAward_s.Select(x => x.IsDone).ToList());
+        }
+        [TestMethod]
+        public void TestStatisticCorrect()
+        {
+            int actualVF = StatisticFunction.CountViewedFilm(7);
+            int expectedVF = 1;
+            Assert.AreEqual(actualVF, expectedVF);
+            int actualVT = StatisticFunction.CountTimeViewedFilm(7);
+            int exeptedVT = 148;
+            Assert.AreEqual(actualVT, exeptedVT);
+            int actualAC = StatisticFunction.CountAward(7);
+            int exeptedAC = 2;
+            Assert.AreEqual(actualAC, exeptedAC);
+            int actualTC = StatisticFunction.CountDoneTest(7);
+            int exeptedTC = 5;
+            Assert.AreEqual(actualTC, exeptedTC);
+         }
     }
 }

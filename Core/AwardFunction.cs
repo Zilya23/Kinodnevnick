@@ -142,5 +142,10 @@ namespace Core
 				}
 			}
 		}
+		public static List<Award_User> GetAward_Users(int IDUser)
+		{
+			List<Award_User> award_Users = bd_connection.connection.Award_User.Where(x => x.ID_User == IDUser).ToList();
+			return award_Users;
+		}
 	}
 }
