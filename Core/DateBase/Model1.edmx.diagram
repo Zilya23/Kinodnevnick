@@ -4,33 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="10ee6ed8d72c46bcae038252f2f069de" Name="Diagram1">
-        <EntityTypeShape EntityType="KinoKradModel.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Film" Width="1.5" PointX="3.75" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KinoKradModel.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="KinoKradModel.FK_Award_User_Award" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Award_User_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Collection_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Film_Collection_Film" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Film_Calendar_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Follow_User" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Follow_User1" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Test_Level" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_Question_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_User_Test_Test" ManuallyRouted="false" />
-        <AssociationConnector Association="KinoKradModel.FK_User_Test_User" ManuallyRouted="false" />
+      <Diagram DiagramId="db0ebbfebbcc48fd9e1ab10de6d916c5" Name="Diagram1">
+        <EntityTypeShape EntityType="KinokradModel.Award" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Award_User" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Collection" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Film" Width="1.5" PointX="3.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Film_Calendar" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Film_Collection" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Follow" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Level" Width="1.5" PointX="1.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Question" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.Test" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradModel.User_Test" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="KinokradModel.FK_Award_User_Award" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Award_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Film_Collection_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Film_Calendar_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Film_Collection_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Film_Calendar_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Follow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Follow_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Test_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_Question_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_User_Test_Test" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradModel.FK_User_Test_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

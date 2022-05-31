@@ -223,9 +223,6 @@
     <Compile Include="DateBase\Question.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DateBase\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DateBase\Test.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
