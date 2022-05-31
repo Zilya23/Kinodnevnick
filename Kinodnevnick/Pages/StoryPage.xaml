@@ -59,10 +59,10 @@
                    Grid.Column="5" Grid.ColumnSpan="3"
                    Grid.Row="3" HorizontalAlignment="Center"
                    FontWeight="Bold"/>
-        <ScrollViewer Grid.Column="5" Grid.ColumnSpan="6"
+        <ScrollViewer Grid.Column="2" Grid.ColumnSpan="9"
                    Grid.Row="5" Grid.RowSpan="6">
             <TextBlock Text="Вы андроид из будущего, прямо сейчас вы находитесь в библиотеке всех фильмов мира, ваша задача ознакомится с как можно большим количеством картин для понимания человеческой натуры. Переодически вам нужно будет проходить квалификационные тесты, чтобы понять насколько вы преуспели в своём познании."
-                   Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Column="2" Grid.ColumnSpan="9"
                    Grid.Row="5" Grid.RowSpan="6"
                    FontSize="16"
                    TextWrapping="Wrap" />
