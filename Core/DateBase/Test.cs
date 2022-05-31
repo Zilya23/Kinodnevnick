@@ -7,25 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Level
+    public partial class Test
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Level()
+        public Test()
         {
-            this.Test = new HashSet<Test>();
+            this.Question = new HashSet<Question>();
+            this.User_Test = new HashSet<User_Test>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> Min_Count_XP { get; set; }
-        public string Lvl_Award { get; set; }
-        public Nullable<int> Max_Count_XP { get; set; }
+        public string Title { get; set; }
+        public string Descriptin { get; set; }
+        public byte[] Photo { get; set; }
+        public Nullable<int> Id_Lvl { get; set; }
     
+        public virtual Level Level { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Test> Test { get; set; }
+        public virtual ICollection<Question> Question { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Test> User_Test { get; set; }
     }
 }

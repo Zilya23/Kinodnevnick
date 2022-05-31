@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Award_User
+    public partial class Film_Collection
     {
         public int ID { get; set; }
-        public Nullable<int> ID_Award { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<bool> IsDone { get; set; }
+        public Nullable<int> ID_Film { get; set; }
+        public Nullable<int> ID_Collection { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
-        public virtual Award Award { get; set; }
-        public virtual User User { get; set; }
+        public virtual Collection Collection { get; set; }
+        public virtual Film Film { get; set; }
     }
 }

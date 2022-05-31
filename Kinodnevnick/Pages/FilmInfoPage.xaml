@@ -64,7 +64,6 @@
                Source="{Binding filmToFill.Poster}"
                Grid.Column="1" Grid.ColumnSpan="3"
                Grid.Row="2" Grid.RowSpan="8"/>
-
         <TextBlock Text="Дата выхода: "
                    Grid.Column="5" Grid.ColumnSpan="3"
                    Grid.Row="2"
@@ -75,14 +74,22 @@
                    FontSize="20"/>
         <TextBlock Text="Описание: "
                    Grid.Column="5" Grid.ColumnSpan="3"
-                   Grid.Row="4"
+                   Grid.Row="5"
                    FontSize="20"/>
+        <TextBlock x:Name="tb_link"
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   FontSize="20">
+            <Hyperlink
+                CommandParameter="{Binding ExternalURL}"
+                Command="{Binding NavHomeViewCommand}">Смотреть</Hyperlink>
+        </TextBlock>
 
         <ScrollViewer Grid.Column="5" Grid.ColumnSpan="6"
-                   Grid.Row="5" Grid.RowSpan="6">
+                   Grid.Row="6" Grid.RowSpan="5">
             <TextBlock Text="{Binding filmToFill.Description}"
                    Grid.Column="5" Grid.ColumnSpan="6"
-                   Grid.Row="5" Grid.RowSpan="6"
+                   Grid.Row="6" Grid.RowSpan="5"
                    FontSize="16"
                    TextWrapping="Wrap" />
         </ScrollViewer>

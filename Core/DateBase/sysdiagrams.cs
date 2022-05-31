@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Follow
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public Nullable<int> ID_Follower_User { get; set; }
-        public Nullable<int> ID_Following_User { get; set; }
-        public Nullable<System.DateTime> Date_follow { get; set; }
-    
-        public virtual User User { get; set; }
-        public virtual User User1 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

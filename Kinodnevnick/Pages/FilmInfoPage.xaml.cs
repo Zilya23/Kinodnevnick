@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Core;
 using Core.DateBase;
+using Prism.Commands;
 
 namespace Kinodnevnick.Pages
 {
@@ -24,10 +25,22 @@ namespace Kinodnevnick.Pages
     public partial class FilmInfoPage : Page
     {
         public Film filmToFill { get; set; }
+        private void NavHomeView(object ID)
+        {
+            if (ID is string destinationurl)
+                System.Diagnostics.Process.Start(filmToFill.Film_link);  
+        }
+        public string ExternalURL { get => filmToFill.Film_link; }
+        private readonly ICommand navHomeViewCommand;
+        public ICommand NavHomeViewCommand
+        {
+            get { return navHomeViewCommand; }
+        }
         public FilmInfoPage(Film film)
         {
             InitializeComponent();
             filmToFill = film;
+            navHomeViewCommand = new DelegateCommand<object>(NavHomeView);
             tb_duration.Text = filmToFill.Duration + " мин.";
             if(CollectionFunction.Viewed(AuthorizationPage.user.ID, filmToFill.ID))
             {

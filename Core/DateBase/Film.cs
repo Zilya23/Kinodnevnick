@@ -7,30 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Test
+    public partial class Film
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Test()
+        public Film()
         {
-            this.Question = new HashSet<Question>();
-            this.User_Test = new HashSet<User_Test>();
+            this.Film_Calendar = new HashSet<Film_Calendar>();
+            this.Film_Collection = new HashSet<Film_Collection>();
         }
     
         public int ID { get; set; }
-        public string Title { get; set; }
-        public string Descriptin { get; set; }
-        public byte[] Photo { get; set; }
-        public Nullable<int> Id_Lvl { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public byte[] Poster { get; set; }
+        public Nullable<System.DateTime> Date_Issue { get; set; }
+        public Nullable<int> Duration { get; set; }
+        public string Film_link { get; set; }
     
-        public virtual Level Level { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Question> Question { get; set; }
+        public virtual ICollection<Film_Calendar> Film_Calendar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Test> User_Test { get; set; }
+        public virtual ICollection<Film_Collection> Film_Collection { get; set; }
     }
 }

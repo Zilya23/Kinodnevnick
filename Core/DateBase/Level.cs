@@ -7,30 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Film
+    public partial class Level
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Film()
+        public Level()
         {
-            this.Film_Calendar = new HashSet<Film_Calendar>();
-            this.Film_Collection = new HashSet<Film_Collection>();
+            this.Test = new HashSet<Test>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public byte[] Poster { get; set; }
-        public Nullable<System.DateTime> Date_Issue { get; set; }
-        public Nullable<int> Duration { get; set; }
+        public Nullable<int> Min_Count_XP { get; set; }
+        public string Lvl_Award { get; set; }
+        public Nullable<int> Max_Count_XP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film_Calendar> Film_Calendar { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film_Collection> Film_Collection { get; set; }
+        public virtual ICollection<Test> Test { get; set; }
     }
 }

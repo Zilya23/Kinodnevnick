@@ -7,23 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Question
+    public partial class Follow
     {
         public int ID { get; set; }
-        public Nullable<int> ID__Test { get; set; }
-        public string Question1 { get; set; }
-        public byte[] Photo { get; set; }
-        public string Answer_One { get; set; }
-        public string Answer_Two { get; set; }
-        public string Answer_Three { get; set; }
-        public string True_Answer { get; set; }
-        public string Answer_Four { get; set; }
+        public Nullable<int> ID_Follower_User { get; set; }
+        public Nullable<int> ID_Following_User { get; set; }
+        public Nullable<System.DateTime> Date_follow { get; set; }
     
-        public virtual Test Test { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

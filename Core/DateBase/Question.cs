@@ -7,26 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Award
+    public partial class Question
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Award()
-        {
-            this.Award_User = new HashSet<Award_User>();
-        }
-    
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> ID__Test { get; set; }
+        public string Question1 { get; set; }
         public byte[] Photo { get; set; }
-        public Nullable<int> CountXP { get; set; }
+        public string Answer_One { get; set; }
+        public string Answer_Two { get; set; }
+        public string Answer_Three { get; set; }
+        public string True_Answer { get; set; }
+        public string Answer_Four { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Award_User> Award_User { get; set; }
+        public virtual Test Test { get; set; }
     }
 }

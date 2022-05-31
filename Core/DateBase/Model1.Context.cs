@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core
+namespace Core.DateBase
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class preendEntities : DbContext
+    public partial class KinoKradEntities : DbContext
     {
-        public preendEntities()
-            : base("name=preendEntities")
+        public KinoKradEntities()
+            : base("name=KinoKradEntities")
         {
         }
     
@@ -34,6 +34,7 @@ namespace Core
         public virtual DbSet<Follow> Follow { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Test> Test { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<User_Test> User_Test { get; set; }
