@@ -12,17 +12,12 @@ namespace Core.DateBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Film_Calendar
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> ID_User { get; set; }
-        public Nullable<int> ID_Film { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.TimeSpan> Start_Time { get; set; }
-        public Nullable<System.TimeSpan> End_Time { get; set; }
-    
-        public virtual Film Film { get; set; }
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -41,12 +41,12 @@
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Following.Photo}" Width="50"/>
+                                <Image Source="{Binding User1.Photo}" Width="50"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn DisplayMemberBinding="{Binding  Following.Nickname}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding  User1.Nickname}"/>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

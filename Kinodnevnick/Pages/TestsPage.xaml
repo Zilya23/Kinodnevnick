@@ -104,8 +104,10 @@
             <StackPanel Grid.Column="0"
                     Grid.Row="0" Grid.RowSpan="13"
                     Background="#FF780000"/>
-            <Image x:Name="Story" Source="../img\Story.png"
-                   Grid.Column="11" Grid.Row="0"
+            <Image x:Name="Story" 
+                   Source="../img\Story.png"
+                   Grid.Column="11" 
+                   Grid.Row="0"
                    MouseDown="Story_MouseDown"/>
             <TextBlock Text="КинокраД.Тесты" 
                    Grid.Row="0"
